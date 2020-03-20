@@ -1,0 +1,3119 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (126.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (143.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to DeviseCreateUsers (20200307203930)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "cpf" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200307203930_devise_create_users.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20200307203930_devise_create_users.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20200307203930_devise_create_users.rb:42
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200307203930"]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (140.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-07 20:41:18.191402"], ["updated_at", "2020-03-07 20:41:18.191402"]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (121.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/users/sign_up" for ::1 at 2020-03-07 17:46:04 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/registrations/new.html.erb within layouts/application (550.0ms)
+Completed 200 OK in 6225ms (Views: 6205.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for ::1 at 2020-03-07 17:46:24 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BxkXLYxgz5FO9nuMCLz4y1OnMkUk5uOYrRyc5rSTamxvd+8uI4fMl+oyKYfEsj5uhTQCgbeOLKZTlybt0+w3xQ==", "user"=>{"email"=>"guilherme.saraivak7@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "guilherme.saraivak7@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "guilherme.saraivak7@gmail.com"], ["encrypted_password", "$2a$11$LeE43zqGf5YuXJfEqXiEbuNsx/UwAnhgPf2WbzVWT4qxki9tNGtlW"], ["created_at", "2020-03-07 20:46:25.132091"], ["updated_at", "2020-03-07 20:46:25.132091"]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (117.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 300ms (ActiveRecord: 118.1ms)
+
+
+Started GET "/" for ::1 at 2020-03-07 17:46:25 -0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ApplicationController):
+  
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to AddTokenToUser (20200307205702)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "token" varchar[0m
+  ↳ db/migrate/20200307205702_add_token_to_user.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200307205702"]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (100.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["token", "RnJd-j2rEfetZ8S1xS4r"], ["updated_at", "2020-03-07 20:59:11.730936"], ["id", 1]]
+  [1m[35m (112.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-03-12 12:30:53 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ApplicationController):
+  
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:34:55 -0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:36:14 -0300
+  [1m[35m (20.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/criar_grupo" for ::1 at 2020-03-12 12:37:28 -0300
+  
+ActionController::RoutingError (undefined local variable or method `impressionist' for ApiController:Class):
+  
+app/controllers/api_controller.rb:3:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<top (required)>'
+Started GET "/api/criar_grupo" for ::1 at 2020-03-12 12:37:48 -0300
+  
+ArgumentError (Before process_action callback :active_user has not been defined):
+  
+app/controllers/api_controller.rb:3:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<top (required)>'
+Started GET "/api/criar_grupo" for ::1 at 2020-03-12 12:38:12 -0300
+Processing by ApiController#login as HTML
+Completed 401 Unauthorized in 45ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-12 12:38:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (3.1ms)
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (36.4ms)
+Started GET "/api/criar_grupo" for ::1 at 2020-03-12 12:38:15 -0300
+Processing by ApiController#login as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-12 12:38:15 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (26.1ms)
+Started GET "/api/criar_grupo" for ::1 at 2020-03-12 12:38:24 -0300
+Processing by ApiController#login as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-12 12:38:24 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (5.2ms)
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 14343ms (Views: 14314.2ms | ActiveRecord: 1.0ms)
+
+
+Completed 200 OK in 11465ms (Views: 11459.9ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 2818ms (Views: 2816.1ms | ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:38:53 -0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:38:58 -0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:39:35 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:39:41 -0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:39:41 -0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:40:05 -0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:40:06 -0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:46:26 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/criar_grupo" for ::1 at 2020-03-12 12:46:49 -0300
+  
+ActionController::RoutingError (uninitialized constant ApisController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/criar_grupo?hh=oi" for ::1 at 2020-03-12 12:47:17 -0300
+Processing by ApiController#login as HTML
+  Parameters: {"hh"=>"oi"}
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-12 12:47:18 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 378ms (Views: 365.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/criar_grupo" for ::1 at 2020-03-12 12:47:52 -0300
+Processing by ApiController#login as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-12 12:47:52 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.6ms)
+  Rendered /home/guilherme/.rvm/gems/ruby-2.5.1/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/api/criar_grupo" for ::1 at 2020-03-12 12:48:57 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 12:50:04 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/criar_grupo"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 12:52:55 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#login as */*
+HTTP Origin header (http://localhost:8100) didn't match request.base_url (https://f7625c33.ngrok.io)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.7.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.4.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started OPTIONS "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 12:54:40 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#login as */*
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 12:55:26 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#login as */*
+No template found for ApiController#login, rendering head :no_content
+Completed 204 No Content in 89ms (ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 12:55:35 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#login as */*
+No template found for ApiController#login, rendering head :no_content
+Completed 204 No Content in 103ms (ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 12:55:37 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#login as */*
+No template found for ApiController#login, rendering head :no_content
+Completed 204 No Content in 115ms (ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 12:55:43 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#login as */*
+No template found for ApiController#login, rendering head :no_content
+Completed 204 No Content in 85ms (ActiveRecord: 0.0ms)
+
+
+Started OPTIONS "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 13:03:13 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#login as */*
+No template found for ApiController#login, rendering head :no_content
+Completed 204 No Content in 82ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 13:12:06 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#login as HTML
+  Parameters: {"id"=>"0.8228142336896684", "nome"=>"wefwe", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09a5YhwmXi-ygEmsIE:::-M0XLjGBTsexydt-o2t9", "api"=>{"id"=>"0.8228142336896684", "nome"=>"wefwe", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09a5YhwmXi-ygEmsIE:::-M0XLjGBTsexydt-o2t9"}}
+No template found for ApiController#login, rendering head :no_content
+Completed 204 No Content in 61ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 13:12:29 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#login as HTML
+  Parameters: {"id"=>"0.9332156068060435", "nome"=>"dgrgdrg", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09a5YhwmXi-ygEmsIE:::-M0XLjGBTsexydt-o2t9", "api"=>{"id"=>"0.9332156068060435", "nome"=>"dgrgdrg", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09a5YhwmXi-ygEmsIE:::-M0XLjGBTsexydt-o2t9"}}
+No template found for ApiController#login, rendering head :no_content
+Completed 204 No Content in 91ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 13:37:55 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#login as HTML
+  Parameters: {"id"=>"0.1158998851896682", "nome"=>"wdwd", "usuariosPermitidos"=>"-M09ZGvtPLP_dWvrC5DB:::-M09a5YhwmXi-ygEmsIE", "api"=>{"id"=>"0.1158998851896682", "nome"=>"wdwd", "usuariosPermitidos"=>"-M09ZGvtPLP_dWvrC5DB:::-M09a5YhwmXi-ygEmsIE"}}
+No template found for ApiController#login, rendering head :no_content
+Completed 204 No Content in 51ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 13:39:45 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#criar_grupo as HTML
+  Parameters: {"id"=>"0.5995050085477649", "nome"=>"fefefe", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB", "api"=>{"id"=>"0.5995050085477649", "nome"=>"fefefe", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB"}}
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/criar_grupo" for 186.248.135.150 at 2020-03-12 13:53:47 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#criar_grupo as HTML
+  Parameters: {"id"=>"0.7183986195832628", "nome"=>"wdwd", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB", "api"=>{"id"=>"0.7183986195832628", "nome"=>"wdwd", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB"}}
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/api_controller.rb:28:in `criar_grupo'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/criar_usuario" for 186.248.135.150 at 2020-03-12 14:37:12 -0300
+Cannot render console from 186.248.135.150! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ApiController#criar_usuario as HTML
+  Parameters: {"id"=>"0.5972990365049855", "nome"=>"asasas", "email"=>"gegesg@gemoge.com", "cpf"=>"12255522244", "ativo"=>true, "senha"=>"[FILTERED]", "api"=>{"id"=>"0.5972990365049855", "nome"=>"asasas", "email"=>"gegesg@gemoge.com", "cpf"=>"12255522244", "ativo"=>true, "senha"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/criar_usuario" for ::1 at 2020-03-12 16:16:40 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#criar_usuario as HTML
+  Parameters: {"id"=>"0.920054785379967", "nome"=>"fsegse", "email"=>"sefse@esgse.com", "cpf"=>"12545215111", "ativo"=>true, "senha"=>"[FILTERED]", "api"=>{"id"=>"0.920054785379967", "nome"=>"fsegse", "email"=>"sefse@esgse.com", "cpf"=>"12545215111", "ativo"=>true, "senha"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 495ms (ActiveRecord: 3.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'ativo' for User.):
+  
+app/controllers/api_controller.rb:26:in `criar_usuario'
+Started POST "/api/criar_usuario" for ::1 at 2020-03-12 16:20:57 -0300
+Processing by ApiController#criar_usuario as HTML
+  Parameters: {"id"=>"0.6908371289247537", "nome"=>"awdawd", "email"=>"ad@gg.com", "cpf"=>"12536988955", "ativo"=>true, "senha"=>"[FILTERED]", "api"=>{"id"=>"0.6908371289247537", "nome"=>"awdawd", "email"=>"ad@gg.com", "cpf"=>"12536988955", "ativo"=>true, "senha"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'nome' for User.):
+  
+app/controllers/api_controller.rb:26:in `criar_usuario'
+  [1m[36mUser Load (42.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to AddCamToUser (20200312192141)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (23.7ms)[0m  [1m[35mALTER TABLE "users" ADD "nome" varchar[0m
+  ↳ db/migrate/20200312192141_add_cam_to_user.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "ativo" boolean[0m
+  ↳ db/migrate/20200312192141_add_cam_to_user.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200312192141"]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (154.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started POST "/api/criar_usuario" for ::1 at 2020-03-12 16:22:56 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#criar_usuario as HTML
+  Parameters: {"id"=>"0.13946085732980928", "nome"=>"esfseg", "email"=>"segs@gseg.com", "cpf"=>"10215244448", "ativo"=>true, "senha"=>"[FILTERED]", "api"=>{"id"=>"0.13946085732980928", "nome"=>"esfseg", "email"=>"segs@gseg.com", "cpf"=>"10215244448", "ativo"=>true, "senha"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:26
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "segs@gseg.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:26
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "cpf", "created_at", "updated_at", "token", "nome", "ativo") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "segs@gseg.com"], ["encrypted_password", "$2a$11$8Q7JqyhNL9eUaIvHfzrDruinLYXaFD072S8aIpBW3Enp.FpDyGM8K"], ["cpf", "10215244448"], ["created_at", "2020-03-12 16:22:57.267086"], ["updated_at", "2020-03-12 16:22:57.267086"], ["token", "y83zwMdmE11__gQ-Upoz"], ["nome", "esfseg"], ["ativo", 1]]
+  ↳ app/controllers/api_controller.rb:26
+  [1m[35m (182.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:26
+Completed 200 OK in 440ms (Views: 0.7ms | ActiveRecord: 188.1ms)
+
+
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (21.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (23.0ms)[0m  [1m[33mUPDATE "users" SET "cpf" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["cpf", "10259636599"], ["updated_at", "2020-03-12 16:29:03.453543"], ["id", 1]]
+  [1m[35m (150.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-03-12 16:29:16.275435"], ["id", 1]]
+  [1m[35m (100.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-03-12 16:29:26.604934"], ["id", 1]]
+  [1m[35m (115.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-03-12 16:29:28.127500"], ["id", 1]]
+  [1m[35m (103.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-03-12 16:29:28.686715"], ["id", 1]]
+  [1m[35m (101.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-03-12 16:29:28.976712"], ["id", 1]]
+  [1m[35m (99.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-03-12 16:29:29.235057"], ["id", 1]]
+  [1m[35m (108.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (3.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-03-12 16:29:29.499506"], ["id", 1]]
+  [1m[35m (120.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (2.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-03-12 16:29:49.181573"], ["id", 1]]
+  [1m[35m (106.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-03-12 16:29:50.504517"], ["id", 1]]
+  [1m[35m (97.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Update (120.5ms)[0m  [1m[33mUPDATE "users" SET "nome" = ? WHERE "users"."id" = ?[0m  [["nome", "gui"], ["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Update (279.7ms)[0m  [1m[33mUPDATE "users" SET "ativo" = ? WHERE "users"."id" = ?[0m  [["ativo", 1], ["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:31:14 -0300
+  
+AbstractController::ActionNotFound (The action 'listar_usuarios' could not be found for ApiController):
+  
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:31:27 -0300
+  
+AbstractController::ActionNotFound (The action 'listar_usuarios' could not be found for ApiController):
+  
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:31:42 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 144ms (Views: 22.8ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:32:26 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:32:48 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:33:49 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (16.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:35:22 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:35:47 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:37:52 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:38:42 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (130.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 133ms (Views: 0.5ms | ActiveRecord: 130.1ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:39:39 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:40:05 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:40:09 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:54:53 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 92ms (Views: 10.5ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:57:15 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 61ms (Views: 0.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:57:49 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:58:12 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 16:59:15 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-12 16:59:17 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `emai' for #<User:0x0000561fdb4d94b8>
+Did you mean?  email):
+  
+app/controllers/api_controller.rb:59:in `get_usuario'
+Started POST "/api/get_usuario" for ::1 at 2020-03-12 16:59:29 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `emai' for #<User:0x0000561fdaa8b6c8>
+Did you mean?  email):
+  
+app/controllers/api_controller.rb:59:in `get_usuario'
+Started POST "/api/get_usuario" for ::1 at 2020-03-12 17:01:34 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `emai' for #<User:0x0000561fdb607c40>
+Did you mean?  email):
+  
+app/controllers/api_controller.rb:59:in `get_usuario'
+Started POST "/api/get_usuario" for ::1 at 2020-03-12 17:02:14 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `emai' for #<User:0x0000561fda6a3dd0>
+Did you mean?  email):
+  
+app/controllers/api_controller.rb:59:in `get_usuario'
+Started POST "/api/get_usuario" for ::1 at 2020-03-12 17:03:07 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `emai' for #<User:0x0000561fdb2945b8>
+Did you mean?  email):
+  
+app/controllers/api_controller.rb:59:in `get_usuario'
+Started POST "/api/get_usuario" for ::1 at 2020-03-12 17:03:20 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `emai' for #<User:0x0000561fd9505628>
+Did you mean?  email):
+  
+app/controllers/api_controller.rb:59:in `get_usuario'
+Started POST "/api/get_usuario" for ::1 at 2020-03-12 17:03:46 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `emai' for #<User:0x0000561fdad50ea8>
+Did you mean?  email):
+  
+app/controllers/api_controller.rb:59:in `get_usuario'
+Started POST "/api/get_usuario" for ::1 at 2020-03-12 17:04:04 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (22.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 55ms (Views: 0.4ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-12 17:04:34 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-12 17:04:35 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-12 17:04:38 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 11:52:14 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (27.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 104ms (Views: 0.6ms | ActiveRecord: 30.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 11:52:17 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 11:52:21 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 11:53:06 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 11:55:25 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 11:55:46 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 11:55:49 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 11:55:50 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 11:56:13 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:00:13 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:04:06 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:58
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:15:44 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:56
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `id' for #<Hash:0x000055f444483ad0>):
+  
+app/controllers/api_controller.rb:58:in `get_usuario'
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:16:12 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:16:17 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:16:18 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:56
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `id' for #<Hash:0x000055f4429e1790>):
+  
+app/controllers/api_controller.rb:58:in `get_usuario'
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:18:38 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 3.3ms)
+
+
+  
+NoMethodError (undefined method `id' for #<Hash:0x000055f443b1c1b8>):
+  
+app/controllers/api_controller.rb:70:in `get_usuario'
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:19:06 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:20:08 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:21:10 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:21:33 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:21:46 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:22:06 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:22:11 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:22:12 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:22:38 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:23:11 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:23:17 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:23:18 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:23:21 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:23:23 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:23:46 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:23:50 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:24:11 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:32:38 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:32:59 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:33:20 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:33:47 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:33:54 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/update_usuario" for ::1 at 2020-03-13 12:33:58 -0300
+Processing by ApiController#update_usuario as HTML
+  Parameters: {"id"=>2, "nome"=>"esfseg", "email"=>"segs@gseg.com", "cpf"=>"10215244448", "ativo"=>true, "api"=>{"id"=>2, "nome"=>"esfseg", "email"=>"segs@gseg.com", "cpf"=>"10215244448", "ativo"=>true}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:74
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:75
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:75
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:33:58 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:34:01 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/update_usuario" for ::1 at 2020-03-13 12:34:05 -0300
+Processing by ApiController#update_usuario as HTML
+  Parameters: {"id"=>2, "nome"=>"esfseg", "email"=>"seMODDgs@gseg.com", "cpf"=>"10215244448", "ativo"=>true, "api"=>{"id"=>2, "nome"=>"esfseg", "email"=>"seMODDgs@gseg.com", "cpf"=>"10215244448", "ativo"=>true}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:74
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:75
+  [1m[36mUser Exists (71.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "semoddgs@gseg.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:75
+  [1m[36mUser Update (81.8ms)[0m  [1m[33mUPDATE "users" SET "email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["email", "semoddgs@gseg.com"], ["updated_at", "2020-03-13 12:34:05.819451"], ["id", 2]]
+  ↳ app/controllers/api_controller.rb:75
+  [1m[35m (115.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:75
+Completed 200 OK in 279ms (Views: 0.7ms | ActiveRecord: 268.7ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:34:06 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:34:08 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/update_usuario" for ::1 at 2020-03-13 12:34:13 -0300
+Processing by ApiController#update_usuario as HTML
+  Parameters: {"id"=>2, "nome"=>"esfseg", "email"=>"semoKKKKddgs@gseg.com", "cpf"=>"10215244448", "ativo"=>true, "api"=>{"id"=>2, "nome"=>"esfseg", "email"=>"semoKKKKddgs@gseg.com", "cpf"=>"10215244448", "ativo"=>true}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:74
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:75
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "semokkkkddgs@gseg.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:75
+  [1m[36mUser Update (4.1ms)[0m  [1m[33mUPDATE "users" SET "email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["email", "semokkkkddgs@gseg.com"], ["updated_at", "2020-03-13 12:34:13.149409"], ["id", 2]]
+  ↳ app/controllers/api_controller.rb:75
+  [1m[35m (108.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:75
+Completed 200 OK in 124ms (Views: 0.9ms | ActiveRecord: 113.7ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:34:13 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:34:22 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/update_usuario" for ::1 at 2020-03-13 12:37:46 -0300
+Processing by ApiController#update_usuario as HTML
+  Parameters: {"id"=>2, "nome"=>"esfseg", "email"=>"sAAAAAAgs@gseg.com", "cpf"=>"10215244448", "ativo"=>true, "api"=>{"id"=>2, "nome"=>"esfseg", "email"=>"sAAAAAAgs@gseg.com", "cpf"=>"10215244448", "ativo"=>true}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:83
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:84
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "saaaaaags@gseg.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:84
+  [1m[36mUser Update (4.6ms)[0m  [1m[33mUPDATE "users" SET "email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["email", "saaaaaags@gseg.com"], ["updated_at", "2020-03-13 12:37:47.782908"], ["id", 2]]
+  ↳ app/controllers/api_controller.rb:84
+  [1m[35m (246.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:84
+Completed 200 OK in 305ms (Views: 0.2ms | ActiveRecord: 252.9ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:37:48 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:38:23 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 53ms (Views: 0.4ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/api/update_usuario" for ::1 at 2020-03-13 12:38:31 -0300
+Processing by ApiController#update_usuario as HTML
+  Parameters: {"id"=>2, "nome"=>"esfseg", "email"=>"saaRRRRRags@gseg.com", "cpf"=>"10215244448", "ativo"=>true, "api"=>{"id"=>2, "nome"=>"esfseg", "email"=>"saaRRRRRags@gseg.com", "cpf"=>"10215244448", "ativo"=>true}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "saarrrrrags@gseg.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:86
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["email", "saarrrrrags@gseg.com"], ["updated_at", "2020-03-13 12:38:31.940371"], ["id", 2]]
+  ↳ app/controllers/api_controller.rb:86
+  [1m[35m (124.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+Completed 200 OK in 142ms (Views: 0.3ms | ActiveRecord: 125.5ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:38:32 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 12:38:51 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/update_usuario" for ::1 at 2020-03-13 12:38:57 -0300
+Processing by ApiController#update_usuario as HTML
+  Parameters: {"id"=>2, "nome"=>"MOAA", "email"=>"saarrrrrags@gseg.com", "cpf"=>"10215244448", "ativo"=>true, "api"=>{"id"=>2, "nome"=>"MOAA", "email"=>"saarrrrrags@gseg.com", "cpf"=>"10215244448", "ativo"=>true}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "nome" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["nome", "MOAA"], ["updated_at", "2020-03-13 12:38:57.388160"], ["id", 2]]
+  ↳ app/controllers/api_controller.rb:86
+  [1m[35m (173.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+Completed 200 OK in 182ms (Views: 0.6ms | ActiveRecord: 175.7ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:38:57 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:39:18 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "nome" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["nome", "NFF"], ["updated_at", "2020-03-13 12:39:56.446096"], ["id", 2]]
+  [1m[35m (99.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 12:39:59 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 14:23:36 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/update_usuario" for ::1 at 2020-03-13 14:23:42 -0300
+Processing by ApiController#update_usuario as HTML
+  Parameters: {"id"=>1, "nome"=>"gui", "email"=>"guilherme.saraivak7@gmail.com", "cpf"=>"10259636588", "ativo"=>true, "api"=>{"id"=>1, "nome"=>"gui", "email"=>"guilherme.saraivak7@gmail.com", "cpf"=>"10259636588", "ativo"=>true}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "cpf" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["cpf", "10259636588"], ["updated_at", "2020-03-13 14:23:42.822681"], ["id", 1]]
+  ↳ app/controllers/api_controller.rb:86
+  [1m[35m (104.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+Completed 200 OK in 115ms (Views: 0.3ms | ActiveRecord: 106.1ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 14:23:53 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 14:23:56 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/update_usuario" for ::1 at 2020-03-13 14:23:58 -0300
+Processing by ApiController#update_usuario as HTML
+  Parameters: {"id"=>1, "nome"=>"gui", "email"=>"guilherme.saraivak7@gmail.com", "cpf"=>"10259636588", "ativo"=>true, "api"=>{"id"=>1, "nome"=>"gui", "email"=>"guilherme.saraivak7@gmail.com", "cpf"=>"10259636588", "ativo"=>true}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:85
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 14:25:34 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 14:25:36 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/update_usuario" for ::1 at 2020-03-13 14:25:37 -0300
+Processing by ApiController#update_usuario as HTML
+  Parameters: {"id"=>1, "nome"=>"gui", "email"=>"guilherme.saraivak7@gmail.com", "cpf"=>"10259636588", "ativo"=>true, "api"=>{"id"=>1, "nome"=>"gui", "email"=>"guilherme.saraivak7@gmail.com", "cpf"=>"10259636588", "ativo"=>true}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 14:25:37 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-13 14:25:42 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"1", "api"=>{"id"=>"1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:68
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/update_usuario" for ::1 at 2020-03-13 14:25:45 -0300
+Processing by ApiController#update_usuario as HTML
+  Parameters: {"id"=>1, "nome"=>"Guii", "email"=>"guilherme.saraivak7@gmail.com", "cpf"=>"10259636588", "ativo"=>true, "api"=>{"id"=>1, "nome"=>"Guii", "email"=>"guilherme.saraivak7@gmail.com", "cpf"=>"10259636588", "ativo"=>true}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:85
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "nome" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["nome", "Guii"], ["updated_at", "2020-03-13 14:25:45.560746"], ["id", 1]]
+  ↳ app/controllers/api_controller.rb:86
+  [1m[35m (126.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:86
+Completed 200 OK in 133ms (Views: 0.7ms | ActiveRecord: 127.7ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 14:25:45 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 14:28:52 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 14:34:24 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 14:58:15 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 15:25:24 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 15:25:41 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 15:28:37 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 15:28:55 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 32ms (Views: 0.4ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/login" for ::1 at 2020-03-13 15:29:14 -0300
+Processing by ApiController#login as HTML
+  Parameters: {"cpf"=>"10215244448", "senha"=>"[FILTERED]", "api"=>{"cpf"=>"10215244448", "senha"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."cpf" = ? ORDER BY "users"."id" DESC LIMIT ?[0m  [["cpf", "10215244448"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:8
+Completed 200 OK in 407ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/login" for ::1 at 2020-03-13 15:29:21 -0300
+Processing by ApiController#login as HTML
+  Parameters: {"cpf"=>"10215244448", "senha"=>"[FILTERED]", "api"=>{"cpf"=>"10215244448", "senha"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."cpf" = ? ORDER BY "users"."id" DESC LIMIT ?[0m  [["cpf", "10215244448"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:8
+Completed 200 OK in 157ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/login" for ::1 at 2020-03-13 15:29:28 -0300
+Processing by ApiController#login as HTML
+  Parameters: {"cpf"=>"10215244440", "senha"=>"[FILTERED]", "api"=>{"cpf"=>"10215244440", "senha"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."cpf" = ? ORDER BY "users"."id" DESC LIMIT ?[0m  [["cpf", "10215244440"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:8
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/login" for ::1 at 2020-03-13 15:29:32 -0300
+Processing by ApiController#login as HTML
+  Parameters: {"cpf"=>"10215244448", "senha"=>"[FILTERED]", "api"=>{"cpf"=>"10215244448", "senha"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."cpf" = ? ORDER BY "users"."id" DESC LIMIT ?[0m  [["cpf", "10215244448"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:8
+Completed 200 OK in 167ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 15:59:57 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/criar_usuario" for ::1 at 2020-03-13 16:00:07 -0300
+Processing by ApiController#criar_usuario as HTML
+  Parameters: {"id"=>"0.2807029176561393", "nome"=>"Novo", "email"=>"aefmise@gmiseg.com", "cpf"=>"10255588844", "ativo"=>true, "senha"=>"[FILTERED]", "api"=>{"id"=>"0.2807029176561393", "nome"=>"Novo", "email"=>"aefmise@gmiseg.com", "cpf"=>"10255588844", "ativo"=>true, "senha"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:27
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aefmise@gmiseg.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27
+  [1m[36mUser Create (42.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "cpf", "created_at", "updated_at", "token", "nome", "ativo") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "aefmise@gmiseg.com"], ["encrypted_password", "$2a$11$xes4j6WbZRaRlCqvXG6nYeVDeqC2t9w7jALzvvNiDON.UmY//tsk2"], ["cpf", "10255588844"], ["created_at", "2020-03-13 16:00:07.841246"], ["updated_at", "2020-03-13 16:00:07.841246"], ["token", "giGNcmiazmXxAtMtpPjV"], ["nome", "Novo"], ["ativo", 1]]
+  ↳ app/controllers/api_controller.rb:27
+  [1m[35m (101.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:27
+Completed 200 OK in 496ms (Views: 1.3ms | ActiveRecord: 143.8ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 16:02:04 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 16:02:19 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 16:04:09 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 16:04:43 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 16:05:41 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 16:06:40 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 16:06:55 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:42
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateGrupos (20200313190749)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200313190749_create_grupos.rb:3
+  [1m[35m (30.1ms)[0m  [1m[35mCREATE TABLE "grupos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "usuariosPermitidos" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200313190749_create_grupos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200313190749"]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (150.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" ORDER BY "grupos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 16:11:40 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 37ms (Views: 0.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-13 16:11:57 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:15:58 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/listar_grupos"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:16:24 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/listar_grupos"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:16:28 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/listar_grupos"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:17:17 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 57ms (Views: 0.5ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/criar_grupo" for ::1 at 2020-03-13 16:17:31 -0300
+Processing by ApiController#criar_grupo as HTML
+  Parameters: {"id"=>"0.6200607865030485", "nome"=>"Grupo 1", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB:::-M0XLjGBTsexydt-o2t9", "api"=>{"id"=>"0.6200607865030485", "nome"=>"Grupo 1", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB:::-M0XLjGBTsexydt-o2t9"}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'usuariosPermitidos' for User.):
+  
+app/controllers/api_controller.rb:61:in `criar_grupo'
+Started POST "/api/criar_grupo" for ::1 at 2020-03-13 16:17:46 -0300
+Processing by ApiController#criar_grupo as HTML
+  Parameters: {"id"=>"0.5443917677557528", "nome"=>"Grupo 1", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB:::-M0XLjGBTsexydt-o2t9", "api"=>{"id"=>"0.5443917677557528", "nome"=>"Grupo 1", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB:::-M0XLjGBTsexydt-o2t9"}}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:61
+  [1m[36mGrupo Create (0.7ms)[0m  [1m[32mINSERT INTO "grupos" ("nome", "usuariosPermitidos", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nome", "Grupo 1"], ["usuariosPermitidos", "-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB:::-M0XLjGBTsexydt-o2t9"], ["created_at", "2020-03-13 16:17:47.110491"], ["updated_at", "2020-03-13 16:17:47.110491"]]
+  ↳ app/controllers/api_controller.rb:61
+  [1m[35m (117.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:61
+Completed 200 OK in 141ms (Views: 0.7ms | ActiveRecord: 119.8ms)
+
+
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" ORDER BY "grupos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:19:37 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 31ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:19:52 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:20:18 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:20:32 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:20:43 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:20:55 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:20:57 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:20:58 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:20:59 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:20:59 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:20:59 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:00 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:00 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:04 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:05 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:08 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:08 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:09 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:09 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:09 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:10 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:10 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:10 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:13 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:20 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:26 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:21:43 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 39ms (Views: 0.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:23:25 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 42ms (Views: 0.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:23:57 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.8ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 24ms (Views: 0.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:24:07 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:24:41 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/criar_grupo" for ::1 at 2020-03-13 16:25:02 -0300
+Processing by ApiController#criar_grupo as HTML
+  Parameters: {"id"=>"0.6916238700567614", "nome"=>"Grupo 2", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09a5YhwmXi-ygEmsIE:::-M0XLjGBTsexydt-o2t9", "api"=>{"id"=>"0.6916238700567614", "nome"=>"Grupo 2", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09a5YhwmXi-ygEmsIE:::-M0XLjGBTsexydt-o2t9"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:61
+  [1m[36mGrupo Create (1.8ms)[0m  [1m[32mINSERT INTO "grupos" ("nome", "usuariosPermitidos", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nome", "Grupo 2"], ["usuariosPermitidos", "-LzN701vD_k9h4BGydo9:::-M09a5YhwmXi-ygEmsIE:::-M0XLjGBTsexydt-o2t9"], ["created_at", "2020-03-13 16:25:02.308707"], ["updated_at", "2020-03-13 16:25:02.308707"]]
+  ↳ app/controllers/api_controller.rb:61
+  [1m[35m (100.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:61
+Completed 200 OK in 108ms (Views: 0.5ms | ActiveRecord: 102.3ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:27:58 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 19ms (Views: 0.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:28:46 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/criar_grupo" for ::1 at 2020-03-13 16:28:54 -0300
+Processing by ApiController#criar_grupo as HTML
+  Parameters: {"id"=>"0.9299612529130348", "nome"=>"Grupo 3", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB", "api"=>{"id"=>"0.9299612529130348", "nome"=>"Grupo 3", "usuariosPermitidos"=>"-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:61
+  [1m[36mGrupo Create (1.7ms)[0m  [1m[32mINSERT INTO "grupos" ("nome", "usuariosPermitidos", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nome", "Grupo 3"], ["usuariosPermitidos", "-LzN701vD_k9h4BGydo9:::-M09ZGvtPLP_dWvrC5DB"], ["created_at", "2020-03-13 16:28:54.255648"], ["updated_at", "2020-03-13 16:28:54.255648"]]
+  ↳ app/controllers/api_controller.rb:61
+  [1m[35m (135.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:61
+Completed 200 OK in 148ms (Views: 0.3ms | ActiveRecord: 137.9ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:29:17 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:29:19 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:30:10 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:30:35 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-13 16:30:59 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateMensagems (20200315213523)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200315213523_create_mensagems.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "mensagems" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "grupo_id" integer, "msg" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200315213523_create_mensagems.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_mensagems_on_user_id" ON "mensagems" ("user_id")[0m
+  ↳ db/migrate/20200315213523_create_mensagems.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_mensagems_on_grupo_id" ON "mensagems" ("grupo_id")[0m
+  ↳ db/migrate/20200315213523_create_mensagems.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200315213523"]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (195.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/api/listar_grupos" for ::1 at 2020-03-15 22:45:22 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.3ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-15 22:51:39 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.3ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-15 22:51:43 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-15 22:52:21 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.4ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-15 22:52:25 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-15 23:03:06 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/login" for ::1 at 2020-03-15 23:03:09 -0300
+Processing by ApiController#login as HTML
+  Parameters: {"cpf"=>"10215244448", "senha"=>"[FILTERED]", "api"=>{"cpf"=>"10215244448", "senha"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."cpf" = ? ORDER BY "users"."id" DESC LIMIT ?[0m  [["cpf", "10215244448"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:8
+Completed 200 OK in 297ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-15 23:06:53 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-15 23:07:29 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/login" for ::1 at 2020-03-15 23:07:32 -0300
+Processing by ApiController#login as HTML
+  Parameters: {"cpf"=>"10215244448", "senha"=>"[FILTERED]", "api"=>{"cpf"=>"10215244448", "senha"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."cpf" = ? ORDER BY "users"."id" DESC LIMIT ?[0m  [["cpf", "10215244448"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:8
+Completed 200 OK in 153ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-15 23:09:43 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-15 23:10:00 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-15 23:39:12 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-15 23:41:30 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.3ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-16 00:17:23 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"1", "user_id"=>2, "msg"=>"aasasa", "api"=>{"grupo_id"=>"1", "user_id"=>2, "msg"=>"aasasa"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (0.7ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 1], ["msg", "aasasa"], ["created_at", "2020-03-16 00:17:23.550355"], ["updated_at", "2020-03-16 00:17:23.550355"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (119.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 201ms (Views: 0.2ms | ActiveRecord: 121.0ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-19 22:58:20 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guilherme/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (14.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 59ms (Views: 0.6ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-19 22:58:22 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (19.0ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 53ms (Views: 0.3ms | ActiveRecord: 19.5ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 22:58:26 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"2", "user_id"=>2, "msg"=>"efsfe", "api"=>{"grupo_id"=>"2", "user_id"=>2, "msg"=>"efsfe"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (50.9ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 2], ["msg", "efsfe"], ["created_at", "2020-03-19 22:58:26.706364"], ["updated_at", "2020-03-19 22:58:26.706364"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (130.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 274ms (Views: 0.3ms | ActiveRecord: 183.1ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 22:58:31 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"2", "user_id"=>2, "msg"=>"sss", "api"=>{"grupo_id"=>"2", "user_id"=>2, "msg"=>"sss"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (0.3ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 2], ["msg", "sss"], ["created_at", "2020-03-19 22:58:31.456963"], ["updated_at", "2020-03-19 22:58:31.456963"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (154.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 162ms (Views: 0.2ms | ActiveRecord: 155.2ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:07:46 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"2", "user_id"=>2, "msg"=>"sfe", "api"=>{"grupo_id"=>"2", "user_id"=>2, "msg"=>"sfe"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (2.4ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 2], ["msg", "sfe"], ["created_at", "2020-03-19 23:07:46.530542"], ["updated_at", "2020-03-19 23:07:46.530542"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (131.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 143ms (Views: 0.2ms | ActiveRecord: 134.3ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:08:07 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"3", "user_id"=>2, "msg"=>"1", "api"=>{"grupo_id"=>"3", "user_id"=>2, "msg"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (2.1ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 3], ["msg", "1"], ["created_at", "2020-03-19 23:08:07.178453"], ["updated_at", "2020-03-19 23:08:07.178453"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (130.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 142ms (Views: 0.2ms | ActiveRecord: 132.9ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:08:10 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"3", "user_id"=>2, "msg"=>"2", "api"=>{"grupo_id"=>"3", "user_id"=>2, "msg"=>"2"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.5ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (1.1ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 3], ["msg", "2"], ["created_at", "2020-03-19 23:08:10.473710"], ["updated_at", "2020-03-19 23:08:10.473710"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (292.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 304ms (Views: 0.4ms | ActiveRecord: 294.1ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:08:14 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"3", "user_id"=>2, "msg"=>"3", "api"=>{"grupo_id"=>"3", "user_id"=>2, "msg"=>"3"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (0.5ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 3], ["msg", "3"], ["created_at", "2020-03-19 23:08:14.083080"], ["updated_at", "2020-03-19 23:08:14.083080"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (105.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 116ms (Views: 0.2ms | ActiveRecord: 106.5ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:08:17 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"3", "user_id"=>2, "msg"=>"4", "api"=>{"grupo_id"=>"3", "user_id"=>2, "msg"=>"4"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (1.1ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 3], ["msg", "4"], ["created_at", "2020-03-19 23:08:17.890177"], ["updated_at", "2020-03-19 23:08:17.890177"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (132.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 142ms (Views: 0.4ms | ActiveRecord: 133.7ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:09:51 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"3", "user_id"=>2, "msg"=>"5", "api"=>{"grupo_id"=>"3", "user_id"=>2, "msg"=>"5"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (0.3ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 3], ["msg", "5"], ["created_at", "2020-03-19 23:09:51.153632"], ["updated_at", "2020-03-19 23:09:51.153632"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (181.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 193ms (Views: 0.2ms | ActiveRecord: 182.2ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:09:55 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"3", "user_id"=>2, "msg"=>"6", "api"=>{"grupo_id"=>"3", "user_id"=>2, "msg"=>"6"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (1.1ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 3], ["msg", "6"], ["created_at", "2020-03-19 23:09:55.349527"], ["updated_at", "2020-03-19 23:09:55.349527"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (129.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 143ms (Views: 0.4ms | ActiveRecord: 131.1ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:10:12 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"3", "user_id"=>2, "msg"=>"7", "api"=>{"grupo_id"=>"3", "user_id"=>2, "msg"=>"7"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (2.8ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 3], ["msg", "7"], ["created_at", "2020-03-19 23:10:12.991272"], ["updated_at", "2020-03-19 23:10:12.991272"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (333.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 346ms (Views: 0.5ms | ActiveRecord: 336.3ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:15:47 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"3", "msg"=>"1", "api"=>{"grupo_id"=>"3", "msg"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 0.4ms)
+
+
+  
+I18n::InvalidLocale (:"pt-BR" is not a valid locale):
+  
+app/controllers/api_controller.rb:71:in `criar_msg'
+Started GET "/api/listar_grupos" for ::1 at 2020-03-19 23:15:56 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_usuarios" for ::1 at 2020-03-19 23:16:00 -0300
+Processing by ApiController#listar_usuarios as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api_controller.rb:39
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/get_usuario" for ::1 at 2020-03-19 23:16:02 -0300
+Processing by ApiController#get_usuario as HTML
+  Parameters: {"id"=>"2", "api"=>{"id"=>"2"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:44
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:16:12 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"1", "msg"=>"1", "api"=>{"grupo_id"=>"1", "msg"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+I18n::InvalidLocale (:"pt-BR" is not a valid locale):
+  
+app/controllers/api_controller.rb:71:in `criar_msg'
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:16:14 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"1", "msg"=>"2", "api"=>{"grupo_id"=>"1", "msg"=>"2"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+I18n::InvalidLocale (:"pt-BR" is not a valid locale):
+  
+app/controllers/api_controller.rb:71:in `criar_msg'
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:16:50 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"1", "msg"=>"oi", "api"=>{"grupo_id"=>"1", "msg"=>"oi"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms)
+
+
+  
+I18n::InvalidLocale (:"pt-BR" is not a valid locale):
+  
+app/controllers/api_controller.rb:71:in `criar_msg'
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:18:18 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"1", "msg"=>"4", "api"=>{"grupo_id"=>"1", "msg"=>"4"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 91ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:19:14 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"1", "msg"=>"5", "api"=>{"grupo_id"=>"1", "msg"=>"5"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:77
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:77
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api_controller.rb:77
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:20:42 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"1", "user_id"=>2, "msg"=>"1", "api"=>{"grupo_id"=>"1", "user_id"=>2, "msg"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:78
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:78
+  [1m[36mGrupo Load (0.3ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:78
+  [1m[36mMensagem Create (0.8ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 1], ["msg", "1"], ["created_at", "2020-03-19 23:20:42.666332"], ["updated_at", "2020-03-19 23:20:42.666332"]]
+  ↳ app/controllers/api_controller.rb:78
+  [1m[35m (114.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:78
+Completed 200 OK in 179ms (Views: 0.3ms | ActiveRecord: 119.2ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/api/login" for ::1 at 2020-03-19 23:22:11 -0300
+Processing by ApiController#login as HTML
+  Parameters: {"cpf"=>"10255588844", "senha"=>"[FILTERED]", "api"=>{"cpf"=>"10255588844", "senha"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."cpf" = ? ORDER BY "users"."id" DESC LIMIT ?[0m  [["cpf", "10255588844"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:8
+Completed 200 OK in 238ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-19 23:22:15 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:22:21 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"1", "user_id"=>3, "msg"=>"sim\n", "api"=>{"grupo_id"=>"1", "user_id"=>3, "msg"=>"sim\n"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.7ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (1.0ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["grupo_id", 1], ["msg", "sim\n"], ["created_at", "2020-03-19 23:22:21.870006"], ["updated_at", "2020-03-19 23:22:21.870006"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (124.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 149ms (Views: 0.4ms | ActiveRecord: 127.8ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:22:43 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"1", "user_id"=>2, "msg"=>"mas como ?", "api"=>{"grupo_id"=>"1", "user_id"=>2, "msg"=>"mas como ?"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (0.4ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["grupo_id", 1], ["msg", "mas como ?"], ["created_at", "2020-03-19 23:22:43.949832"], ["updated_at", "2020-03-19 23:22:43.949832"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (123.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 133ms (Views: 0.2ms | ActiveRecord: 124.2ms)
+
+
+Started POST "/api/criar_msg" for ::1 at 2020-03-19 23:22:50 -0300
+Processing by ApiController#criar_msg as HTML
+  Parameters: {"grupo_id"=>"1", "user_id"=>3, "msg"=>"uee.. so foi carai", "api"=>{"grupo_id"=>"1", "user_id"=>3, "msg"=>"uee.. so foi carai"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mGrupo Load (0.1ms)[0m  [1m[34mSELECT  "grupos".* FROM "grupos" WHERE "grupos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[36mMensagem Create (0.5ms)[0m  [1m[32mINSERT INTO "mensagems" ("user_id", "grupo_id", "msg", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["grupo_id", 1], ["msg", "uee.. so foi carai"], ["created_at", "2020-03-19 23:22:50.493127"], ["updated_at", "2020-03-19 23:22:50.493127"]]
+  ↳ app/controllers/api_controller.rb:71
+  [1m[35m (159.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:71
+Completed 200 OK in 170ms (Views: 0.2ms | ActiveRecord: 160.5ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-19 23:27:17 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.2ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/listar_grupos" for ::1 at 2020-03-19 23:28:11 -0300
+Processing by ApiController#listar_grupos as HTML
+  [1m[36mGrupo Load (0.4ms)[0m  [1m[34mSELECT "grupos".* FROM "grupos"[0m
+  ↳ app/controllers/api_controller.rb:56
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
