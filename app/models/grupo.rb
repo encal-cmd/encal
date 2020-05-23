@@ -3,13 +3,13 @@ class Grupo < ApplicationRecord
   has_many :mensagens
 
 	def integrantes
-    ids = self.usuariosPermitidos.split(":::")
+    ids = self.usuarios_permitidos.split(":::")
     return User.where(id: ids)
   end
 
   def integrantes_onesignal_ids
     one_sig_ids = []
-    ids = self.usuariosPermitidos.split(":::")
+    ids = self.usuarios_permitidos.split(":::")
     User.where(id: ids).each do |user|
       one_sig_ids += user.onesignal_users.map(&:one_signal_id)
     end
