@@ -1,0 +1,40 @@
+{:uriI"¢file://app/assets/plugins/bootstrap-material-datetimepicker/package.json?type=application/json&id=745aeb0bd87f83158bca1180a1e60a2912e1ae17e636a6f0ec242ff28df2f4b9:ET:load_pathI"app/assets/plugins;T:filenameI"Fapp/assets/plugins/bootstrap-material-datetimepicker/package.json;T:	nameI".bootstrap-material-datetimepicker/package;T:logical_pathI"3bootstrap-material-datetimepicker/package.json;T:content_typeI"application/json;T:sourceI"‚{
+  "name": "bootstrap-material-datetimepicker",
+  "description": ".",
+  "version": "2.7.1",
+  "keywords": [
+    "css",
+    "js",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "web"
+  ],
+  "homepage": "https://github.com/T00rk/bootstrap-material-datetimepicker",
+  "main": "js/bootstrap-material-datetimepicker.js",
+  "ignore": [
+    "/.*",
+    "_config.yml",
+    "CNAME",
+    "composer.json",
+    "CONTRIBUTING.md",
+    "docs",
+    "js/tests",
+    "test-infra"
+  ],
+  "dependencies": {
+    "moment": "~2.10.2",
+    "bootstrap": "~3.3.4",
+    "jquery": "1.12.3",
+    "bootstrap-material-design": "~0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/T00rk/bootstrap-material-datetimepicker"
+  }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Tfile-digest://app/assets/plugins/bootstrap-material-datetimepicker/package.json;TTF:charsetI"
+utf-8;F:digest"%ıèzûﬂr [ºß«{"U 9üóÄ“√9!^€¿Xa˜:lengthi‚:dependencies_digest"%	ÁÇ*á&Ïn#¡√ßnTfÚ‹_á}íPNøÛI¸]ºã√:idI"E745aeb0bd87f83158bca1180a1e60a2912e1ae17e636a6f0ec242ff28df2f4b9;F:
+mtimel+•{h[

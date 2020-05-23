@@ -1,0 +1,33 @@
+{:uriI"¤file://app/assets/plugins/Magnific-Popup-master/magnific-popup.jquery.json?type=application/json&id=f2a88d1001120b2693e3e37c4707b48c67a39715217cc5ee61257ae244768815:ET:load_pathI"app/assets/plugins;T:filenameI"Happ/assets/plugins/Magnific-Popup-master/magnific-popup.jquery.json;T:	nameI"0Magnific-Popup-master/magnific-popup.jquery;T:logical_pathI"5Magnific-Popup-master/magnific-popup.jquery.json;T:content_typeI"application/json;T:sourceI"£{
+  "name": "magnific-popup",
+  "title": "Magnific Popup",
+  "description": "Fast, light, mobile-friendly and responsive lightbox and modal dialog plugin. Open inline HTML, ajax loaded content, image, form, iframe (YouTube video, Vimeo, Google Maps), photo gallery. Animation effects added with CSS3 transitions. For jQuery or Zepto.",
+  "version": "1.1.0",
+  "homepage": "http://dimsemenov.com/plugins/magnific-popup/",
+  "demo": "http://dimsemenov.com/plugins/magnific-popup/",
+  "docs": "http://dimsemenov.com/plugins/magnific-popup/documentation.html",
+  "author": {
+    "name": "Dmitry Semenov",
+    "email": "diiiimaaaa@gmail.com",
+    "url": "http://dimsemenov.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dimsemenov/Magnific-Popup.git"
+  },
+  "bugs": "https://github.com/dimsemenov/Magnific-Popup/issues",
+  "dependencies": {
+    "jquery": ">=1.8.0"
+  },
+  "keywords": ["lightbox","popup","modal","window","dialog","ui","gallery","slideshow","video","image","ajax","html5","animation","jquery","photo","responsive","mobile"],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
+};T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Vfile-digest://app/assets/plugins/Magnific-Popup-master/magnific-popup.jquery.json;TTF:charsetI"
+utf-8;F:digest"%òÂngcG|ýyS¤º¥Søu &e Jb‚y[óÇžð:lengthi£:dependencies_digest"%LZ$³P#<,Mi‘ž!íôÚ>ÿEîW»»¯›:E):idI"Ef2a88d1001120b2693e3e37c4707b48c67a39715217cc5ee61257ae244768815;F:
+mtimel+¥{h[

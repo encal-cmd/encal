@@ -1,0 +1,39 @@
+{:uriI"˜file://app/assets/plugins/bootstrap-treeview-master/bower.json?type=application/json&id=95ae5631c94fceb59e80aa8c0b571862ec40dce31537042865d71df7febd4a69:ET:load_pathI"app/assets/plugins;T:filenameI"<app/assets/plugins/bootstrap-treeview-master/bower.json;T:	nameI"$bootstrap-treeview-master/bower;T:logical_pathI")bootstrap-treeview-master/bower.json;T:content_typeI"application/json;T:sourceI"~{
+  "name": "bootstrap-treeview",
+  "description": "Tree View for Twitter Bootstrap",
+  "version": "1.2.0",
+  "homepage": "https://github.com/jonmiles/bootstrap-treeview",
+  "main": [
+    "dist/bootstrap-treeview.min.js",
+    "dist/bootstrap-treeview.min.css"
+  ],
+  "keywords": [
+    "twitter",
+    "bootstrap",
+    "tree",
+    "treeview",
+    "tree-view",
+    "navigation",
+    "javascript",
+    "jquery",
+    "jquery-plugin"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.0",
+    "bootstrap": ">= 3.0.0"
+  },
+  "devDependencies": {}
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Jfile-digest://app/assets/plugins/bootstrap-treeview-master/bower.json;TTF:charsetI"
+utf-8;F:digest"%ë0Cú0ÈÿÑàíÍİb.€Œ­6g
+à7(ÊT§(¼:lengthi~:dependencies_digest"%¡dwà47ÉıÓŠÅy¾WäŒ	bª+¥¿¦ª8àoz:idI"E95ae5631c94fceb59e80aa8c0b571862ec40dce31537042865d71df7febd4a69;F:
+mtimel+¥{h[

@@ -1,0 +1,14 @@
+{:uriI"ªfile://app/assets/plugins/Magnific-Popup-master/website/site-assets/ajax/test-ajax.html?type=text/html&id=a977f12d7bfe39c3bb53b01058cce3a1427d1a0ba5dfd8046327ffbe47929745:ET:load_pathI"app/assets/plugins;T:filenameI"Uapp/assets/plugins/Magnific-Popup-master/website/site-assets/ajax/test-ajax.html;T:	nameI"=Magnific-Popup-master/website/site-assets/ajax/test-ajax;T:logical_pathI"BMagnific-Popup-master/website/site-assets/ajax/test-ajax.html;T:content_typeI"text/html;T:sourceI"Ê<div id="custom-content" class="white-popup-block" style="max-width:600px; margin: 20px auto;">
+    <h1>HTML content, loaded via ajax</h1>
+    <style>
+    #custom-content img {max-width: 100%;margin-bottom: 10px;}
+    </style>
+    <p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.  These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. </p>
+   	<p>This is dummy copy. It's Greek to you. Unless, of course, you're Greek, in which case, it really makes no sense. Why, you can't even read it!  It is strictly for mock-ups. You may mock it up as strictly as you wish.</p>
+	<img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" />
+	<img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" />
+</div>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"cfile-digest://app/assets/plugins/Magnific-Popup-master/website/site-assets/ajax/test-ajax.html;TTF:charsetI"
+utf-8;F:digest"%bP¡NëÕß-1ÃjËz­'kAÂ}ía)Íbuã¡6:lengthiÊ:dependencies_digest"%Y•„ÿ‡Fe+äP1Ús;~Å…—Ÿ¯ÐÌe£6™ñwH¢:idI"Ea977f12d7bfe39c3bb53b01058cce3a1427d1a0ba5dfd8046327ffbe47929745;F:
+mtimel+¥{h[

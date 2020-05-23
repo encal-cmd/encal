@@ -1,0 +1,53 @@
+{:uriI"’file://app/assets/plugins/jquery-steps-master/bower.json?type=application/json&id=12032096b4a70de640d3b20460bbcb724ac356d5e65f020133ee67c9a0b7f9b4:ET:load_pathI"app/assets/plugins;T:filenameI"6app/assets/plugins/jquery-steps-master/bower.json;T:	nameI"jquery-steps-master/bower;T:logical_pathI"#jquery-steps-master/bower.json;T:content_typeI"application/json;T:sourceI"0{
+    "name": "jquery.steps",
+    "description": "A powerful jQuery wizard plugin that supports accessibility and HTML5.",
+    "keywords": [
+        "wizard",
+        "navigation",
+        "forms",
+        "UI",
+        "component",
+        "HTML5",
+        "accessibility",
+        "validation",
+        "tabs",
+        "steps"
+    ],
+    "version": "1.1.0",
+    "authors": [
+        { "name": "Rafael Staib", "email": "me@rafaelstaib.com", "url": "http://www.rafaelstaib.com" }
+    ],
+    "homepage": "http://www.jquery-steps.com",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/rstaib/jquery-steps.git"
+    },
+    "license": "MIT",
+    "main": [
+        "build/jquery.steps.js",
+        "demo/css/jquery.steps.css"
+    ],
+    "ignore": [
+        "**/.*",
+        "build/*.nupkg",
+        "build/*.zip",
+        "lib",
+        "nuget",
+        "src",
+        "test",
+        "*.md",
+        "*.txt",
+        "Gruntfile.js",
+        "package.json",
+        "steps.jquery.json"
+    ],
+    "dependencies": {
+        "jquery": ">=1.9.0"
+    }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Dfile-digest://app/assets/plugins/jquery-steps-master/bower.json;TTF:charsetI"
+utf-8;F:digest"%ŽÈ”Ç
+¡ÄÜÓ	*õ^4-©¶D/Ü@i(9†/Cƒ;K:lengthi0:dependencies_digest"%%y¿QÅWöœªˆ µ‡²î*!«Øs´öT¶uŸ«˜¢:idI"E12032096b4a70de640d3b20460bbcb724ac356d5e65f020133ee67c9a0b7f9b4;F:
+mtimel+¥{h[

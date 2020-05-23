@@ -1,0 +1,34 @@
+{:uriI"–file://app/assets/plugins/select2/docs/_includes/examples/tags.html?type=text/html&id=14b071187f4eca6dfc3ffce5bd5cc7467420b340961cf0880ed88df53f5e1d33:ET:load_pathI"app/assets/plugins;T:filenameI"Aapp/assets/plugins/select2/docs/_includes/examples/tags.html;T:	nameI")select2/docs/_includes/examples/tags;T:logical_pathI".select2/docs/_includes/examples/tags.html;T:content_typeI"text/html;T:sourceI"×<section>
+  <h1 id="tags">Tagging support</h1>
+
+  <p>
+    Select2 can be used to quickly set up fields used for tagging.
+  </p>
+
+  <p>
+    Note that when tagging is enabled the user can select from pre-existing
+    options or create a new tag by picking the first choice, which is what
+    the user has typed into the search box so far.
+  </p>
+
+  <div class="s2-example">
+    <p>
+      <select class="js-example-tags form-control" multiple="multiple">
+        <option selected="selected">orange</option>
+        <option>white</option>
+        <option selected="selected">purple</option>
+      </select>
+    </p>
+  </div>
+
+{% highlight js linenos %}
+$(".js-example-tags").select2({
+  tags: true
+})
+{% endhighlight %}
+</section>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Ofile-digest://app/assets/plugins/select2/docs/_includes/examples/tags.html;TTF:charsetI"
+utf-8;F:digest"%‚JŒµìíöÅxE‘â¥z§¢ôôß˜PÆ‹Rü˜„½dë:lengthi×:dependencies_digest"%´".Ü†!„€´àâHéTÌ¶\Ã ú‡¢\z¢“îM¢:idI"E14b071187f4eca6dfc3ffce5bd5cc7467420b340961cf0880ed88df53f5e1d33;F:
+mtimel+¥{h[

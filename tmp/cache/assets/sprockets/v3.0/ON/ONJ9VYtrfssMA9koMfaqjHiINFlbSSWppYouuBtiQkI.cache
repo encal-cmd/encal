@@ -1,0 +1,41 @@
+{:uriI"¶file://app/assets/plugins/select2/docs/_includes/options/selections/templating.html?type=text/html&id=3cde2ae067a494f64bab98d283ba0897ef8958fdcf18f7c151a4f5374cc8b14a:ET:load_pathI"app/assets/plugins;T:filenameI"Qapp/assets/plugins/select2/docs/_includes/options/selections/templating.html;T:	nameI"9select2/docs/_includes/options/selections/templating;T:logical_pathI">select2/docs/_includes/options/selections/templating.html;T:content_typeI"text/html;T:sourceI"Æ<section>
+  <h2 id="templateSelection">
+    How can I customize the way selections are displayed?
+  </h2>
+
+  <p>
+    When a selection is made by the user Select2 will display the text of the option by default, just like how it is displayed in a standard select box.  You can override the display of the selection by setting the <code>templateSelection</code> option to a JavaScript function.
+  </p>
+
+{% highlight js linenos %}
+function template(data, container) {
+  return data.text;
+}
+
+$('select').select2({
+  templateSelection: template
+});
+{% endhighlight %}
+
+  <h3>
+    Nothing is being displayed when I select an option
+  </h3>
+
+  {% include options/not-written.html %}
+
+  <h3>
+    I am using HTML in my selection template but it isn't displaying it
+  </h3>
+
+  {% include options/not-written.html %}
+
+  <h3>
+    How can I access the container where the selection is displayed?
+  </h3>
+
+  {% include options/not-written.html %}
+</section>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"_file-digest://app/assets/plugins/select2/docs/_includes/options/selections/templating.html;TTF:charsetI"
+utf-8;F:digest"%Nù"x!Å/(re&MA}	#b.∏Õf/ªÖ(‡íS›:lengthiÆ:dependencies_digest"%ìà?¥B˙	|@¶?STQ◊◊⁄É§«Ã¡{…Úéòı:idI"E3cde2ae067a494f64bab98d283ba0897ef8958fdcf18f7c151a4f5374cc8b14a;F:
+mtimel+•{h[

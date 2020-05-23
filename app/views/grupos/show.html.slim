@@ -1,0 +1,30 @@
+
+.row
+  .col-12
+    .card
+      .card-body
+        div.error_validate style="display:none" class="alert alert-danger"
+          span  
+        h4.box-title.m-t-10
+          | Dados
+        hr
+
+        div.col-md-12
+          div.show_input  
+            = "Nome"
+          = @grupo.nome
+
+        .clear
+        h4.box-title.m-t-10
+          | Arquivos
+        hr
+        .clear
+        - if @imagens.empty?
+          div.col-md-12
+            = "Sem Imagens."
+        - else
+          .row
+            - @imagens.each do |img|
+              .col-3
+                img src="http://localhost:3000/#{img}" style='max-height: 200px'
+            end

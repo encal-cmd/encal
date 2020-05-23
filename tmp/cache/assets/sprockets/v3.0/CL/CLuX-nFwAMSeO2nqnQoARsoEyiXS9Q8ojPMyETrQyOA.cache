@@ -1,0 +1,40 @@
+{:uriI"úfile://app/assets/plugins/jquery-asColorPicker-master/package.json?type=application/json&id=bb2256301a3387669df6f66c8ca92ac9d4b4fcadcdbd77eee735719ee94b3339:ET:load_pathI"app/assets/plugins;T:filenameI"@app/assets/plugins/jquery-asColorPicker-master/package.json;T:	nameI"(jquery-asColorPicker-master/package;T:logical_pathI"-jquery-asColorPicker-master/package.json;T:content_typeI"application/json;T:sourceI"f{
+    "name": "jquery-asColorPicker",
+    "title": "asColorPicker",
+    "description": "a jquery asColorPicker",
+    "version": "0.3.1",
+    "homepage": "https://github.com/amazingSurge/jquery-asColorPicker",
+    "author": {
+        "name": "amazingSurge",
+        "email": "amazingSurge@yahoo.com",
+        "url": "amazingSurge.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/amazingSurge/jquery-asColorPicker.git"
+    },
+    "bugs": "https://github.com/amazingSurge/jquery-asColorPicker/issues",
+    "licenses": [{
+        "type": "GPL",
+        "url": "https://github.com/amazingSurge/jquery-asColorPicker/blob/master/LICENSE-GPL"
+    }],
+    "devDependencies": {
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-concat": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-clean": "*",
+        "grunt": "*",
+        "grunt-jsbeautifier": "*",
+        "load-grunt-tasks": "*",
+        "grunt-text-replace": "*",
+        "grunt-contrib-copy": "*",
+        "grunt-contrib-less": "*",
+        "grunt-autoprefixer": "*"
+    }
+};T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Nfile-digest://app/assets/plugins/jquery-asColorPicker-master/package.json;TTF:charsetI"
+utf-8;F:digest"%®F“+åDÇ¿8¿€:ƒiá
+Ü!±ú®&,≤ù™æ:lengthif:dependencies_digest"%∂c¥Ä»ÏÜ∞¥˝ñA:sy2Êç`©ho)k ƒ:idI"Ebb2256301a3387669df6f66c8ca92ac9d4b4fcadcdbd77eee735719ee94b3339;F:
+mtimel+•{h[

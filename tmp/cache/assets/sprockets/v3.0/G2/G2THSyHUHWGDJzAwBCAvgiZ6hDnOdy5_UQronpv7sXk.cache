@@ -1,0 +1,34 @@
+{:uriI"¢file://app/assets/plugins/select2/docs/_includes/examples/disabled-results.html?type=text/html&id=b85259fc9899cef9775d3a222604e4599162be21293e166134673207645bbffa:ET:load_pathI"app/assets/plugins;T:filenameI"Mapp/assets/plugins/select2/docs/_includes/examples/disabled-results.html;T:	nameI"5select2/docs/_includes/examples/disabled-results;T:logical_pathI":select2/docs/_includes/examples/disabled-results.html;T:content_typeI"text/html;T:sourceI"f<section>
+
+  <h1 id="disabled-results">Disabled results</h1>
+
+  <p>
+    Select2 will correctly handle disabled results, both with data coming
+    from a standard select (when the <code>disabled</code> attribute is set)
+    and from remote sources, where the object has
+    <code>disabled: true</code> set.
+  </p>
+
+  <div class="s2-example">
+    <p>
+      <select class="js-example-disabled-results form-control">
+        <option value="one">First</option>
+        <option value="two" disabled="disabled">Second (disabled)</option>
+        <option value="three">Third</option>
+      </select>
+    </p>
+  </div>
+
+{% highlight html linenos %}
+<select class="js-example-disabled-results">
+  <option value="one">First</option>
+  <option value="two" disabled="disabled">Second (disabled)</option>
+  <option value="three">Third</option>
+</select>
+{% endhighlight %}
+</section>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"[file-digest://app/assets/plugins/select2/docs/_includes/examples/disabled-results.html;TTF:charsetI"
+utf-8;F:digest"%¾uÔÒö´{üs2ðˆ7¨MÂñ+ˆ»©¥ø+ÿÉKÅ:lengthif:dependencies_digest"%8•ƒ“I¾K±Þc`Ù°[<I<‚wGB\;‚¨Ñ:idI"Eb85259fc9899cef9775d3a222604e4599162be21293e166134673207645bbffa;F:
+mtimel+¥{h[

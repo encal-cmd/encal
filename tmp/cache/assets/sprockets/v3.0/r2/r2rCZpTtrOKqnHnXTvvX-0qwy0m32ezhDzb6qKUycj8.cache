@@ -1,0 +1,13 @@
+{:uriI"‡file://app/assets/plugins/flot/component.json?type=application/json&id=30ccaf53d6db6d30ec241cc9d64d7989f197d8a8a2f8982dead461aa250eeccb:ET:load_pathI"app/assets/plugins;T:filenameI"+app/assets/plugins/flot/component.json;T:	nameI"flot/component;T:logical_pathI"flot/component.json;T:content_typeI"application/json;T:sourceI"w{
+	"name": "Flot",
+	"version": "0.8.3",
+	"main": "jquery.flot.js",
+	"dependencies": {
+		"jquery": ">= 1.2.6"
+	}
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"9file-digest://app/assets/plugins/flot/component.json;TTF:charsetI"
+utf-8;F:digest"%/óÂÈùb{ ,8ZøãM¥A“/l3+<œù}vC±:lengthiw:dependencies_digest"%6îƒ_ÇQù»½)Ò¥gîÌ|üÛMaºì„“Ã/’Hı$:idI"E30ccaf53d6db6d30ec241cc9d64d7989f197d8a8a2f8982dead461aa250eeccb;F:
+mtimel+¥{h[

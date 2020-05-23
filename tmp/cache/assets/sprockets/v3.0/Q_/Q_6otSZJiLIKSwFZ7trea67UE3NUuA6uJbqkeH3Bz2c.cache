@@ -1,0 +1,59 @@
+{:uriI"£file://app/assets/plugins/select2/docs/_includes/options/dropdown/filtering.html?type=text/html&id=5712957c26909e1f442440085618cdabaf22c041cd5adc576777ac9aa0b9a5ae:ET:load_pathI"app/assets/plugins;T:filenameI"Napp/assets/plugins/select2/docs/_includes/options/dropdown/filtering.html;T:	nameI"6select2/docs/_includes/options/dropdown/filtering;T:logical_pathI";select2/docs/_includes/options/dropdown/filtering.html;T:content_typeI"text/html;T:sourceI"l<section>
+  <h2>
+    Can I change when search results are loaded?
+  </h2>
+
+  <h3>
+    Can Select2 wait until the user has typed a search term before triggering the request?
+  </h3>
+
+{% highlight js linenos %}
+$('select').select2({
+  ajax: {
+    delay: 250 // wait 250 milliseconds before triggering the request
+  }
+});
+{% endhighlight %}
+
+  {% include options/not-written.html %}
+
+  <h3>
+    Select2 is allowing long search terms, can this be prevented?
+  </h3>
+
+{% highlight js linenos %}
+$('select').select2({
+  maximumInputLength: 20 // only allow terms up to 20 characters long
+});
+{% endhighlight %}
+
+  {% include options/not-written.html %}
+
+  <h3>
+    I only want the search box if there are enough results
+  </h3>
+
+{% highlight js linenos %}
+$('select').select2({
+  minimumResultsForSearch: 20 // at least 20 results must be displayed
+});
+{% endhighlight %}
+
+  {% include options/not-written.html %}
+
+  <h3>
+    How can I permanently hide the search box?
+  </h3>
+
+{% highlight js linenos %}
+$('select').select2({
+  minimumResultsForSearch: Infinity
+});
+{% endhighlight %}
+
+  {% include options/not-written.html %}
+</section>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"\file-digest://app/assets/plugins/select2/docs/_includes/options/dropdown/filtering.html;TTF:charsetI"
+utf-8;F:digest"%/ú0ØÒÒ]y'M‹Gùçœ;Í˜µBßMS3Jıuy‹lû:lengthil:dependencies_digest"%t3∫:ÔŒ}MnŸXêáq∞ïN‚î|Ò±-Ÿ[¡úÖ7∂§:idI"E5712957c26909e1f442440085618cdabaf22c041cd5adc576777ac9aa0b9a5ae;F:
+mtimel+•{h[

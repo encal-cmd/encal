@@ -1,0 +1,22 @@
+{:uriI"´file://app/assets/plugins/select2/docs/_includes/options/compatibility/introduction.html?type=text/html&id=8cd21b0a0dc07e5e20a9e3e95f3a004fa06d8c39ba382e8bd12fdcca01d28a7e:ET:load_pathI"app/assets/plugins;T:filenameI"Vapp/assets/plugins/select2/docs/_includes/options/compatibility/introduction.html;T:	nameI">select2/docs/_includes/options/compatibility/introduction;T:logical_pathI"Cselect2/docs/_includes/options/compatibility/introduction.html;T:content_typeI"text/html;T:sourceI"O<section>
+  <p>
+    Select2 offers limited backwards compatibility with the previously 3.5.x
+    release line, allowing people more efficiently transfer across releases
+    and get the latest features. For many of the larger changes, such as the
+    change in how custom data adapters work, compatibility modules were
+    created that will be used to assist in the upgrade process. It is not
+    recommended to rely on these compatibility modules, as they will not
+    always exist, but they make upgrading easier for major changes.
+  </p>
+
+  <p>
+    <strong>The compatibility modules are only included in the
+    <a href="index.html#builds-full" class="alert-link">full builds</a> of
+    Select2</strong>. These files end in <code>.full.js</code>, and the
+    compatibility modules are prefixed with <code>select2/compat</code>.
+  </p>
+</section>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"dfile-digest://app/assets/plugins/select2/docs/_includes/options/compatibility/introduction.html;TTF:charsetI"
+utf-8;F:digest"%˝Ew∫4‡_ïa;ÛÙÁÑê—+P∂˜+Ω äÙ‡:Î‘:lengthiO:dependencies_digest"%çY⁄•wâ T˝ªÎ€]º<<Ü††éYHq˘'œBO:idI"E8cd21b0a0dc07e5e20a9e3e95f3a004fa06d8c39ba382e8bd12fdcca01d28a7e;F:
+mtimel+•{h[

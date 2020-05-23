@@ -1,0 +1,24 @@
+{:uriI"†file://app/assets/plugins/raphael/bower.json?type=application/json&id=9ca6e2f990c6ed463a3b2634c364c006531f088cc39440ef906b8644e83a61fc:ET:load_pathI"app/assets/plugins;T:filenameI"*app/assets/plugins/raphael/bower.json;T:	nameI"raphael/bower;T:logical_pathI"raphael/bower.json;T:content_typeI"application/json;T:sourceI"${
+  "name": "raphael",
+  "version": "2.1.4",
+  "main": "raphael.js",
+  "ignore": [
+    "eve",
+    "**/.*",
+    "*.html",
+    "*.json",
+    "*.markdown",
+    "*.md",
+    "copy.js",
+    "Gruntfile.js",
+    "raphael.core.js",
+    "raphael.svg.js",
+    "raphael.vml.js",
+    "reference.js"
+  ]
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"8file-digest://app/assets/plugins/raphael/bower.json;TTF:charsetI"
+utf-8;F:digest"%"ÞÌÃÚ&›¢ZUNúÙ´½ÿß¶Oú68×Ä‘ÊÙ:lengthi$:dependencies_digest"%ïÕ¤~‹6ú —/Â14¦våœÆVvIuºž¿âƒ©ˆ7:idI"E9ca6e2f990c6ed463a3b2634c364c006531f088cc39440ef906b8644e83a61fc;F:
+mtimel+¥{h[

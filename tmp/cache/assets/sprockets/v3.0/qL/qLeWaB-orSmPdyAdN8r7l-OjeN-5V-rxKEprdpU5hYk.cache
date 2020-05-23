@@ -1,0 +1,54 @@
+{:uriI"“file://app/assets/plugins/bootstrap-rtl-master/bower.json?type=application/json&id=6f3672fdea23268021593fa8c6806365526640513dedc0c2332ac76213eea636:ET:load_pathI"app/assets/plugins;T:filenameI"7app/assets/plugins/bootstrap-rtl-master/bower.json;T:	nameI"bootstrap-rtl-master/bower;T:logical_pathI"$bootstrap-rtl-master/bower.json;T:content_typeI"application/json;T:sourceI"%{
+    "name": "bootstrap.rtl",
+    "description": "Bootstrap RTL 3.3.6",
+    "version": "3.3.6",
+    "homepage": "https://github.com/mojtabakaviani/bootstrap-rtl",
+    "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+    "keywords": [
+        "css",
+        "js",
+        "less",
+        "mobile-first",
+        "responsive",
+        "front-end",
+        "framework",
+        "web",
+        "rtl"
+    ],
+
+    "authors": [
+        "Mojtaba Kaviani"
+    ],
+    "main": [
+        "dist/css/bootstrap-rtl.css",
+        "dist/css/bootstrap-rtl.min.css",
+        "dist/css/bootstrap-theme-rtl.css",
+        "dist/css/bootstrap-theme-rtl.min.css",
+        "dist/js/bootstrap-rtl.js",
+        "dist/js/bootstrap-rtl.min.js",
+        "dist/fonts/glyphicons-halflings-regular.eot",
+        "dist/fonts/glyphicons-halflings-regular.svg",
+        "dist/fonts/glyphicons-halflings-regular.ttf",
+        "dist/fonts/glyphicons-halflings-regular.woff",
+        "dist/fonts/glyphicons-halflings-regular.woff2"
+
+    ],
+    "ignore": [
+        "**/.*",
+        "_config.yml",
+        "CNAME",
+        "composer.json",
+        "CONTRIBUTING.md",
+        "docs",
+        "js/tests"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "jquery": ">= 1.9.1"
+    }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Efile-digest://app/assets/plugins/bootstrap-rtl-master/bower.json;TTF:charsetI"
+utf-8;F:digest"%ıÊóöD/õ…(ÉÜÄ°N†r$WƒÌ¨)z1ì.‘ir:lengthi%:dependencies_digest"%?Ìt¶ª}$HkÏ<f‹¦•€gßdÊK#W¬vÓP:idI"E6f3672fdea23268021593fa8c6806365526640513dedc0c2332ac76213eea636;F:
+mtimel+¥{h[

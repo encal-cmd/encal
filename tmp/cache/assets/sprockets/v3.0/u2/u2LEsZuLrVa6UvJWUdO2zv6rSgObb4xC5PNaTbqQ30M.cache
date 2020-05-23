@@ -1,0 +1,45 @@
+{:uriI"“file://app/assets/plugins/jquery-wizard-master/bower.json?type=application/json&id=35de5522be773721764129ed09ac6e325b9d9a432bf53c32f20b7b500a7b2a14:ET:load_pathI"app/assets/plugins;T:filenameI"7app/assets/plugins/jquery-wizard-master/bower.json;T:	nameI"jquery-wizard-master/bower;T:logical_pathI"$jquery-wizard-master/bower.json;T:content_typeI"application/json;T:sourceI"4{
+  "name": "jquery-wizard.js",
+  "version": "0.4.3",
+  "description": "jquery wizard is a lightweight jquery plugin for creating step-by-step wizards",
+  "main": "dist/jquery-wizard.js",
+  "copyright": "amazingSurge",
+  "license": "LGPL-3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "demo",
+    "gulp",
+    "CONTRIBUTING.md",
+    "manifest.json",
+    "karma.conf.js",
+    "config.js",
+    "package.json",
+    "gulpfile.babel.js",
+    "tests"
+  ],
+  "homepage": "https://github.com/amazingSurge/jquery-wizard",
+  "authors": [
+    "amazingSurge <amazingSurge@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "dependencies": {
+    "jquery": ">=2.2.0"
+  },
+  "keywords": [
+    "javascript",
+    "breakpoints",
+    "bootstrap",
+    "media query",
+    "matchMedia"
+  ]
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Efile-digest://app/assets/plugins/jquery-wizard-master/bower.json;TTF:charsetI"
+utf-8;F:digest"%Ðº1x!œ¼ª@årç–©Qz–ƒÎ¬×|@f6½:lengthi4:dependencies_digest"%¼¢Þ-ð9sMuþý‰Â-xVÆ{Å{Øh1äýZñ‚’`:idI"E35de5522be773721764129ed09ac6e325b9d9a432bf53c32f20b7b500a7b2a14;F:
+mtimel+¥{h[

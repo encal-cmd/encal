@@ -1,0 +1,37 @@
+{:uriI"file://app/assets/plugins/select2/select2.jquery.json?type=application/json&id=31a2ff8aefa3139b4013a9765022369a5f903751a353b06e845f84105dd178af:ET:load_pathI"app/assets/plugins;T:filenameI"3app/assets/plugins/select2/select2.jquery.json;T:	nameI"select2/select2.jquery;T:logical_pathI" select2/select2.jquery.json;T:content_typeI"application/json;T:sourceI"u{
+    "name": "select2",
+    "title": "Select2",
+    "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",
+    "keywords": [
+        "select",
+        "autocomplete",
+        "typeahead",
+        "dropdown",
+        "multiselect",
+        "tag",
+        "tagging"
+    ],
+    "version": "4.0.3",
+    "author": {
+        "name": "Kevin Brown",
+        "url": "https://github.com/kevin-brown"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "bugs": "https://github.com/select2/select2/issues",
+    "homepage": "https://select2.github.io",
+    "docs": "https://select2.github.io",
+    "download": "https://github.com/select2/select2/releases",
+    "dependencies": {
+        "jquery": ">=1.7.2"
+    }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Afile-digest://app/assets/plugins/select2/select2.jquery.json;TTF:charsetI"
+utf-8;F:digest"%öÖœà„8FØ-£_5ÜGÒÉÉºGZP?—sÄÊ:lengthiu:dependencies_digest"%HÈ˜B·T1àÏÕ½&¸'&n‡1¾¯npİŸ®Fæ:idI"E31a2ff8aefa3139b4013a9765022369a5f903751a353b06e845f84105dd178af;F:
+mtimel+¥{h[

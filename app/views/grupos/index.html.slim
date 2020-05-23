@@ -1,0 +1,39 @@
+<script src="../javascripts/jquery.inputmask.js"></script>
+
+.row
+  .col-12
+    .card
+      .card-body
+        h2.card-title Lista Grupos
+        h6.card-subtitle Visualização e busca de todos os grupos.
+
+        .table-responsive.m-t-40
+          table#example23.display.nowrap.table.table-striped.table-bordered cellspacing="0" width="100%" 
+            col width="30%"
+            col width="30%"
+            col width="30%"
+            col width="30%"
+            col width="5%"
+            thead
+              tr
+                th Nome
+                th Ação
+            tbody
+              - Grupo.all.each do |grupo|
+                tr
+                  td 
+                    = grupo.nome
+                  td
+                    = link_to "ver", grupo_path(grupo.id), helper: "button", class: "btn waves-effect waves-light btn-info", style: "margin-right: 10px"
+                    = link_to "Editar", edit_grupo_path(grupo.id), helper: "button", class: "btn waves-effect waves-light btn-info", style: "margin-right: 10px"
+
+
+javascript:
+
+    $('#example23').DataTable({
+        "displayLength": 15,
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });

@@ -1,5 +1,6 @@
 class Grupo < ApplicationRecord
 	belongs_to :user
+  has_many :mensagens
 
 	def integrantes
     ids = self.usuariosPermitidos.split(":::")
@@ -15,4 +16,18 @@ class Grupo < ApplicationRecord
     return one_sig_ids
   end
 
+  def ultima_msg
+    ultima = self.mensagens.last
+    puts ultima
+    if ultima
+      nome_usu = ultima.user.nome
+      index_nome_usu = ultima.user.nome.index(" ")
+      if index_nome_usu.present?
+        nome_usu = nome_usu[0..index_nome_usu-1]
+      end
+      return "#{nome_usu}: #{ultima.msg}"
+    else
+      return ""
+    end
+  end
 end

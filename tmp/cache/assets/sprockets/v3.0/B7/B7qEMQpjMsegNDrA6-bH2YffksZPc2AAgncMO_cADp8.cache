@@ -1,0 +1,42 @@
+{:uriI"äfile://app/assets/plugins/select2/docs/options-old.html?type=text/html&id=93e5adb74723c16aa061452fee0b51a30b446f2a0d9c60ffea4800a86c54a3ba:ET:load_pathI"app/assets/plugins;T:filenameI"5app/assets/plugins/select2/docs/options-old.html;T:	nameI"select2/docs/options-old;T:logical_pathI""select2/docs/options-old.html;T:content_typeI"text/html;T:sourceI"---
+layout: default
+title: Options - Select2
+slug: options
+---
+
+<section class="jumbotron">
+  <div class="container">
+    <h1>
+      Options
+    </h1>
+  </div>
+</section>
+
+<div class="container s2-docs-container">
+  <div class="row">
+    <div class="col-md-9" role="main">
+
+      {% include options-old/core-options.html %}
+      {% include options-old/dropdown.html %}
+      {% include options-old/events.html %}
+      {% include options-old/adapters.html %}
+      {% include options-old/setting-default-options.html %}
+      {% include options-old/backwards-compatibility.html %}
+
+    </div>
+    <div class="col-md-3" role="complementary">
+
+      {% include nav/options-old.html %}
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  prettyPrint();
+</script>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Cfile-digest://app/assets/plugins/select2/docs/options-old.html;TTF:charsetI"
+utf-8;F:digest"%çı®vÆsã≈áXÅ „O°]hıìπo¶ú‹\,(:lengthi:dependencies_digest"%1Ñé∆qI#|*MßRx	!ì«ˆ4^Ha∏‘¥ë}»Œ:idI"E93e5adb74723c16aa061452fee0b51a30b446f2a0d9c60ffea4800a86c54a3ba;F:
+mtimel+•{h[

@@ -1,0 +1,43 @@
+{:uriI"‡file://app/assets/plugins/jsgrid/package.json?type=application/json&id=576479364a5220f5c15fe451ecfc727ca58fcba438de95de0eaaeb71fe31d987:ET:load_pathI"app/assets/plugins;T:filenameI"+app/assets/plugins/jsgrid/package.json;T:	nameI"jsgrid/package;T:logical_pathI"jsgrid/package.json;T:content_typeI"application/json;T:sourceI"¨{
+    "name": "jsgrid",
+    "version": "1.5.3",
+    "description": "Lightweight data grid jQuery plugin. It supports basic grid operations like inserting, filtering, editing, deleting, paging, sorting, and validation. jsGrid is tunable and allows to customize appearance and components.",
+    "keywords": [
+        "grid",
+        "jquery",
+        "plugin"
+    ],
+    "homepage": "http://js-grid.com",
+    "author": "Artem Tabalin",
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/tabalinas/jsgrid/blob/master/LICENSE"
+    },
+    "main": "dist/jsgrid.js",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tabalinas/jsgrid"
+    },
+    "bugs": {
+        "url": "https://github.com/tabalinas/jsgrid/issues"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-concat": "~0.3.0",
+        "grunt-contrib-copy": "^0.7.0",
+        "grunt-contrib-cssmin": "^0.10.0",
+        "grunt-contrib-qunit": "^1.2.0",
+        "grunt-contrib-uglify": "^0.4.0",
+        "grunt-image-embed": "^0.3.1",
+        "grunt-string-replace": "^1.2.1"
+    }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"9file-digest://app/assets/plugins/jsgrid/package.json;TTF:charsetI"
+utf-8;F:digest"%pZŽ%Ð”|NV2vŽ§ŸC›–‰ŠÁÄi†ßìÉ:lengthi¨:dependencies_digest"%Lt˜oéˆ³SœEÖ#X¯ð8üQlnàò±í\:idI"E576479364a5220f5c15fe451ecfc727ca58fcba438de95de0eaaeb71fe31d987;F:
+mtimel+¥{h[

@@ -10,6 +10,74 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require bootstrap/css/bootstrap
+ *= require bootstrap/css/bootstrap-grid.min
+ *= require bootstrap/css/bootstrap-reboot.min
+ *= require prism/prism.css
+ *= require animate
+ *= require style
+ *= require form
+ *= require colors/blue
+ *= require select2/dist/css/select2.min
+ *= require bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker
+ *= require bootstrap-datepicker
+ *= require bootstrap-datetimepicker
+ *= require datatables/media/css/dataTables.bootstrap4
+ *= require dropify/dist/css/dropify.min
+ *= require select2/dist/css/select2.min.css
+ *= require multiselect/css/multi-select.css
+ *= require bootstrap-select/bootstrap-select.min.css
+ *= require icons/font-awesome/css/font-awesome.min.css
+ *= require icons/material-design-iconic-font/css/materialdesignicons.min
+ *= require daterangepicker/daterangepicker
+ *= require sweetalert/sweetalert.css
+ *= require chartist-js/dist/chartist.min.css
+ *= require chartist-js/dist/chartist-init.css
+ *= require chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css
+ *= require spectrum.css
+ *= require css-chart/css-chart.css
+ *= require vectormap/jquery-jvectormap-2.0.2.css
  */
+
+.menu_totem_selected{
+  background-color: #1e88e5;
+}
+.menu_totem_selected h3{
+  color: white;
+}
+
+.validate_invalid{
+  color: #d9534f;
+  border-color: #d9534f;
+}
+
+.validate_valid{
+  color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+.menuzinho{
+ color: #67757c;
+ padding: 9px 15px;
+}
+
+.show_input{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.input_filtro{
+  height: 52px;
+}
+
+.retirar_padding_right{
+  padding-right: 0px !important;  
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.hide{
+  display: none;
+}

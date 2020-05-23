@@ -1,0 +1,64 @@
+{:uriI"„file://app/assets/plugins/jsgrid/demos/basic.html?type=text/html&id=b81d4d73a32dcaa889bce441bfc5719c46e9b70060dc0d4cce346d8423fca8a8:ET:load_pathI"app/assets/plugins;T:filenameI"/app/assets/plugins/jsgrid/demos/basic.html;T:	nameI"jsgrid/demos/basic;T:logical_pathI"jsgrid/demos/basic.html;T:content_typeI"text/html;T:sourceI"á<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jsGrid - Basic Scenario</title>
+    <link rel="stylesheet" type="text/css" href="demos.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../css/jsgrid.css" />
+    <link rel="stylesheet" type="text/css" href="../css/theme.css" />
+
+    <script src="../external/jquery/jquery-1.8.3.js"></script>
+    <script src="db.js"></script>
+
+    <script src="../src/jsgrid.core.js"></script>
+    <script src="../src/jsgrid.load-indicator.js"></script>
+    <script src="../src/jsgrid.load-strategies.js"></script>
+    <script src="../src/jsgrid.sort-strategies.js"></script>
+    <script src="../src/jsgrid.field.js"></script>
+    <script src="../src/fields/jsgrid.field.text.js"></script>
+    <script src="../src/fields/jsgrid.field.number.js"></script>
+    <script src="../src/fields/jsgrid.field.select.js"></script>
+    <script src="../src/fields/jsgrid.field.checkbox.js"></script>
+    <script src="../src/fields/jsgrid.field.control.js"></script>
+</head>
+<body>
+    <h1>Basic Scenario</h1>
+    <div id="jsGrid"></div>
+
+    <script>
+        $(function() {
+
+            $("#jsGrid").jsGrid({
+                height: "70%",
+                width: "100%",
+                filtering: true,
+                editing: true,
+                inserting: true,
+                sorting: true,
+                paging: true,
+                autoload: true,
+                pageSize: 15,
+                pageButtonCount: 5,
+                deleteConfirm: "Do you really want to delete the client?",
+                controller: db,
+                fields: [
+                    { name: "Name", type: "text", width: 150 },
+                    { name: "Age", type: "number", width: 50 },
+                    { name: "Address", type: "text", width: 200 },
+                    { name: "Country", type: "select", items: db.countries, valueField: "Id", textField: "Name" },
+                    { name: "Married", type: "checkbox", title: "Is Married", sorting: false },
+                    { type: "control" }
+                ]
+            });
+
+        });
+    </script>
+</body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"=file-digest://app/assets/plugins/jsgrid/demos/basic.html;TTF:charsetI"
+utf-8;F:digest"%LÚ,L=F…W:àõÿß11ˆfÒxõ•£åAôvÉO:lengthiá:dependencies_digest"%6špF÷)ê¡¦ÿ7ëR„0ÑÔŸ''‡ÂÁÈg—Õ1–/ó:idI"Eb81d4d73a32dcaa889bce441bfc5719c46e9b70060dc0d4cce346d8423fca8a8;F:
+mtimel+¥{h[

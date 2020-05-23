@@ -73,7 +73,7 @@ class ApiController < ApplicationController
 
   def listar_grupos
     where_perm = "usuariosPermitidos LIKE '#{params[:user_id]}:%' OR usuariosPermitidos LIKE '%:#{params[:user_id]}' OR usuariosPermitidos LIKE '%:#{params[:user_id]}:%'"
-    render json: {status: 200, grupos: Grupo.where(where_perm).collect{|n| [n.id, n.nome, n.usuariosPermitidos]}}
+    render json: {status: 200, grupos: Grupo.where(where_perm).collect{|n| [n.id, n.nome, n.usuariosPermitidos, n.ultima_msg]}}
   end
 
   def listar_grupos_img
@@ -162,27 +162,47 @@ class ApiController < ApplicationController
   end
 
   def listar_mesagens
-    grupo = params[:grupo_id]
-
-    render json: {status: 200, usuarios: User.all.collect{|n| [n.id, n.nome, n.email, n.cpf, n.ativo, n.permissoes]}}
-  end
-
-
-  def listar_mesagens
     
     msgs = Mensagem.where(grupo_id: params[:grupo_id]).collect{|n| [
       n.user_id, 
       n.grupo_id, 
-      n.created_at.strftime("%H:%M %d/%m/%Y"),
+      n.created_at.strftime("%H:%M"),
       n.user.nome,
       n.msg,
       n.imagem.url,
-      n.tipo
+      n.tipo,
+      n.created_at.strftime("%d/%m/%Y")
     ]}
 
+    puts "-- mensagens"
     puts msgs.inspect
 
-    render json: {status: 200, mensagens: msgs}
+    msgs_data = msgs.group_by { |d| d[7] }
+
+    msg_data = []
+
+    msgs_data.each do |data, msgs_dia|
+
+      msg_data << [
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        "data",
+        data
+      ]
+
+      msg_data += msgs_dia
+
+    end
+
+    puts '-- msg data'
+    puts msg_data.inspect
+
+
+    render json: {status: 200, mensagens: msg_data}
   end
 
   # resetar senha

@@ -1,0 +1,48 @@
+{:uriI"Ÿfile://app/assets/plugins/select2/docs/_includes/examples/disabled-mode.html?type=text/html&id=3310ed7fb7d171bccfe12708f2aa4e06fa965d9299cd172e1a2e1a36ea06e2fa:ET:load_pathI"app/assets/plugins;T:filenameI"Japp/assets/plugins/select2/docs/_includes/examples/disabled-mode.html;T:	nameI"2select2/docs/_includes/examples/disabled-mode;T:logical_pathI"7select2/docs/_includes/examples/disabled-mode.html;T:content_typeI"text/html;T:sourceI"L<section>
+
+  <h1 id="disabled">Disabled mode</h1>
+
+  <p>
+    Select2 will respond to the <code>disabled</code> attribute on
+    <code>&lt;select&gt;</code> elements. You can also initialize Select2
+    with <code>disabled: true</code> to get the same effect.
+  </p>
+
+  <div class="s2-example">
+    <p>
+      <select class="js-example-disabled js-states form-control" disabled="disabled"></select>
+    </p>
+
+    <p>
+      <select class="js-example-disabled-multi js-states form-control" multiple="multiple" disabled="disabled"></select>
+    </p>
+    <div class="btn-group btn-group-sm" role="group" aria-label="Programmatic enabling and disabling">
+      <button type="button" class="js-programmatic-enable btn btn-default">
+        Enable
+      </button>
+      <button type="button" class="js-programmatic-disable btn btn-default">
+        Disable
+      </button>
+    </div>
+  </div>
+
+  <pre data-fill-from=".js-code-disabled"></pre>
+
+<script type="text/javascript" class="js-code-disabled">
+$(".js-programmatic-enable").on("click", function () {
+  $(".js-example-disabled").prop("disabled", false);
+  $(".js-example-disabled-multi").prop("disabled", false);
+});
+
+$(".js-programmatic-disable").on("click", function () {
+  $(".js-example-disabled").prop("disabled", true);
+  $(".js-example-disabled-multi").prop("disabled", true);
+});
+</script>
+
+</section>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Xfile-digest://app/assets/plugins/select2/docs/_includes/examples/disabled-mode.html;TTF:charsetI"
+utf-8;F:digest"%×>½YšnÔÔ­aøšDìŽÎªíÌÐr÷Mü:lengthiL:dependencies_digest"%m*@”ÞKôÖö•r’@b{@&Õ)>žBv­ßý}:idI"E3310ed7fb7d171bccfe12708f2aa4e06fa965d9299cd172e1a2e1a36ea06e2fa;F:
+mtimel+¥{h[

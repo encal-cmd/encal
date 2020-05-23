@@ -1,0 +1,14 @@
+{:uriI"‹file://app/assets/plugins/select2/docs/_includes/ga.html?type=text/html&id=1019b8c5f1836c1c47fcb9d377534c3acc9e01220965733ade28f61b52376566:ET:load_pathI"app/assets/plugins;T:filenameI"6app/assets/plugins/select2/docs/_includes/ga.html;T:	nameI"select2/docs/_includes/ga;T:logical_pathI"#select2/docs/_includes/ga.html;T:content_typeI"text/html;T:sourceI"³<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57144786-2', 'auto');
+  ga('send', 'pageview');
+</script>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Dfile-digest://app/assets/plugins/select2/docs/_includes/ga.html;TTF:charsetI"
+utf-8;F:digest"%e°_³wk¢^í¡K ´‹¯w5p…	O[îˆxaNvþB£:lengthi³:dependencies_digest"%¨0<ð"e#·4‹s¿ñIEmº×P³¤Iˆ‚/:idI"E1019b8c5f1836c1c47fcb9d377534c3acc9e01220965733ade28f61b52376566;F:
+mtimel+¥{h[

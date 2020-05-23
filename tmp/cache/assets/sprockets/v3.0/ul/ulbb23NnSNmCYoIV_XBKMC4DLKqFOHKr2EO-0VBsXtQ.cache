@@ -1,0 +1,26 @@
+{:uriI"èfile://app/assets/plugins/select2/docs/_includes/footer.html?type=text/html&id=d90b8fa418a8e291d253e42422486fc9181705b135a7a31374bacb70d481192b:ET:load_pathI"app/assets/plugins;T:filenameI":app/assets/plugins/select2/docs/_includes/footer.html;T:	nameI""select2/docs/_includes/footer;T:logical_pathI"'select2/docs/_includes/footer.html;T:content_typeI"text/html;T:sourceI"M<footer class="s2-docs-footer" role="contentinfo">
+  <div class="container">
+    {% include social-buttons.html %}
+    <p>
+      Select2 is licensed under <a href="https://github.com/select2/select2/blob/master/LICENSE.md">MIT</a>, documentation under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+    </p>
+    <p>
+      Maintained by <a href="https://github.com/kevin-brown">Kevin Brown</a> and <a href="https://github.com/ivaynberg">Igor Vaynberg</a> with the help of <a href="https://github.com/select2/select2/graphs/contributors">our contributors</a>.
+    </p>
+    <ul class="s2-docs-footer-links">
+      <li>Currently v4.0.3</li>
+      <li><a href="https://github.com/select2/select2">GitHub</a></li>
+      <li><a href="./examples.html">Examples</a></li>
+      <li><a href="./options.html">Options</a></li>
+      <li><a href="http://select2.github.io/select2/">v3.5.2 docs</a></li>
+      <li><a href="https://github.com/select2/select2/issues">Issues</a></li>
+      <li><a href="https://github.com/select2/select2/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Hfile-digest://app/assets/plugins/select2/docs/_includes/footer.html;TTF:charsetI"
+utf-8;F:digest"%˛Ó_Cû™>≈oj]Q8Æpª•Ãl|G∞Wî˘≥ø√:lengthiM:dependencies_digest"%ÔIÓr9åj/Hÿ¸Ñ
+ç"cï¡àø”?K≈„çÒˇ:idI"Ed90b8fa418a8e291d253e42422486fc9181705b135a7a31374bacb70d481192b;F:
+mtimel+•{h[

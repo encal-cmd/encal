@@ -1,0 +1,37 @@
+{:uriI"›file://app/assets/plugins/select2/docs/_includes/examples/tokenizer.html?type=text/html&id=76686d89ab4e02353d4f6488b2ca80fa2d9120754d1dd69017e0539c392b69f0:ET:load_pathI"app/assets/plugins;T:filenameI"Fapp/assets/plugins/select2/docs/_includes/examples/tokenizer.html;T:	nameI".select2/docs/_includes/examples/tokenizer;T:logical_pathI"3select2/docs/_includes/examples/tokenizer.html;T:content_typeI"text/html;T:sourceI"%<section>
+  <h1 id="tokenizer">Automatic tokenization</h1>
+
+  <p>
+    Select2 supports ability to add choices automatically as the user is
+    typing into the search field. Try typing in the search field below and
+    entering a space or a comma.
+  </p>
+
+  <p>
+    The separators that should be used when tokenizing can be specified
+    using the <a href="options.html#tokenSeparators">tokenSeparators</a>
+    options.
+  </p>
+
+  <div class="s2-example">
+    <p>
+      <select class="js-example-tokenizer form-control" multiple="multiple">
+        <option>red</option>
+        <option>blue</option>
+        <option>green</option>
+      </select>
+    </p>
+  </div>
+
+{% highlight js linenos %}
+$(".js-example-tokenizer").select2({
+  tags: true,
+  tokenSeparators: [',', ' ']
+})
+{% endhighlight %}
+</section>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Tfile-digest://app/assets/plugins/select2/docs/_includes/examples/tokenizer.html;TTF:charsetI"
+utf-8;F:digest"%×’Š<ƒ¬âÓÏ«=Ž²ä=±H»F í+:Ã(•?cr{ï:lengthi%:dependencies_digest"%|ž£`9²i¸…­¯kÊ=¶¬úÞZrº¤øUa	„:idI"E76686d89ab4e02353d4f6488b2ca80fa2d9120754d1dd69017e0539c392b69f0;F:
+mtimel+¥{h[

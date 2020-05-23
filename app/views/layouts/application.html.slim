@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    title Encal
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' 
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = content_for :head
+  - if current_user
+    body.fix-header.fix-sidebar.card-no-border
+      .main-wrapper
+        header.topbar
+          nav.navbar.top-navbar.navbar-expand-md.navbar-light
+            .navbar-header
+              a.navbar-brand href="#{root_path}"
+                b
+                  img.dark-logo alt="homepage" height="50" src="/imagens/logo.png"
+                  img.light-logo alt="homepage" height="50" src="/imagens/logo.png"
+                span
+                  img.dark-logo alt="homepage" height="50" src="/imagens/text.png"
+                  img.light-logo alt="homepage" height="50" src="/imagens/text.png"
+            .navbar-collapse
+              ul.navbar-nav.mr-auto.mt-md-0
+                li.nav-item
+                  a.nav-link.nav-toggler.hidden-md-up.text-muted.waves-effect.waves-dark href="javascript:void(0)" onclick="toggle_menu()"
+                    i.mdi.mdi-menu
+                li.nav-item
+              ul.navbar-nav.my-lg-0
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle.text-muted.waves-effect.waves-dark data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle.text-muted.waves-effect.waves-dark data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    img src="/imagens/user.png" alt="user" class="profile-pic"
+                  .dropdown-menu.dropdown-menu-right.scape-up
+                    = render "menu_current_user.html.slim"
+
+        - if true
+          aside.left-sidebar
+            .slimScrollDiv style="position: relative; overflow:hidden; width: auto; height:  100%"
+              .scroll-sidebar style="overflow: hidden; width: auto; height: 100%;"
+                nav.sidebar-nav
+                  = render "menu.html.slim"
+              .slimScrollBar
+              .slimScrollRail
+            .sidebar-footer
+
+          .page-wrapper style="min-height: 651px"
+            .container-fluid
+              = render partial: "/partials/texto_cabecalho"
+              = yield
+            footer.footer style="text-align: center"
+              = "developed by Eu®".html_safe
+        - else
+          div style="padding-left: 30px; padding-right: 30px; background-color: #67757c; heigth: 100%"
+            = render partial: "/partials/texto_cabecalho"
+            = yield
+          footer.footer style="text-align: center"
+            = "developed by Eu®".html_safe
+
+  - elsif !current_user
+    body
+      = yield
+
+
+javascript:
+  function go_page(){
+    window.loca
+  }

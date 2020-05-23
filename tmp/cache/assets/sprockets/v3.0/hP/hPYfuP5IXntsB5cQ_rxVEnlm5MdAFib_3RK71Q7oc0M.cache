@@ -1,0 +1,21 @@
+{:uriI"šfile://app/assets/plugins/jquery-asColorPicker-master/bower.json?type=application/json&id=e1f4d6ab44b7817ceea11fe4914d5730859d2a3561a80cda8959818e0c648b0e:ET:load_pathI"app/assets/plugins;T:filenameI">app/assets/plugins/jquery-asColorPicker-master/bower.json;T:	nameI"&jquery-asColorPicker-master/bower;T:logical_pathI"+jquery-asColorPicker-master/bower.json;T:content_typeI"application/json;T:sourceI"{
+  "name": "jquery-asColorPicker",
+  "version": "0.3.1",
+  "main": "dist/jquery-asColorPicker.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.11.0",
+    "jquery-asColor": "git@github.com:amazingSurge/jquery-asColor.git#master",
+    "jquery-asGradient": "git@github.com:amazingSurge/jquery-asGradient.git#master"
+  }
+};T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Lfile-digest://app/assets/plugins/jquery-asColorPicker-master/bower.json;TTF:charsetI"
+utf-8;F:digest"%rUŸ«¬ÑL ‘É"åêTÁØ«5ë+"¶ş“´[:lengthi:dependencies_digest"%ñ}ßÏëÇ»(ƒÚ°Ëñíê×ÊôÄÊwfî•µkI‡:idI"Ee1f4d6ab44b7817ceea11fe4914d5730859d2a3561a80cda8959818e0c648b0e;F:
+mtimel+¥{h[

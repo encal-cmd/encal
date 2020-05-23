@@ -1,0 +1,28 @@
+{:uriI"£file://app/assets/plugins/Magnific-Popup-master/website/_includes/analytics.html?type=text/html&id=1630c3769b0bf66f4fafc0d7259476dd409b2f67eadcb625d8594f8ec2c4f264:ET:load_pathI"app/assets/plugins;T:filenameI"Napp/assets/plugins/Magnific-Popup-master/website/_includes/analytics.html;T:	nameI"6Magnific-Popup-master/website/_includes/analytics;T:logical_pathI";Magnific-Popup-master/website/_includes/analytics.html;T:content_typeI"text/html;T:sourceI"E{% if site.url == 'local' %}
+  <!-- analytics removed -->
+{% else %}
+<!-- Analytics start -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25969065-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    function recordOutboundLink(link, category, action) {
+      _gat._getTrackerByName()._trackEvent(category, action);
+      setTimeout('document.location = "' + link.href + '"', 100);
+    }
+</script>
+
+<!-- ya metrika -->
+<script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter11382601 = new Ya.Metrika({id:11382601, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/11382601" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+{% endif %};T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"\file-digest://app/assets/plugins/Magnific-Popup-master/website/_includes/analytics.html;TTF:charsetI"
+utf-8;F:digest"%àdê€‹a<J]«‰>Ü·vï%»ºAÀhëâ˚ùéI:lengthiE:dependencies_digest"%ˆ¥ﬁ°^è˙<Àd[€h…3˛ü*ÒWRè	«ÃsÉ:idI"E1630c3769b0bf66f4fafc0d7259476dd409b2f67eadcb625d8594f8ec2c4f264;F:
+mtimel+•{h[

@@ -1,0 +1,39 @@
+{:uriI"ˆfile://app/assets/plugins/morrisjs/spec/viz/test.html?type=text/html&id=046194ea88bb1045679aabb9d048f0fd39aedfc10be6db2bb2204999ec4bf10d:ET:load_pathI"app/assets/plugins;T:filenameI"3app/assets/plugins/morrisjs/spec/viz/test.html;T:	nameI"morrisjs/spec/viz/test;T:logical_pathI" morrisjs/spec/viz/test.html;T:content_typeI"text/html;T:sourceI"z<!DOCTYPE html>  
+<head>
+  <!-- jQuery packaging changed for 2.1.0, so try to load both paths, one will work. -->
+  <script src="../../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../../bower_components/jquery/jquery.js"></script>
+  <script src="../../bower_components/raphael/raphael-min.js"></script>
+  <script src="../../morris.js"></script>
+  <link rel="stylesheet" href="../../morris.css">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: white;
+    }
+    #chart {
+      width: 500px;
+      height: 300px;
+    }
+  </style>
+  <script>
+    function bridge(e) {
+      window.alert(JSON.stringify(e));
+    }
+    window.snapshot = function () {
+      bridge({ fn: "snapshot" });
+    };
+    window.mousemove = function (x, y) {
+      bridge({ fn: "mousemove", x: x, y: y });
+    };
+  </script>
+</head>
+<body>
+<div id="chart"></div>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Afile-digest://app/assets/plugins/morrisjs/spec/viz/test.html;TTF:charsetI"
+utf-8;F:digest"%Š¹ò67LCÜbÐFSÎ	AMì=³·^2‚W(>Äé:lengthiz:dependencies_digest"%Q&êÂ¼­²E°cÈa"1k´:¾/¿‘k¤ƒOÔ_:idI"E046194ea88bb1045679aabb9d048f0fd39aedfc10be6db2bb2204999ec4bf10d;F:
+mtimel+¥{h[

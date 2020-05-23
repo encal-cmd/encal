@@ -1,0 +1,22 @@
+{:uriI"•file://app/assets/plugins/typeahead.js-master/composer.json?type=application/json&id=933fb4fee558bc85f4e7659b2f751415167f8807464ebd201b685499bc010d65:ET:load_pathI"app/assets/plugins;T:filenameI"9app/assets/plugins/typeahead.js-master/composer.json;T:	nameI"!typeahead.js-master/composer;T:logical_pathI"&typeahead.js-master/composer.json;T:content_typeI"application/json;T:sourceI"ë{
+    "name": "twitter/typeahead.js",
+    "description": "fast and fully-featured autocomplete library",
+    "keywords": ["typeahead", "autocomplete"],
+    "homepage": "http://twitter.github.com/typeahead.js",
+    "authors": [
+        {
+            "name": "Twitter Inc.",
+            "homepage": "https://twitter.com/twitteross"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/twitter/typeahead.js/issues"
+    },
+    "author": "Twitter Inc.",
+    "license": "MIT"
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Gfile-digest://app/assets/plugins/typeahead.js-master/composer.json;TTF:charsetI"
+utf-8;F:digest"%ÚÌI¤ˆÖÕ—eñDX{Õ¾®1në©ƒ¢i˜IÑ:lengthië:dependencies_digest"%›Æã”`ië!K"\Íğ«é BCİ‘¸YyÍG¯D<:idI"E933fb4fee558bc85f4e7659b2f751415167f8807464ebd201b685499bc010d65;F:
+mtimel+¥{h[

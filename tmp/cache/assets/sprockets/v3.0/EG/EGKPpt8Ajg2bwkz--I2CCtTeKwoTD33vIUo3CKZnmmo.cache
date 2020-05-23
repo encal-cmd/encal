@@ -1,0 +1,26 @@
+{:uriI"‹file://app/assets/plugins/select2/tests/integration.html?type=text/html&id=951cb15a22a9dcbc26a7908713a56c210de9cffb1b0ed5e795dc2c97bb1110c4:ET:load_pathI"app/assets/plugins;T:filenameI"6app/assets/plugins/select2/tests/integration.html;T:	nameI"select2/tests/integration;T:logical_pathI"#select2/tests/integration.html;T:content_typeI"text/html;T:sourceI"2<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="vendor/qunit-1.23.1.css" type="text/css" />
+    <link rel="stylesheet" href="../../dist/css/select2.css" type="text/css" />
+  </head>
+  <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+    <script src="vendor/qunit-1.23.1.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.7.2.js" type="text/javascript"></script>
+    <script src="../dist/js/select2.full.js" type="text/javascript"></script>
+
+    <script src="helpers.js" type="text/javascript"></script>
+
+    <script src="integration/dom-changes.js" type="text/javascript"></script>
+    <script src="integration/jquery-calls.js" type="text/javascript"></script>
+    <script src="integration/select2-methods.js" type="text/javascript"></script>
+  </body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Dfile-digest://app/assets/plugins/select2/tests/integration.html;TTF:charsetI"
+utf-8;F:digest"%‘… ³«7[q™×òÖK,<@"H†<#£%ÜS1µ‰:lengthi2:dependencies_digest"%yÓi*ÿ2;b¯/n`É?’êœ2¬èk—ëR']oñ.¡Œ:idI"E951cb15a22a9dcbc26a7908713a56c210de9cffb1b0ed5e795dc2c97bb1110c4;F:
+mtimel+¥{h[

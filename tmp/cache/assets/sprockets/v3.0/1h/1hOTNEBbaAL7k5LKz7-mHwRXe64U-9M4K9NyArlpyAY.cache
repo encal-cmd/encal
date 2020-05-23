@@ -1,0 +1,34 @@
+{:uriI"¬file://app/assets/plugins/Magnific-Popup-master/website/site-assets/ajax/test-ajax-2.html?type=text/html&id=12081539b5b001dd4e396c7e3ea07ab72969ab31d01a3814fb013a7fe988f6b8:ET:load_pathI"app/assets/plugins;T:filenameI"Wapp/assets/plugins/Magnific-Popup-master/website/site-assets/ajax/test-ajax-2.html;T:	nameI"?Magnific-Popup-master/website/site-assets/ajax/test-ajax-2;T:logical_pathI"DMagnific-Popup-master/website/site-assets/ajax/test-ajax-2.html;T:content_typeI"text/html;T:sourceI"d<div class="ajax-text-and-image white-popup-block">
+	<style>
+	.ajax-text-and-image {
+		max-width:800px; margin: 20px auto; background: #FFF; padding: 0; line-height: 0;
+	}
+	.ajcol {
+		width: 50%; float:left;
+	}
+	.ajcol img {
+		width: 100%; height: auto;
+	}
+	@media all and (max-width:30em) {
+		.ajcol { 
+			width: 100%;
+			float:none;
+		}
+	}
+	</style>
+	<div class="ajcol">
+		<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Marabou_stork%2C_Leptoptilos_crumeniferus_edit1.jpg/603px-Marabou_stork%2C_Leptoptilos_crumeniferus_edit1.jpg"/>
+	</div>
+	<div class="ajcol" style="line-height: 1.231;">
+		<div style="padding: 1em">
+			<h1>This is just block of HTML, loaded via ajax</h1>
+		    <p>You can put absolutely any HTML here and resize it dynamically just with help of CSS.</p>
+		</div>
+	</div>
+	<div style="clear:both; line-height: 0;"></div>
+</div>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"efile-digest://app/assets/plugins/Magnific-Popup-master/website/site-assets/ajax/test-ajax-2.html;TTF:charsetI"
+utf-8;F:digest"% õ5ÂôÖÜÌÑjÔTtˆå˜ÅådGªëƒn¯`‹º:lengthid:dependencies_digest"%VÚ€İOo¬ˆĞM¤^ë§w*Ç?…=›F¼×@
+ˆ:idI"E12081539b5b001dd4e396c7e3ea07ab72969ab31d01a3814fb013a7fe988f6b8;F:
+mtimel+¥{h[

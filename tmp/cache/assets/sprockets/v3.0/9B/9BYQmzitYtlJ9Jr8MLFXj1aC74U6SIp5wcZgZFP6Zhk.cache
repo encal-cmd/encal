@@ -1,0 +1,54 @@
+{:uriI"≠file://app/assets/plugins/select2/docs/_includes/options/compatibility/query-function.html?type=text/html&id=631933323234daae6a9a5e6d5adccea904a4ce2ac96b3669270be949ce2a918e:ET:load_pathI"app/assets/plugins;T:filenameI"Xapp/assets/plugins/select2/docs/_includes/options/compatibility/query-function.html;T:	nameI"@select2/docs/_includes/options/compatibility/query-function;T:logical_pathI"Eselect2/docs/_includes/options/compatibility/query-function.html;T:content_typeI"text/html;T:sourceI"A<section>
+  <h2 id="query">
+    Querying old data with <code>query</code>
+  </h2>
+
+  <p class="alert alert-warning">
+    <a href="announcements-4.0.html#query-to-data-adapter" class="alert-link">Deprecated in Select2 4.0.</a>
+    This has been replaced by another option and is only available in the
+    <a href="index.html#builds-full" class="alert-link">full builds</a> of
+    Select2.
+  </p>
+
+  <p>
+    In the past, Select2 supported an option called <code>query</code> that
+    allowed for a custom data source to be used. This option has been replaced
+    by the <code>query</code> method on the
+    <a href="#dataAdapter">data adapter</a> and takes a very similar set of
+    parameters.
+  </p>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <dl class="dl-horizontal">
+        <dt>Key</dt>
+        <dd>
+          <code>query</code>
+        </dd>
+
+        <dt>Value</dt>
+        <dd>
+          A function taking <code>params</code> (including a <code>callback</code>)
+        </dd>
+      </dl>
+    </div>
+
+    <div class="col-sm-6">
+      <dl class="dl-horizontal">
+        <dt>Adapter</dt>
+        <dd>
+          <code title="select2/data/base">DataAdapter</code>
+        </dd>
+
+        <dt>Decorator</dt>
+        <dd>
+          <code title="select2/compat/query">Query</code>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</section>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"ffile-digest://app/assets/plugins/select2/docs/_includes/options/compatibility/query-function.html;TTF:charsetI"
+utf-8;F:digest"%9ﬁÖ'éÙÛ]≠◊õM¨ò[Åa-æ'päOÔ{:ù}:lengthiA:dependencies_digest"%1»Ùıƒÿù,u„æ≥ Õ«'èG^}Ç–ŸÇaWˆ:idI"E631933323234daae6a9a5e6d5adccea904a4ce2ac96b3669270be949ce2a918e;F:
+mtimel+•{h[

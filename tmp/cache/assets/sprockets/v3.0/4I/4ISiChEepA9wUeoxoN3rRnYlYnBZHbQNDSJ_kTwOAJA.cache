@@ -1,0 +1,41 @@
+{:uriI"file://app/assets/plugins/morrisjs/package.json?type=application/json&id=4b69211a971499d3dfde4de6abc91fe4d69bcb58fc481fddb5bd49044c21e5ff:ET:load_pathI"app/assets/plugins;T:filenameI"-app/assets/plugins/morrisjs/package.json;T:	nameI"morrisjs/package;T:logical_pathI"morrisjs/package.json;T:content_typeI"application/json;T:sourceI"g{
+  "name": "morris.js",
+  "version": "0.5.0",
+  "homepage": "http://morrisjs.github.com/morris.js",
+  "license": "BSD-2-Clause",
+  "description": "Easy, pretty charts",
+  "author": {
+    "name": "Olly Smith",
+    "email": "olly@oesmith.co.uk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/morrisjs/morris.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/morrisjs/morris.js/issues"
+  },
+  "devDependencies": {
+    "matchdep": "~0.1.2",
+    "grunt": "~0.4.1",
+    "grunt-mocha": "~0.4.10",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-shell": "~0.5.0",
+    "bower": "~1.2.8"
+  },
+  "scripts": {
+    "test": "grunt concat coffee mocha"
+  },
+  "engines": {
+    "node": ">=0.8 <0.11"
+  }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI";file-digest://app/assets/plugins/morrisjs/package.json;TTF:charsetI"
+utf-8;F:digest"%ดx/ล\$๊ÝโX>þู๕ํ"qม@ค#L<ณ:lengthig:dependencies_digest"%ๅ๖–Zฑ๛…8üฃBxSวิüaาง<Oธ1:idI"E4b69211a971499d3dfde4de6abc91fe4d69bcb58fc481fddb5bd49044c21e5ff;F:
+mtimel+ฅ{h[

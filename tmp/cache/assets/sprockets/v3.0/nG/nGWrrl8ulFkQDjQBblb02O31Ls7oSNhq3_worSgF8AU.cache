@@ -1,0 +1,24 @@
+{:uriI"Šfile://app/assets/plugins/select2/component.json?type=application/json&id=559cec194533c22484f3da93677c0ea042be30ac2c6ab1f57bbcab2516b4ea50:ET:load_pathI"app/assets/plugins;T:filenameI".app/assets/plugins/select2/component.json;T:	nameI"select2/component;T:logical_pathI"select2/component.json;T:content_typeI"application/json;T:sourceI"Ô{
+  "name": "select2",
+  "repo": "select/select2",
+  "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",
+  "version": "4.0.3",
+  "demo": "https://select2.github.io/",
+  "keywords": [
+    "jquery"
+  ],
+  "main": "dist/js/select2.js",
+  "styles": [
+    "dist/css/select2.css"
+  ],
+  "scripts": [
+    "dist/js/select2.js",
+    "dist/js/i18n/*.js"
+  ],
+  "license": "MIT"
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"<file-digest://app/assets/plugins/select2/component.json;TTF:charsetI"
+utf-8;F:digest"%m£/,ïIüË³×ÿ»Èš”	L¥:Á†Ã	V#}ií:lengthiÔ:dependencies_digest"%ÆíÄnê1¼S9,	‘^AOŠÅ?Ì'¶”Ï‡ÈŸ:idI"E559cec194533c22484f3da93677c0ea042be30ac2c6ab1f57bbcab2516b4ea50;F:
+mtimel+¥{h[

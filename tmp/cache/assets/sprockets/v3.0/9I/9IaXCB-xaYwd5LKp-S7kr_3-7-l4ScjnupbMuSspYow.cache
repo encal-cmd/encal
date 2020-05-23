@@ -1,0 +1,14 @@
+{:uriI"file://app/assets/plugins/select2/docs/_includes/options/compatibility.html?type=text/html&id=17f56b738b4821fa324e9be594458d4cd108837ddb4f6c9684836ffe721ebd37:ET:load_pathI"app/assets/plugins;T:filenameI"Iapp/assets/plugins/select2/docs/_includes/options/compatibility.html;T:	nameI"1select2/docs/_includes/options/compatibility;T:logical_pathI"6select2/docs/_includes/options/compatibility.html;T:content_typeI"text/html;T:sourceI" <section>
+  <h1>
+    Backwards compatibility
+  </h1>
+
+  {% include options/compatibility/matcher.html %}
+  {% include options/compatibility/initial-selection.html %}
+  {% include options/compatibility/query-function.html %}
+  {% include options/compatibility/text-input.html %}
+</section>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Wfile-digest://app/assets/plugins/select2/docs/_includes/options/compatibility.html;TTF:charsetI"
+utf-8;F:digest"%ÔÊŒA’ù 6’6 úB‰=ˆÙI¯pÙ‚Y­%òûÛ:lengthi :dependencies_digest"%yÍ!ÿv"\v!7ûğº©gĞ¦`b`—P:idI"E17f56b738b4821fa324e9be594458d4cd108837ddb4f6c9684836ffe721ebd37;F:
+mtimel+¥{h[

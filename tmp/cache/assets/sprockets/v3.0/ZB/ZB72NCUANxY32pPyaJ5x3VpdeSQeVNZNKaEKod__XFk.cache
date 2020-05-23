@@ -1,0 +1,93 @@
+{:uriI"êfile://app/assets/plugins/jquery-steps-master/test/index.html?type=text/html&id=c1b3254f239e0f33a7cc0a08cff086eb21a37f0fcac817edcd461e449490e383:ET:load_pathI"app/assets/plugins;T:filenameI";app/assets/plugins/jquery-steps-master/test/index.html;T:	nameI"#jquery-steps-master/test/index;T:logical_pathI"(jquery-steps-master/test/index.html;T:content_typeI"text/html;T:sourceI"<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery Steps Test Suite</title>
+		<link rel="stylesheet" href="qunit/qunit-1.11.0.css">
+	</head>
+	<body>
+		<h1 id="qunit-header">
+			<a href="http://rstaib.github.io/jquery-steps">jQuery Steps Plugin</a> Test Suite
+		</h1>
+		<div id="qunit-banner"></div>
+		<div id="qunit-testrunner-toolbar"><span>jQuery Versions: <input id="version-191" name="version" type="radio" value="1.9.1" /><label for="version-191">jQuery 1.9.1</label>
+            <input id="version-1102" name="version" type="radio" value="1.10.2" /><label for="version-1102">jQuery 1.10.2</label>
+            <input id="version-1111" name="version" type="radio" value="1.11.1" /><label for="version-1111">jQuery 1.11.1</label>
+			<input id="version-latest" name="version" type="radio" value="latest" /><label for="version-latest">jQuery Latest (git)</label></span></div>
+		<h2 id="qunit-userAgent"></h2>
+		<ol id="qunit-tests"></ol>
+		<div id="qunit-fixture">
+			<div id="contentModeWithEmptyStringArgument">
+				<h1>contentModeWithEmptyStringArgument</h1>
+				<div data-mode="">
+					<p>contentModeWithEmptyStringArgument</p>
+				</div>
+			</div>
+
+			<div id="contentModeWithWrongNumberArgument">
+				<h1>contentModeWithWrongNumberArgument</h1>
+				<div data-mode="3">
+					<p>contentModeWithWrongNumberArgument</p>
+				</div>
+			</div>
+
+			<div id="contentModeWithWrongStringArgument">
+				<h1>contentModeWithWrongStringArgument</h1>
+				<div data-mode="none">
+					<p>contentModeWithWrongStringArgument</p>
+				</div>
+			</div>
+
+			<div id="contentModeWithNumberArgument">
+				<h1>contentModeWithNumberArgument</h1>
+				<div data-mode="0">
+					<p>contentModeWithNumberArgument</p>
+				</div>
+			</div>
+
+			<div id="contentModeWithStringArgument">
+				<h1>contentModeWithStringArgument</h1>
+				<div data-mode="html">
+					<p>contentModeWithStringArgument</p>
+				</div>
+			</div>
+		</div>
+		<script src="qunit/qunit-1.11.0.js"></script>
+		<script src="tests.js"></script>
+		<script src="jquery.js"></script>
+		<script src="../build/jquery.steps.js"></script>
+		<script src="../src/privates.js"></script>
+		<script src="../src/enums.js"></script>
+		<script src="../src/model.js"></script>
+		<script src="../src/defaults.js"></script>
+		<script>
+			$(function ()
+			{
+				$("input[name='version']").click(function ()
+				{
+					location.href = "?version=" + $(this).val();
+				});
+
+				var versionPattern = /^[\?|\&]{1}version=(\d{1,2}\.\d{1,2}\.\d{1,2}|latest)/,
+					version = versionPattern.exec(location.search),
+					defaultVersion = "1.11.1";
+
+				if (version != null && version.length > 0)
+				{
+					version = version[1];
+				}
+				else
+				{
+					version = defaultVersion;
+				}
+
+				$("input[value='" + version + "']").attr("checked", "checked");
+			});
+		</script>
+	</body>
+</html>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Ifile-digest://app/assets/plugins/jquery-steps-master/test/index.html;TTF:charsetI"
+utf-8;F:digest"%)ñøX°µ6Æ¥˝ÛˇQˇá)X2%zâ∞Ôu˛;∂)wt:lengthi:dependencies_digest"%z«x¬"√È¨©˜y‹yXªü“JXÅÛí°,(
+W®:idI"Ec1b3254f239e0f33a7cc0a08cff086eb21a37f0fcac817edcd461e449490e383;F:
+mtimel+•{h[

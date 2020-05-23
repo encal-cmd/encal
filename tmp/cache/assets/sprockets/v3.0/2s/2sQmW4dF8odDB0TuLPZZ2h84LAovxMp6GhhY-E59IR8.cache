@@ -1,0 +1,56 @@
+{:uriI"¶file://app/assets/plugins/select2/docs/_includes/options/compatibility/matcher.html?type=text/html&id=e45360ce407714a68ba6c532bbd16a366bde049beff93f41822018c1b246de80:ET:load_pathI"app/assets/plugins;T:filenameI"Qapp/assets/plugins/select2/docs/_includes/options/compatibility/matcher.html;T:	nameI"9select2/docs/_includes/options/compatibility/matcher;T:logical_pathI">select2/docs/_includes/options/compatibility/matcher.html;T:content_typeI"text/html;T:sourceI"c<section>
+  <h2 id="compat-matcher">
+    Simplified function for matching data objects
+  </h2>
+
+  <p class="alert alert-info">
+    <a href="announcements-4.0.html#new-matcher" class="alert-link">Added in Select2 4.0.0.</a>
+    This method was added to make upgrading easier from earlier versions of
+    Select2.
+  </p>
+
+  <p>
+    During the <a href="announcements-4.0.html">Select2 4.0.0 release</a>, the
+    <code>matcher</code> function was changed to allow for more complex
+    matching of nested objects.
+  </p>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <dl class="dl-horizontal">
+        <dt>Key</dt>
+        <dd>
+          <code>matcher</code>
+        </dd>
+
+        <dt>Value</dt>
+        <dd>
+          A function taking a search <code>term</code> and the data object
+          <code>text</code>.
+        </dd>
+      </dl>
+    </div>
+
+    <div class="col-sm-6">
+      <dl class="dl-horizontal">
+        <dt>Adapter</dt>
+        <dd>
+          <code title="select2/compat/matcher">oldMatcher</code>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <p>
+    The <a href="examples.html#matcher">custom matcher example</a> provides a
+    guide for how to use this in your own application. For those upgrading
+    from older versions of Select2, you just need to wrap your old
+    <code>matcher</code> with this function to maintain compatibility.
+  </p>
+</section>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"_file-digest://app/assets/plugins/select2/docs/_includes/options/compatibility/matcher.html;TTF:charsetI"
+utf-8;F:digest"%£t¡2Ç%C[”dºΩ£ùŒ˜nâvá%≈
+&~	
+ï7:lengthic:dependencies_digest"%`5Ë∑∑mE°&‘∫»¶rP	»‰ÃÛh!ƒJ?Ìüî5Ew:idI"Ee45360ce407714a68ba6c532bbd16a366bde049beff93f41822018c1b246de80;F:
+mtimel+•{h[

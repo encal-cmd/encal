@@ -1,0 +1,40 @@
+section#wrapper
+  .login-register style="background-color: #{false ? escola.cor_fundo : '#3880ff'};" 
+    div.text-center style="width: 100%;"
+      img.dark-logo.m-r-15 alt="homepage" width="300" src="/imagens/logomarca-encal1.png"
+    br
+    br
+    .login-box.card style="width: 430px;"
+      .card-body
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .form-group
+            .col-xs-12
+              = f.input :cpf, required: true, autofocus: true, label: "CPF", input_html: { class: "form-control" }
+          .form-group
+            .col-xs-12
+              = f.input :password, required: true, label: "Senha", input_html: { class: "form-control" }
+          .form-group.text-center.m-t-20
+            .col-xs-12
+              button#botao_log_in.btn.btn-info.btn-lg.btn-block.text-uppercase.waves-effect.waves-light type="button" Log In
+
+javascript:
+  $("#botao_log_in").click(function(){
+
+    $("#div_acesso_senha_errada").hide()
+    $("#div_usuario_desativado").hide()
+
+    $.post("/login_acesso",
+    {
+      cpf: $("#user_cpf").val(),
+      senha: $("#user_password").val()
+    },
+    function(data, status){
+      if (data.status == "OK"){
+        $("#new_user").submit()
+      }else if(data.status == "USUARIO_NAO_ENCONTRADO"){
+        swal('Ops!', "Acesso ou senha inválida.", 'error');
+      }else if(data.status == "USUARIO_DESATIVADO"){
+        swal('Ops!', "Usuário desativado.", 'error');
+      }
+    });
+  })

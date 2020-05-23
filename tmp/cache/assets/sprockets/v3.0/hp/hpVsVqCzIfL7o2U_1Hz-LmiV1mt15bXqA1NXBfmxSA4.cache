@@ -1,0 +1,64 @@
+{:uriI"èfile://app/assets/plugins/select2/docs/_layouts/default.html?type=text/html&id=bdfeeec14e892fc9f4c6adb719c1e51d3feb107d1199be6a11f13cfbbe78be4a:ET:load_pathI"app/assets/plugins;T:filenameI":app/assets/plugins/select2/docs/_layouts/default.html;T:	nameI""select2/docs/_layouts/default;T:logical_pathI"'select2/docs/_layouts/default.html;T:content_typeI"text/html;T:sourceI"A<!doctype html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include navigation.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+
+    <script>
+      (function ($) {
+        'use strict';
+
+        $(function () {
+          var $window = $(window);
+          var $body = $(document.body);
+          var $sidebar = $('.s2-docs-sidebar');
+
+          $body.scrollspy({
+            target: '.s2-docs-sidebar',
+            offset: 40
+          });
+
+          $window.on('load', function () {
+            $body.scrollspy('refresh');
+          });
+
+          $sidebar.affix({
+            offset: {
+              top: function () {
+                var offsetTop = $sidebar.offset().top;
+                var navOuterHeight = $('.s2-docs-nav').height();
+
+                return (this.top = offsetTop - navOuterHeight);
+              },
+              bottom: function () {
+                return (this.bottom = $('.s2-docs-footer').outerHeight(true));
+              }
+            }
+          });
+        });
+      })(jQuery);
+
+      (function () {
+        'use strict';
+
+        anchors.options.placement = 'left';
+        anchors.add('.s2-docs-container h1, .s2-docs-container h2, .s2-docs-container h3, .s2-docs-container h4, .s2-docs-container h5');
+      })();
+    </script>
+
+    {% include ga.html %}
+  </body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Hfile-digest://app/assets/plugins/select2/docs/_layouts/default.html;TTF:charsetI"
+utf-8;F:digest"%C£D¯:‘ò
+úç•VÀ§
+¬⁄Í≥”&ﬂ±çÊÙ:lengthiA:dependencies_digest"%–Ò6LÜeÛ:Àû™Yæ8s¢ÿÄı-gÅ*w}s•Å:idI"Ebdfeeec14e892fc9f4c6adb719c1e51d3feb107d1199be6a11f13cfbbe78be4a;F:
+mtimel+•{h[

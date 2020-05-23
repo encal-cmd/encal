@@ -1,0 +1,33 @@
+{:uriI"…file://app/assets/plugins/jsgrid/bower.json?type=application/json&id=9604f0d169d982682890423a80c4510462f2ea8b89ba80ba218dcb8aa1749573:ET:load_pathI"app/assets/plugins;T:filenameI")app/assets/plugins/jsgrid/bower.json;T:	nameI"jsgrid/bower;T:logical_pathI"jsgrid/bower.json;T:content_typeI"application/json;T:sourceI"{
+    "name": "jsgrid",
+    "version": "1.5.3",
+    "main": [
+        "dist/jsgrid.js",
+        "dist/jsgrid.css",
+        "dist/jsgrid-theme.css"
+    ],
+    "ignore": [
+        "demos",
+        "external",
+        "tests",
+        ".editorconfig",
+        ".gitignore",
+        ".travis.yml",
+        "bower.json",
+        "Gruntfile.js",
+        "LICENSE",
+        "package.json",
+        "README.md"
+    ],
+    "dependencies": {
+        "jquery": ">=1.8.3"
+    },
+    "devDependencies": {
+        "qunit": ">=1.10.0"
+    }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"7file-digest://app/assets/plugins/jsgrid/bower.json;TTF:charsetI"
+utf-8;F:digest"%T¦Û“1¿	§—¾œt†®÷4ßr÷@¡7}ÿÕÑ™ßS:lengthi:dependencies_digest"%©–#¹4h~,ë»»H)¹0ZŠb3°[æ@³Î+<w:idI"E9604f0d169d982682890423a80c4510462f2ea8b89ba80ba218dcb8aa1749573;F:
+mtimel+¥{h[

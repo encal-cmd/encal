@@ -1,0 +1,68 @@
+{:uriI"‰file://app/assets/plugins/jsgrid/demos/validation.html?type=text/html&id=24074e8a003540a88ed41bfbde6bddc65f984532aea72eea4b5b195b91e45acc:ET:load_pathI"app/assets/plugins;T:filenameI"4app/assets/plugins/jsgrid/demos/validation.html;T:	nameI"jsgrid/demos/validation;T:logical_pathI"!jsgrid/demos/validation.html;T:content_typeI"text/html;T:sourceI"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jsGrid - Validation</title>
+    <link rel="stylesheet" type="text/css" href="demos.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../css/jsgrid.css" />
+    <link rel="stylesheet" type="text/css" href="../css/theme.css" />
+
+    <script src="../external/jquery/jquery-1.8.3.js"></script>
+    <script src="db.js"></script>
+
+    <script src="../src/jsgrid.core.js"></script>
+    <script src="../src/jsgrid.load-indicator.js"></script>
+    <script src="../src/jsgrid.load-strategies.js"></script>
+    <script src="../src/jsgrid.sort-strategies.js"></script>
+    <script src="../src/jsgrid.validation.js"></script>
+    <script src="../src/jsgrid.field.js"></script>
+    <script src="../src/fields/jsgrid.field.text.js"></script>
+    <script src="../src/fields/jsgrid.field.number.js"></script>
+    <script src="../src/fields/jsgrid.field.select.js"></script>
+    <script src="../src/fields/jsgrid.field.checkbox.js"></script>
+    <script src="../src/fields/jsgrid.field.control.js"></script>
+</head>
+<body>
+    <h1>Validation</h1>
+    <div id="jsGrid"></div>
+
+    <script>
+        $(function() {
+
+            $("#jsGrid").jsGrid({
+                height: "70%",
+                width: "100%",
+                filtering: true,
+                editing: true,
+                inserting: true,
+                sorting: true,
+                paging: true,
+                autoload: true,
+                pageSize: 15,
+                pageButtonCount: 5,
+                deleteConfirm: "Do you really want to delete the client?",
+                controller: db,
+                fields: [
+                    { name: "Name", type: "text", width: 150, validate: "required" },
+                    { name: "Age", type: "number", width: 50, validate: { validator: "range", param: [18,80] } },
+                    { name: "Address", type: "text", width: 200, validate: { validator: "rangeLength", param: [10, 250] } },
+                    { name: "Country", type: "select", items: db.countries, valueField: "Id", textField: "Name",
+                        validate: { message: "Country should be specified", validator: function(value) { return value > 0; } } },
+                    { name: "Married", type: "checkbox", title: "Is Married", sorting: false },
+                    { type: "control" }
+                ]
+            });
+
+        });
+    </script>
+</body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Bfile-digest://app/assets/plugins/jsgrid/demos/validation.html;TTF:charsetI"
+utf-8;F:digest"%Ÿµzã‹£GP¿#!&ZÈß gç>Mì#ÓWô÷v®D:lengthi
+:dependencies_digest"%%ÓÉÃjé¦ÁCOÕœh¡9'ZSÒËR¢°SðRšÎDµp:idI"E24074e8a003540a88ed41bfbde6bddc65f984532aea72eea4b5b195b91e45acc;F:
+mtimel+¥{h[

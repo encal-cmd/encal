@@ -1,0 +1,13 @@
+{:uriI"•file://app/assets/plugins/select2/docs/_includes/options/data.html?type=text/html&id=d84a6d0e435658a6db052a1e46b047f3d9706cceff032dc1bcede3f345c03927:ET:load_pathI"app/assets/plugins;T:filenameI"@app/assets/plugins/select2/docs/_includes/options/data.html;T:	nameI"(select2/docs/_includes/options/data;T:logical_pathI"-select2/docs/_includes/options/data.html;T:content_typeI"text/html;T:sourceI"®<section>
+  <h1>
+    Data adapters
+  </h1>
+
+  {% include options/data/select.html %}
+  {% include options/data/array.html %}
+  {% include options/data/ajax.html %}
+</section>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Nfile-digest://app/assets/plugins/select2/docs/_includes/options/data.html;TTF:charsetI"
+utf-8;F:digest"%1ŸÒ<~™.Ó¨úÆ.¥8]Ù‚p¡ÕW0žž:lengthi®:dependencies_digest"%÷S‰i©sŽÊñU4Ÿig¨‡uYkÉ÷õ;²­è²:idI"Ed84a6d0e435658a6db052a1e46b047f3d9706cceff032dc1bcede3f345c03927;F:
+mtimel+¥{h[

@@ -1,0 +1,27 @@
+{:uriI"file://app/assets/plugins/tablesaw-master/test/tablesaw.html?type=text/html&id=02af9ca27f4f46be559180da3c69026bbb106f25590327ca7abafa924e9130d2:ET:load_pathI"app/assets/plugins;T:filenameI":app/assets/plugins/tablesaw-master/test/tablesaw.html;T:	nameI""tablesaw-master/test/tablesaw;T:logical_pathI"'tablesaw-master/test/tablesaw.html;T:content_typeI"text/html;T:sourceI"<!DOCTYPE html>  
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tablesaw Test Suite</title>
+  <link rel="stylesheet" href="../dist/dependencies/qunit.css">
+  <link rel="stylesheet" href="../dist/tablesaw.css">
+
+  <script src="../dist/dependencies/jquery.js"></script>
+  <script src="../dist/dependencies/qunit.js"></script>
+  <script src="../dist/tablesaw.js"></script>
+  <script src="tablesaw_test.js"></script>
+  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+       you REALLY want to mess around with jQuery in the console. REMEMBER WE
+       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
+  <script>window._$ = jQuery.noConflict(true);</script>
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+</body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Hfile-digest://app/assets/plugins/tablesaw-master/test/tablesaw.html;TTF:charsetI"
+utf-8;F:digest"%‚JCâ'+úÌ2çyøh|ÆµXj¢îZ›ê:}-:lengthi:dependencies_digest"%Fãğ¡„· ƒãâ^Ğ{İÖ€¦ÅŞi·8°š¶Sy:idI"E02af9ca27f4f46be559180da3c69026bbb106f25590327ca7abafa924e9130d2;F:
+mtimel+¥{h[

@@ -11,7 +11,9 @@ Your App ID: da5bb7a2-00f8-4809-90b0-525a4b5143f2
 64.225.63.183
 Encal@123456
 
-
+------- HostGator
+encaldigitalservidor@gmail.com
+Encal123456@
 
 postgree server password
 password

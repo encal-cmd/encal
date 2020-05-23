@@ -1,0 +1,22 @@
+{:uriI"§file://app/assets/plugins/select2/docs/_includes/options/selections/multiple.html?type=text/html&id=5c5ac9636915a097f460697e63e2c12f2740c7635f7540cf91a7edb3b7136650:ET:load_pathI"app/assets/plugins;T:filenameI"Oapp/assets/plugins/select2/docs/_includes/options/selections/multiple.html;T:	nameI"7select2/docs/_includes/options/selections/multiple;T:logical_pathI"<select2/docs/_includes/options/selections/multiple.html;T:content_typeI"text/html;T:sourceI"<section>
+  <h2 id="multiple">
+    Can I allow users to make multiple selections?
+  </h2>
+
+  <p>
+    Yes, Select2 supports making multiple selections through the use of the <code>multiple</code> option that can be passed in when initializing Select2.
+  </p>
+
+  <h3>
+    Can the <code>multiple</code> attribute be used on my <code>&lt;select&gt;</code> element?
+  </h3>
+
+  <p>
+    Yes, Select2 will automatically map the value of the <code>multiple</code> attribute to the <code>multiple</code> option during initialization.
+  </p>
+</section>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"]file-digest://app/assets/plugins/select2/docs/_includes/options/selections/multiple.html;TTF:charsetI"
+utf-8;F:digest"%à≥j
+cÔîù‡7U∫†≈6·Îfh˜¿Y%1ÓGWôîﬁx:lengthi:dependencies_digest"%u˘ﬁ‚ö[kß%ÌÉêu·œkÃaúUìóPäö°N:idI"E5c5ac9636915a097f460697e63e2c12f2740c7635f7540cf91a7edb3b7136650;F:
+mtimel+•{h[

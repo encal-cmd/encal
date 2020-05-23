@@ -1,0 +1,31 @@
+{:uriI"žfile://app/assets/plugins/select2/docs/_includes/nav/announcements-4.0.html?type=text/html&id=ade43c8b2c82646f34c0072e1780cd063ee7b45cf440c1dd0ea3fd6687862bd5:ET:load_pathI"app/assets/plugins;T:filenameI"Iapp/assets/plugins/select2/docs/_includes/nav/announcements-4.0.html;T:	nameI"1select2/docs/_includes/nav/announcements-4.0;T:logical_pathI"6select2/docs/_includes/nav/announcements-4.0.html;T:content_typeI"text/html;T:sourceI"7<nav class="s2-docs-sidebar hidden-print hidden-xs hidden-sm">
+  <ul class="nav s2-docs-sidenav">
+    <li>
+      <a href="#select2-400">Select2 4.0.0</a>
+      <ul class="nav">
+        <li><a href="#new-features">New features</a></li>
+        <li><a href="#plugin-system">Plugin system</a></li>
+        <li><a href="#amd-based-build-system">AMD-based build system</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#migrating-from-select2-35">Migrating from Select2 3.5</a>
+      <ul class="nav">
+        <li><a href="#hidden-input">No more hidden input tags</a></li>
+        <li><a href="#new-matcher">Advanced matching of searches</a></li>
+        <li><a href="#flexible-placeholders">More flexible placeholders</a></li>
+        <li><a href="#value-ordering">Display reflects the actual order of the values</a></li>
+        <li><a href="#changed-options">Changed method and option names</a></li>
+        <li><a href="#removed-methods">Deprecated and removed methods</a></li>
+      </ul>
+    </li>
+  </ul>
+  <a class="back-to-top" href="#top">
+    Back to top
+  </a>
+</nav>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Wfile-digest://app/assets/plugins/select2/docs/_includes/nav/announcements-4.0.html;TTF:charsetI"
+utf-8;F:digest"%±HC0C˜×".€¼‚€k3¬šÑíP®öÓ^=ANÀï:lengthi7:dependencies_digest"%Ü‹×Œ|Ì–ïù†¢­(þ»KÈ¡èûÎA>-¦:>:idI"Eade43c8b2c82646f34c0072e1780cd063ee7b45cf440c1dd0ea3fd6687862bd5;F:
+mtimel+¥{h[

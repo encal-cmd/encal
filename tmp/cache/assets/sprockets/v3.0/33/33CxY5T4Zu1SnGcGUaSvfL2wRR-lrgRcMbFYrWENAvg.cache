@@ -1,0 +1,42 @@
+{:uriI"˜file://app/assets/plugins/morrisjs/examples/decimal-custom-hover.html?type=text/html&id=cd62b1cc619bcd0b896cb57e7f609f4f87ef9782edb9b12b6b6c7977e9fc5632:ET:load_pathI"app/assets/plugins;T:filenameI"Capp/assets/plugins/morrisjs/examples/decimal-custom-hover.html;T:	nameI"+morrisjs/examples/decimal-custom-hover;T:logical_pathI"0morrisjs/examples/decimal-custom-hover.html;T:content_typeI"text/html;T:sourceI"ª<!DOCTYPE html>  
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+</head>
+<body>
+<h1>Decimal Data</h1>
+<div id="graph"></div>
+<pre id="code" class="prettyprint linenums">
+var decimal_data = [];
+for (var x = 0; x <= 360; x += 10) {
+  decimal_data.push({
+    x: x,
+    y: 1.5 + 1.5 * Math.sin(Math.PI * x / 180).toFixed(4)
+  });
+}
+window.m = Morris.Line({
+  element: 'graph',
+  data: decimal_data,
+  xkey: 'x',
+  ykeys: ['y'],
+  labels: ['sin(x)'],
+  parseTime: false,
+  hoverCallback: function (index, options, default_content, row) {
+    return default_content.replace("sin(x)", "1.5 + 1.5 sin(" + row.x + ")");
+  },
+  xLabelMargin: 10,
+  integerYLabels: true
+});
+</pre>
+</body>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Qfile-digest://app/assets/plugins/morrisjs/examples/decimal-custom-hover.html;TTF:charsetI"
+utf-8;F:digest"%‘®d&Ø‹Æ¿dÑù	?lYÀÕÇÍ–,ˆîU—0¬:lengthiª:dependencies_digest"%†ùË‹l¿oi6oóÉËmìÉ_ó§Ğ7ªª"¹×':idI"Ecd62b1cc619bcd0b896cb57e7f609f4f87ef9782edb9b12b6b6c7977e9fc5632;F:
+mtimel+¥{h[

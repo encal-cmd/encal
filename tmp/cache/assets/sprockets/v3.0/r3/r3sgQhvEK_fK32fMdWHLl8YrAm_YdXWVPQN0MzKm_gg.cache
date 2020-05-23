@@ -1,0 +1,48 @@
+{:uriI"–file://app/assets/plugins/tablesaw-master/demo/issues/issue-37.html?type=text/html&id=ede0d6398dc1ce080b8778bbd37dc7ff79730997be2b37bccda8ee8dd3ead4ee:ET:load_pathI"app/assets/plugins;T:filenameI"Aapp/assets/plugins/tablesaw-master/demo/issues/issue-37.html;T:	nameI")tablesaw-master/demo/issues/issue-37;T:logical_pathI".tablesaw-master/demo/issues/issue-37.html;T:content_typeI"text/html;T:sourceI"Ê<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TableSaw Stack Table</title>
+
+  <link rel="stylesheet" href="../../dist/tablesaw.css">
+
+  <!--[if lt IE 9]><script src="../../dist/dependencies/respond.js"></script><![endif]-->
+  <script src="../../dist/dependencies/jquery.js"></script>
+  <script src="../../dist/tablesaw.js"></script>
+  <script src="../../dist/tablesaw-init.js"></script>
+</head>
+<body>
+<!-- <div style="position:relative;"> -->
+  <table class="tablesaw" data-tablesaw-mode="swipe">
+    <thead>
+      <tr>
+        <th data-tablesaw-priority="persist">rental unit address</th>
+        <th>rooms</th>
+        <th>fee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>        
+        <td>1600 Pennsylvania Ave NW, Washington</td>
+        <td>200 i imagine i've seen the west wing</td>
+        <td>$200,000</td>
+      </tr>
+      <tr>        
+        <td>10 downing street , London</td>
+        <td>20 i imagine, I've seen ouse of Cards</td>
+        <td>$200,000</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- </div> -->
+  
+  
+  
+</body>
+</html>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Ofile-digest://app/assets/plugins/tablesaw-master/demo/issues/issue-37.html;TTF:charsetI"
+utf-8;F:digest"%dpåÈ°«A`åc|’C Nu£f2g©²õ°õž§ÀºJ“d:lengthiÊ:dependencies_digest"%yÒ8BÎW	B‡ž~¹êE¯ý\%ÑÐ¨RëÛ–çÜ-~º.Ò:idI"Eede0d6398dc1ce080b8778bbd37dc7ff79730997be2b37bccda8ee8dd3ead4ee;F:
+mtimel+¥{h[

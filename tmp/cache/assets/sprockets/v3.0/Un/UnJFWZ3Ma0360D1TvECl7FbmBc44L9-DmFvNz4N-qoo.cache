@@ -1,0 +1,94 @@
+{:uriI"°file://app/assets/plugins/select2/docs/_includes/options/dropdown/tagging.html?type=text/html&id=6679aa6f6952fdeaa47eacc6aaf78471d5f43219c1ab53e98807a1df44a03faf:ET:load_pathI"app/assets/plugins;T:filenameI"Lapp/assets/plugins/select2/docs/_includes/options/dropdown/tagging.html;T:	nameI"4select2/docs/_includes/options/dropdown/tagging;T:logical_pathI"9select2/docs/_includes/options/dropdown/tagging.html;T:content_typeI"text/html;T:sourceI"ı<section>
+  <h2>
+    Can options be created based on the search term?
+  </h2>
+
+  <h3>
+    How do I enable tagging?
+  </h3>
+
+{% highlight js linenos %}
+$('select').select2({
+  tags: true
+});
+{% endhighlight %}
+
+  {% include options/not-written.html %}
+
+  <h3>
+    Does tagging work with a single select?
+  </h3>
+
+  <p>
+    Yes.
+  </p>
+
+  {% include options/not-written.html %}
+
+  <h3>
+    How do I add extra properties to the tag?
+  </h3>
+
+{% highlight js linenos %}
+$('select').select2({
+  createTag: function (params) {
+    var term = $.trim(params.term);
+
+    if (term === '') {
+      return null;
+    }
+
+    return {
+      id: term,
+      text: term,
+      newTag: true // add additional parameters
+    }
+  }
+});
+{% endhighlight %}
+
+  {% include options/not-written.html %}
+
+  <h3>
+    Can I control when tags are created?
+  </h3>
+
+{% highlight js linenos %}
+$('select').select2({
+  createTag: function (params) {
+    // Don't offset to create a tag if there is no @ symbol
+    if (params.term.indexOf('@') === -1) {
+      // Return null to disable tag creation
+      return null;
+    }
+
+    return {
+      id: params.term,
+      text: params.term
+    }
+  }
+});
+{% endhighlight %}
+
+  {% include options/not-written.html %}
+
+  <h3>
+    How do I control the placement of the option?
+  </h3>
+
+{% highlight js linenos %}
+$('select').select2({
+  insertTag: function (data, tag) {
+    // Insert the tag at the end of the results
+    data.push(tag);
+  }
+});
+{% endhighlight %}
+
+  {% include options/not-written.html %}
+</section>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Zfile-digest://app/assets/plugins/select2/docs/_includes/options/dropdown/tagging.html;TTF:charsetI"
+utf-8;F:digest"%Ê,Xìv‹r0’ü§ó8EÃc%∫Âö4†[)T§™F:lengthiı:dependencies_digest"%Ûûg¸Bçßˇ®¢º-ÑÍ6)»pO∫<…ˆˇØ†
+—¿:idI"E6679aa6f6952fdeaa47eacc6aaf78471d5f43219c1ab53e98807a1df44a03faf;F:
+mtimel+•{h[

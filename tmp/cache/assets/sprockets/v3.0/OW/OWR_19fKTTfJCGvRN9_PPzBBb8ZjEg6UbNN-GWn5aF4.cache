@@ -1,0 +1,25 @@
+{:uriI"‡file://app/assets/plugins/morrisjs/bower.json?type=application/json&id=4535843558e821c6920bf54fe28b5432e0d96646f368e4e854a411103c587e36:ET:load_pathI"app/assets/plugins;T:filenameI"+app/assets/plugins/morrisjs/bower.json;T:	nameI"morrisjs/bower;T:logical_pathI"morrisjs/bower.json;T:content_typeI"application/json;T:sourceI"‡{
+  "name": "morris.js",
+  "version": "0.5.0",
+  "main": [
+    "./morris.js",
+    "./morris.css"
+  ],
+  "dependencies": {
+    "jquery": ">= 2.1.0",
+    "raphael": ">= 2.0",
+    "mocha": "~1.17.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "chai": "~1.9.0",
+    "chai-jquery": "~1.2.1",
+    "sinon": "http://sinonjs.org/releases/sinon-1.8.1.js",
+    "sinon-chai": "~2.5.0"
+  }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"9file-digest://app/assets/plugins/morrisjs/bower.json;TTF:charsetI"
+utf-8;F:digest"%-+fÓù==Mà1É_ge°À¨š¾ckl İûj Ê:lengthi‡:dependencies_digest"%1„(ŠÁº‰ÊÎ¯:éhí±9s,¾•ÏCË!¥<^Pi¨Õ:idI"E4535843558e821c6920bf54fe28b5432e0d96646f368e4e854a411103c587e36;F:
+mtimel+¥{h[

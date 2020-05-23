@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   root to: 'application#index'
   
   devise_for :users
+
+  resources :users, path: "/controle_de_usuarios"
+  resources :grupos
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  match "/login_acesso" => "users#login_acesso", as: :login_acesso, via: [:get, :post]
 
   match "/api/login" => 'api#login', via: [:get, :post]
   match "/api/criar_usuario" => 'api#criar_usuario', via: [:get, :post, :options]

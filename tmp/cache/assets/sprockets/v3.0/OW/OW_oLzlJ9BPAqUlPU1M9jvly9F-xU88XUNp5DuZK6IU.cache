@@ -1,0 +1,32 @@
+{:uriI"—file://app/assets/plugins/bootstrap-treeview-master/tests/tests.html?type=text/html&id=9a2b931b94d51477296cd7dd0434b75d7a0a7602c825a1f673dda3eb64e9ca2c:ET:load_pathI"app/assets/plugins;T:filenameI"Bapp/assets/plugins/bootstrap-treeview-master/tests/tests.html;T:	nameI"*bootstrap-treeview-master/tests/tests;T:logical_pathI"/bootstrap-treeview-master/tests/tests.html;T:content_typeI"text/html;T:sourceI"I<!DOCTYPE html>  
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+
+    <title>bootstrap-treeview.js Tests</title>
+
+    <link rel='stylesheet' href='./lib/qunit-1.12.0.css'>
+
+    <script src='./lib/jquery.js'></script>
+    <script src='./lib/qunit-1.12.0.js'></script>
+    <script src="./lib/blanket.min.js"></script>
+
+    <script data-cover src='./lib/bootstrap-treeview.js'></script>
+
+    <!-- your tests, any and all to run with the given fixtures below -->
+    <script src='./tests.js'></script>
+  </head>
+  <body>
+    <div id="qunit"></div> <!-- QUnit fills this with results, etc -->
+    <div id='qunit-fixture'>
+ 
+      <!-- any HTML you want to be present in each test (will be reset for each test) -->
+      <div id="treeview"></div>
+    </div>
+  </body>
+</html>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Pfile-digest://app/assets/plugins/bootstrap-treeview-master/tests/tests.html;TTF:charsetI"
+utf-8;F:digest"%´óôâï’}¿ˆ=ë/Ê0x#Ydö’Âæ“æ§´mx:lengthiI:dependencies_digest"%¸EfR…u:èC¤n2ÿ9£¶ƒBÓ,ùl–Æc:idI"E9a2b931b94d51477296cd7dd0434b75d7a0a7602c825a1f673dda3eb64e9ca2c;F:
+mtimel+¥{h[

@@ -1,0 +1,38 @@
+{:uriI"êfile://app/assets/plugins/typeahead.js-master/nfl.json?type=application/json&id=b5163ca2025d2c7e35823d36d7b1e241a4adc12ba966488c2e72955ff70d8a1a:ET:load_pathI"app/assets/plugins;T:filenameI"4app/assets/plugins/typeahead.js-master/nfl.json;T:	nameI"typeahead.js-master/nfl;T:logical_pathI"!typeahead.js-master/nfl.json;T:content_typeI"application/json;T:sourceI"[
+{ "team": "San Francisco 49ers" },
+{ "team": "Chicago Bears" },
+{ "team": "Cincinnati Bengals" },
+{ "team": "Buffalo Bills" },
+{ "team": "Denver Broncos" },
+{ "team": "Cleveland Browns" },
+{ "team": "Tampa Bay Buccaneers" },
+{ "team": "Arizona Cardinals" },
+{ "team": "San Diego Chargers" },
+{ "team": "Kansas City Chiefs" },
+{ "team": "Indianapolis Colts" },
+{ "team": "Dallas Cowboys" },
+{ "team": "Miami Dolphins" },
+{ "team": "Philadelphia Eagles" },
+{ "team": "Atlanta Falcons" },
+{ "team": "New York Giants" },
+{ "team": "Jacksonville Jaguars" },
+{ "team": "New York Jets" },
+{ "team": "Detroit Lions" },
+{ "team": "Green Bay Packers" },
+{ "team": "Carolina Panthers" },
+{ "team": "New England Patriots" },
+{ "team": "Oakland Raiders" },
+{ "team": "St.Louis Rams" },
+{ "team": "Baltimore Ravens" },
+{ "team": "Washington Redskins" },
+{ "team": "New Orlean Saints" },
+{ "team": "Seattle Seahawks" },
+{ "team": "Pittsburgh Steelers" },
+{ "team": "Houston Texans" },
+{ "team": "Tennesse Titans" },
+{ "team": "Minnesota Viking" }
+];T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Bfile-digest://app/assets/plugins/typeahead.js-master/nfl.json;TTF:charsetI"
+utf-8;F:digest"%œ◊·áh<y„◊Í:€0≈™f/O^áïÉúz–7:kÔ:lengthi:dependencies_digest"%#Ñ)Âhc∏æ{ƒ@ `.o]ˆCø›é’›≈s¥:idI"Eb5163ca2025d2c7e35823d36d7b1e241a4adc12ba966488c2e72955ff70d8a1a;F:
+mtimel+•{h[

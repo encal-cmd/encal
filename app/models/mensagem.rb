@@ -48,12 +48,17 @@ class Mensagem < ApplicationRecord
       nome_usu = nome_usu[0..index_nome_usu-1]
     end
 
+    if self.tipo == "msg"
+      content = "#{nome_usu}: #{self.msg}"
+    elsif self.tipo == "imagem"
+      content = "#{nome_usu}: Imagem"
+    end
 
     envio = HTTParty.post(url, { 
       body: {
           "app_id" => "da5bb7a2-00f8-4809-90b0-525a4b5143f2", 
           "headings" => {"en" => self.grupo.nome},
-          "contents" => {"en" => "#{nome_usu}: #{self.msg}"},
+          "contents" => {"en" => content},
           "data" => {"grupo_id" => self.grupo_id, "user_id" => self.user_id},
           "include_player_ids" => self.grupo.integrantes_onesignal_ids
       }.as_json.to_json,

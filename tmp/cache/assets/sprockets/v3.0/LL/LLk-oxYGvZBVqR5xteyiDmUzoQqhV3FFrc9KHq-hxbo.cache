@@ -1,0 +1,19 @@
+{:uriI"ãfile://app/assets/plugins/flot.tooltip/bower.json?type=application/json&id=d99f68174143b8a20573ae2ad704978c37085380f927a5432871f914072b1278:ET:load_pathI"app/assets/plugins;T:filenameI"/app/assets/plugins/flot.tooltip/bower.json;T:	nameI"flot.tooltip/bower;T:logical_pathI"flot.tooltip/bower.json;T:content_typeI"application/json;T:sourceI"È{
+  "name": "flot.tooltip",
+  "version": "0.8.5",
+  "license": "MIT",
+  "main": "js/jquery.flot.tooltip.js",
+  "ignore": [
+    ".gitignore",
+    "Gruntfile.js",
+    "README.md",
+    "package.json",
+    "examples",
+    "js/old"
+  ]
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"=file-digest://app/assets/plugins/flot.tooltip/bower.json;TTF:charsetI"
+utf-8;F:digest"%ΩYq°Hcj”Î·¶‰HÜãÁõ‚≥ÈúﬁÜçcπ<:lengthiÈ:dependencies_digest"%§›ﬂ—¡æ√øë•`Ôtp_/∫ÚøM€l˝{ôÓ8÷:idI"Ed99f68174143b8a20573ae2ad704978c37085380f927a5432871f914072b1278;F:
+mtimel+•{h[

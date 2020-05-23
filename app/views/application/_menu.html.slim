@@ -1,0 +1,15 @@
+ul#sidebarnav.in
+  li
+    a.waves-effect.waves-dark href="#{root_url}"
+      i.mdi.mdi-home
+      span.hide-menu
+        | Home
+  li
+    a.has-arrow.waves-effect.waves-dark
+      i.mdi.mdi-hospital-building
+      span.hide-menu
+        | Grupo
+    ul.collapse
+      - if current_user.tem_permissao("ver_grupo")
+        li
+          = link_to("Grupos", grupos_path)

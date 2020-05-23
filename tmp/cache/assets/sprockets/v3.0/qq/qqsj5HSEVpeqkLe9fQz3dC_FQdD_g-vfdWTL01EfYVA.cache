@@ -1,0 +1,23 @@
+{:uriI"ëfile://app/assets/plugins/dropzone-master/composer.json?type=application/json&id=3bc857fc2ba6515eb1e18c6c8f450a0e854911e87466340db19631639525564f:ET:load_pathI"app/assets/plugins;T:filenameI"5app/assets/plugins/dropzone-master/composer.json;T:	nameI"dropzone-master/composer;T:logical_pathI""dropzone-master/composer.json;T:content_typeI"application/json;T:sourceI"r{
+	"name": "enyo/dropzone",
+	"description": "Handles drag and drop of files for you.",
+	"homepage": "http://www.dropzonejs.com",
+	"keywords": [
+		"dragndrop",
+		"drag and drop",
+		"file upload",
+		"upload"
+	],
+	"authors": [{
+		"name": "Matias Meno",
+		"email": "m@tias.me",
+		"homepage": "http://www.matiasmeno.com"
+	}],
+	"license": "MIT",
+	"minimum-stability": "dev"
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Cfile-digest://app/assets/plugins/dropzone-master/composer.json;TTF:charsetI"
+utf-8;F:digest"%¶ﬁàiãwÿbPÔo‰ﬁôvY‡úXjl1rßià:lengthir:dependencies_digest"%PO}Zr5Æ”vr*›ƒÔNy*.ó)≥EÅßI3N¬∏“:idI"E3bc857fc2ba6515eb1e18c6c8f450a0e854911e87466340db19631639525564f;F:
+mtimel+•{h[

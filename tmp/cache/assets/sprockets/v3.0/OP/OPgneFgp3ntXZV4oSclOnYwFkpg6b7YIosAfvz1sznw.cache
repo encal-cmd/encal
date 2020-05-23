@@ -1,0 +1,27 @@
+{:uriI"file://app/assets/plugins/chartist-plugin-tooltip-master/tasks/aliases.yml?type=text/yaml&id=d104f813e02e08ebb7944a23450e1342b7152e447f839c7db68634c7c50adb94:ET:load_pathI"app/assets/plugins;T:filenameI"Happ/assets/plugins/chartist-plugin-tooltip-master/tasks/aliases.yml;T:	nameI"1chartist-plugin-tooltip-master/tasks/aliases;T:logical_pathI"5chartist-plugin-tooltip-master/tasks/aliases.yml;T:content_typeI"text/yaml;T:sourceI""# Grunt Commands
+# ==============
+#
+# Use `grunt` in the root directory to select and run a specific task.
+
+default:
+  - 'test'
+  - 'build'
+
+# create the plugin
+build:
+  - 'clean:dist'
+  - 'sass:dist'
+  - 'copy:dist'
+  - 'umd'
+  - 'uglify:dist'
+
+# tests
+test:
+  - 'clean:tmp'
+  - 'jasmine'
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/yaml&file_type=text/yaml;TTI"Vfile-digest://app/assets/plugins/chartist-plugin-tooltip-master/tasks/aliases.yml;TTF:charsetI"
+utf-8;F:digest"%]CÈu\¶ñWXj·A?b[Ç‰’¡bÁ	
+Ï:lengthi":dependencies_digest"%ø‹"ÎÂacWÒı1†ëND0HĞª@”ßq4*Á:idI"Ed104f813e02e08ebb7944a23450e1342b7152e447f839c7db68634c7c50adb94;F:
+mtimel+¥{h[

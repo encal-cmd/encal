@@ -1,0 +1,27 @@
+{:uriI"ùfile://app/assets/plugins/select2/docs/_includes/examples/hide-search.html?type=text/html&id=ec8594fcfc52d3ade035695e545d048f3f7a39b0457d3833d066d0431822e756:ET:load_pathI"app/assets/plugins;T:filenameI"Happ/assets/plugins/select2/docs/_includes/examples/hide-search.html;T:	nameI"0select2/docs/_includes/examples/hide-search;T:logical_pathI"5select2/docs/_includes/examples/hide-search.html;T:content_typeI"text/html;T:sourceI";<section>
+
+  <h1 id="hide-search">Hiding the search box</h1>
+
+  <p>
+    Select2 allows you to hide the search box depending on the number of
+    options which are displayed. In this example, we use the value
+    <code>Infinity</code> to tell Select2 to never display the search box.
+  </p>
+
+  <div class="s2-example">
+    <p>
+      <select class="js-example-basic-hide-search js-states form-control"></select>
+    </p>
+  </div>
+
+{% highlight js linenos %}
+$(".js-example-basic-hide-search").select2({
+  minimumResultsForSearch: Infinity
+});
+{% endhighlight %}
+</section>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Vfile-digest://app/assets/plugins/select2/docs/_includes/examples/hide-search.html;TTF:charsetI"
+utf-8;F:digest"%WÛqB Ü%…‰	Nü{ß&“hâabºù}*èxÉ{®-g:lengthi;:dependencies_digest"%§ÙæÙìÖ˝çeO[ﬂaa„Á>ï;]÷º´—	'_@:idI"Eec8594fcfc52d3ade035695e545d048f3f7a39b0457d3833d066d0431822e756;F:
+mtimel+•{h[

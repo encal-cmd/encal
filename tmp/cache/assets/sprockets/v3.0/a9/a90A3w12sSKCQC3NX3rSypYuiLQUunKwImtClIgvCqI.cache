@@ -1,0 +1,17 @@
+{:uriI"Üfile://app/assets/plugins/select2/bower.json?type=application/json&id=109f8eb60f08eb68a26991f6ddac325c4cf6fd8a60dccd57c93dc5fca6c8c880:ET:load_pathI"app/assets/plugins;T:filenameI"*app/assets/plugins/select2/bower.json;T:	nameI"select2/bower;T:logical_pathI"select2/bower.json;T:content_typeI"application/json;T:sourceI"j{
+    "name": "select2",
+    "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",
+    "main": [
+        "dist/js/select2.js",
+        "src/scss/core.scss"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:select2/select2.git"
+    }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"8file-digest://app/assets/plugins/select2/bower.json;TTF:charsetI"
+utf-8;F:digest"%bîù⁄Ç¶ˇ»ï.;2J˝ËU;U8°6¢ˇ?ı]®«Áx:lengthij:dependencies_digest"%V·7D†’ÃÌ¿èk2(¶8;êı√∆ƒê'+W€:idI"E109f8eb60f08eb68a26991f6ddac325c4cf6fd8a60dccd57c93dc5fca6c8c880;F:
+mtimel+•{h[

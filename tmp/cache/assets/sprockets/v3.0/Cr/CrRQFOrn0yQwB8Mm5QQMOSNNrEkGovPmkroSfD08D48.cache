@@ -1,0 +1,42 @@
+{:uriI"Üfile://app/assets/plugins/select2/docs/options.html?type=text/html&id=6c1b8d7b049771260e51adc175883686c67eda4f707b87ef6cd0fc3310da9df1:ET:load_pathI"app/assets/plugins;T:filenameI"1app/assets/plugins/select2/docs/options.html;T:	nameI"select2/docs/options;T:logical_pathI"select2/docs/options.html;T:content_typeI"text/html;T:sourceI"l---
+layout: default
+title: Options - Select2
+slug: options
+---
+
+<section class="jumbotron">
+  <div class="container">
+    <h1>
+      Options
+    </h1>
+    <p class="lead">
+      Select2 supports a wide variety of options that allow you to customize it to your needs.
+    </p>
+  </div>
+</section>
+
+<div class="container s2-docs-container">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      {% include options/introduction.html %}
+      {% include options/core.html %}
+      {% include options/data.html %}
+      {% include options/selections.html %}
+      {% include options/dropdown.html %}
+      {% include options/events.html %}
+      {% include options/compatibility.html %}
+    </div>
+    <div class="col-md-3" role="complementary">
+      {% include nav/options.html %}
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  prettyPrint();
+</script>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"?file-digest://app/assets/plugins/select2/docs/options.html;TTF:charsetI"
+utf-8;F:digest"%ŒËIû®áx¡X®0–ﬁÇæ«µ_∆‹ÈÚÈzÑañû:lengthil:dependencies_digest"%ojå2¬œ7}jbªŸ°A]ı‡”˚GµÖ^†i$‚Ê °’°:idI"E6c1b8d7b049771260e51adc175883686c67eda4f707b87ef6cd0fc3310da9df1;F:
+mtimel+•{h[

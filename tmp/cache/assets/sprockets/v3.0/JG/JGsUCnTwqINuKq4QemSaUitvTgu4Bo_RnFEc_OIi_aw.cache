@@ -1,0 +1,21 @@
+{:uriI"file://app/assets/plugins/tablesaw-master/bower.json?type=application/json&id=18dd20b7c3a3a3a7347e2444aa7ac7f3355f8837bd793cb22a84942f0170cc78:ET:load_pathI"app/assets/plugins;T:filenameI"2app/assets/plugins/tablesaw-master/bower.json;T:	nameI"tablesaw-master/bower;T:logical_pathI"tablesaw-master/bower.json;T:content_typeI"application/json;T:sourceI"Ğ{
+	"name": "filament-tablesaw",
+	"main": [
+		"dist/tablesaw.js",
+		"dist/tablesaw.css",
+		"dist/icons/**"
+	],
+	"ignore": [
+		"**/.*"
+	],
+	"dependencies": {
+		"jquery": ">=1.11.2",
+		"respond": ">=1.4.2"
+	}
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"@file-digest://app/assets/plugins/tablesaw-master/bower.json;TTF:charsetI"
+utf-8;F:digest"%éjüV.b‘
+1åH¨wb‰SÜC>z¬Ó¿¥[?:lengthiĞ:dependencies_digest"%›e V¯ˆ—”¤ï«H2—ƒÊ	ÖâÇ¯`"ªá:idI"E18dd20b7c3a3a3a7347e2444aa7ac7f3355f8837bd793cb22a84942f0170cc78;F:
+mtimel+¥{h[

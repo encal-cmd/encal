@@ -1,0 +1,55 @@
+{:uriI"›file://app/assets/plugins/select2/docs/_includes/options-old/events.html?type=text/html&id=a8ab9c4a46cec50ee1275120b7ee2f15e5f7aeb7eb7cf3922d532eb2061a7951:ET:load_pathI"app/assets/plugins;T:filenameI"Fapp/assets/plugins/select2/docs/_includes/options-old/events.html;T:	nameI".select2/docs/_includes/options-old/events;T:logical_pathI"3select2/docs/_includes/options-old/events.html;T:content_typeI"text/html;T:sourceI"W<section>
+  <div id="events" class="page-header">
+    <h1>Events</h1>
+  </div>
+
+  <p>
+    Select2 has an internal event system that is used to notify parts of the
+    component that state has changed, as well as an adapter that allows some
+    of these events to be relayed to the outside word.
+  </p>
+
+  <dl class="dl-horizontal">
+    <dt>Adapter</dt>
+    <dd>
+      <code title="select2/selection">SelectionAdapter</code>
+    </dd>
+
+    <dt>Decorator</dt>
+    <dd>
+      <code title="select2/selection/eventRelay">EventRelay</code>
+    </dd>
+  </dl>
+
+  <h2 id="events-public">
+    Public events
+  </h2>
+
+  <p>
+    All public events are relayed using the jQuery event system, and they are
+    triggered on the <code>&lt;select&gt;</code> element that Select2 is
+    attached to. You can attach to them using the
+    <a href="https://api.jquery.com/on/"><code>.on</code> method</a> provided
+    by jQuery.
+  </p>
+
+  <h2 id="events-internal">
+    Internal events
+  </h2>
+
+  <p>
+    Select2 triggers internal events using its own internal event system,
+    which allows adapters to communicate with each other. These events are not
+    accessible through the jQuery event system.
+  </p>
+
+  <p>
+    You can find more information on the public events triggered by individual
+    adapters in <a href="#adapters">the individual adapter documentation</a>.
+  </p>
+</section>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Tfile-digest://app/assets/plugins/select2/docs/_includes/options-old/events.html;TTF:charsetI"
+utf-8;F:digest"%ˆ^™˜sM€ç²-ÿeYO˜|ƒ¹AŠ‘bÑ¬@h´:lengthiW:dependencies_digest"%ü‰}Î«>dý5m~ ±™Ž <ÌNEL ýco+N–Ü:idI"Ea8ab9c4a46cec50ee1275120b7ee2f15e5f7aeb7eb7cf3922d532eb2061a7951;F:
+mtimel+¥{h[
