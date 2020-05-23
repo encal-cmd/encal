@@ -3697,3 +3697,279 @@ I, [2020-05-23T00:07:57.625131 #26202]  INFO -- : Writing /home/deploy/encal/rel
   INFO [f482ea95] Running /usr/bin/env echo "Branch master (at 69703069b06cfd02f1887efca4e0b773e40f4946) deployed as release 20200523000653 by guilherme" >> /home/deploy/encal/revisions.log as deploy@64.225.63.183
  DEBUG [f482ea95] Command: cd /home/deploy/encal/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "Branch master (at 69703069b06cfd02f1887efca4e0b773e40f4946) deployed as release 20200523000653 by guilherme" >> /home/deploy/encal/revisions.log )
   INFO [f482ea95] Finished in 0.489 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-05-22 21:20:36 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [1f9e6742] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as deploy@64.225.63.183
+ DEBUG [1f9e6742] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+ DEBUG [1f9e6742] Finished in 2.359 seconds with exit status 0 (successful).
+ DEBUG [9e4ae29b] Running /usr/bin/env which passenger as deploy@64.225.63.183
+ DEBUG [9e4ae29b] Command: /usr/bin/env which passenger
+ DEBUG [9e4ae29b] 	/usr/bin/passenger
+ DEBUG [9e4ae29b] Finished in 0.496 seconds with exit status 0 (successful).
+  INFO [e399470a] Running /usr/bin/env mkdir -p /tmp as deploy@64.225.63.183
+ DEBUG [e399470a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [e399470a] Finished in 0.474 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-encal-production-guilherme.sh 0.0%
+  INFO Uploading /tmp/git-ssh-encal-production-guilherme.sh 100.0%
+  INFO [b1b27709] Running /usr/bin/env chmod 700 /tmp/git-ssh-encal-production-guilherme.sh as deploy@64.225.63.183
+ DEBUG [b1b27709] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-encal-production-guilherme.sh )
+  INFO [b1b27709] Finished in 0.476 seconds with exit status 0 (successful).
+  INFO [6c95dcd4] Running /usr/bin/env git ls-remote git@github.com:encal-cmd/encal.git HEAD as deploy@64.225.63.183
+ DEBUG [6c95dcd4] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-encal-production-guilherme.sh" ; /usr/bin/env git ls-remote git@github.com:encal-cmd/encal.git HEAD )
+ DEBUG [6c95dcd4] 	376874c6dba2d5d8e8613b9beba815cf29267562	HEAD
+  INFO [6c95dcd4] Finished in 1.075 seconds with exit status 0 (successful).
+  INFO [ba1f7a43] Running /usr/bin/env mkdir -p /home/deploy/encal/shared /home/deploy/encal/releases as deploy@64.225.63.183
+ DEBUG [ba1f7a43] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/deploy/encal/shared /home/deploy/encal/releases )
+  INFO [ba1f7a43] Finished in 0.291 seconds with exit status 0 (successful).
+  INFO [67806340] Running /usr/bin/env mkdir -p /home/deploy/encal/shared/log /home/deploy/encal/shared/tmp/pids /home/deploy/encal/shared/tmp/cache /home/deploy/encal/shared/tmp/sockets /home/deploy/encal/shared/vendor/bundle /home/deploy/encal/shared/.bundle /home/deploy/encal/shared/public/system /home/deploy/encal/shared/public/uploads /home/deploy/encal/shared/public/assets as deploy@64.225.63.183
+ DEBUG [67806340] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/deploy/encal/shared/log /home/deploy/encal/shared/tmp/pids /home/deploy/encal/shared/tmp/cache /home/deploy/encal/shared/tmp/sockets /home/deploy/encal/shared/vendor/bundle /home/deploy/encal/shared/.bundle /home/deploy/encal/shared/public/system /home/deploy/encal/shared/public/uploads /home/deploy/encal/shared/public/assets )
+  INFO [67806340] Finished in 0.500 seconds with exit status 0 (successful).
+ DEBUG [c61d9996] Running [ -f /home/deploy/encal/current/REVISION ] as deploy@64.225.63.183
+ DEBUG [c61d9996] Command: [ -f /home/deploy/encal/current/REVISION ]
+ DEBUG [c61d9996] Finished in 0.481 seconds with exit status 0 (successful).
+ DEBUG [f29b9228] Running /usr/bin/env cat /home/deploy/encal/current/REVISION 2>/dev/null as deploy@64.225.63.183
+ DEBUG [f29b9228] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env cat /home/deploy/encal/current/REVISION 2>/dev/null )
+ DEBUG [f29b9228] 	69703069b06cfd02f1887efca4e0b773e40f4946
+ DEBUG [f29b9228] Finished in 0.482 seconds with exit status 0 (successful).
+ DEBUG [6ab1ee36] Running [ -f /home/deploy/encal/repo/HEAD ] as deploy@64.225.63.183
+ DEBUG [6ab1ee36] Command: [ -f /home/deploy/encal/repo/HEAD ]
+ DEBUG [6ab1ee36] Finished in 0.468 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/encal/repo
+ DEBUG [9b216545] Running if test ! -d /home/deploy/encal/repo; then echo "Directory does not exist '/home/deploy/encal/repo'" 1>&2; false; fi as deploy@64.225.63.183
+ DEBUG [9b216545] Command: if test ! -d /home/deploy/encal/repo; then echo "Directory does not exist '/home/deploy/encal/repo'" 1>&2; false; fi
+ DEBUG [9b216545] Finished in 0.308 seconds with exit status 0 (successful).
+  INFO [af2569e7] Running /usr/bin/env git remote set-url origin git@github.com:encal-cmd/encal.git as deploy@64.225.63.183
+ DEBUG [af2569e7] Command: cd /home/deploy/encal/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-encal-production-guilherme.sh" ; /usr/bin/env git remote set-url origin git@github.com:encal-cmd/encal.git )
+  INFO [af2569e7] Finished in 0.485 seconds with exit status 0 (successful).
+  INFO [613efbd1] Running /usr/bin/env git remote update --prune as deploy@64.225.63.183
+ DEBUG [613efbd1] Command: cd /home/deploy/encal/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-encal-production-guilherme.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [613efbd1] 	Fetching origin
+ DEBUG [613efbd1] 	From github.com:encal-cmd/encal
+   6970306..376874c  master     -> master
+  INFO [613efbd1] Finished in 2.000 seconds with exit status 0 (successful).
+ DEBUG [39e22418] Running if test ! -d /home/deploy/encal/repo; then echo "Directory does not exist '/home/deploy/encal/repo'" 1>&2; false; fi as deploy@64.225.63.183
+ DEBUG [39e22418] Command: if test ! -d /home/deploy/encal/repo; then echo "Directory does not exist '/home/deploy/encal/repo'" 1>&2; false; fi
+ DEBUG [39e22418] Finished in 0.290 seconds with exit status 0 (successful).
+  INFO [2e4369ed] Running /usr/bin/env mkdir -p /home/deploy/encal/releases/20200523002050 as deploy@64.225.63.183
+ DEBUG [2e4369ed] Command: cd /home/deploy/encal/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-encal-production-guilherme.sh" ; /usr/bin/env mkdir -p /home/deploy/encal/releases/20200523002050 )
+  INFO [2e4369ed] Finished in 0.483 seconds with exit status 0 (successful).
+  INFO [f64b54de] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/encal/releases/20200523002050 as deploy@64.225.63.183
+ DEBUG [f64b54de] Command: cd /home/deploy/encal/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-encal-production-guilherme.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/encal/releases/20200523002050 )
+  INFO [f64b54de] Finished in 1.719 seconds with exit status 0 (successful).
+ DEBUG [b969d691] Running if test ! -d /home/deploy/encal/repo; then echo "Directory does not exist '/home/deploy/encal/repo'" 1>&2; false; fi as deploy@64.225.63.183
+ DEBUG [b969d691] Command: if test ! -d /home/deploy/encal/repo; then echo "Directory does not exist '/home/deploy/encal/repo'" 1>&2; false; fi
+ DEBUG [b969d691] Finished in 0.296 seconds with exit status 0 (successful).
+ DEBUG [69888764] Running /usr/bin/env git rev-list --max-count=1 master as deploy@64.225.63.183
+ DEBUG [69888764] Command: cd /home/deploy/encal/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-encal-production-guilherme.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [69888764] 	376874c6dba2d5d8e8613b9beba815cf29267562
+ DEBUG [69888764] Finished in 0.476 seconds with exit status 0 (successful).
+ DEBUG [9065344f] Running if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi as deploy@64.225.63.183
+ DEBUG [9065344f] Command: if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi
+ DEBUG [9065344f] Finished in 0.328 seconds with exit status 0 (successful).
+  INFO [1c9c55fb] Running /usr/bin/env echo "376874c6dba2d5d8e8613b9beba815cf29267562" > REVISION as deploy@64.225.63.183
+ DEBUG [1c9c55fb] Command: cd /home/deploy/encal/releases/20200523002050 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "376874c6dba2d5d8e8613b9beba815cf29267562" > REVISION )
+  INFO [1c9c55fb] Finished in 0.472 seconds with exit status 0 (successful).
+  INFO [a1715cae] Running /usr/bin/env mkdir -p /home/deploy/encal/releases/20200523002050 /home/deploy/encal/releases/20200523002050/tmp /home/deploy/encal/releases/20200523002050/vendor /home/deploy/encal/releases/20200523002050/public as deploy@64.225.63.183
+ DEBUG [a1715cae] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/deploy/encal/releases/20200523002050 /home/deploy/encal/releases/20200523002050/tmp /home/deploy/encal/releases/20200523002050/vendor /home/deploy/encal/releases/20200523002050/public )
+  INFO [a1715cae] Finished in 0.469 seconds with exit status 0 (successful).
+ DEBUG [ee4f1af5] Running [ -L /home/deploy/encal/releases/20200523002050/log ] as deploy@64.225.63.183
+ DEBUG [ee4f1af5] Command: [ -L /home/deploy/encal/releases/20200523002050/log ]
+ DEBUG [ee4f1af5] Finished in 0.472 seconds with exit status 1 (failed).
+ DEBUG [23dc68b5] Running [ -d /home/deploy/encal/releases/20200523002050/log ] as deploy@64.225.63.183
+ DEBUG [23dc68b5] Command: [ -d /home/deploy/encal/releases/20200523002050/log ]
+ DEBUG [23dc68b5] Finished in 0.519 seconds with exit status 0 (successful).
+  INFO [f4475cda] Running /usr/bin/env rm -rf /home/deploy/encal/releases/20200523002050/log as deploy@64.225.63.183
+ DEBUG [f4475cda] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /home/deploy/encal/releases/20200523002050/log )
+  INFO [f4475cda] Finished in 0.470 seconds with exit status 0 (successful).
+  INFO [40ffc7fc] Running /usr/bin/env ln -s /home/deploy/encal/shared/log /home/deploy/encal/releases/20200523002050/log as deploy@64.225.63.183
+ DEBUG [40ffc7fc] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/deploy/encal/shared/log /home/deploy/encal/releases/20200523002050/log )
+  INFO [40ffc7fc] Finished in 0.473 seconds with exit status 0 (successful).
+ DEBUG [44f3d84e] Running [ -L /home/deploy/encal/releases/20200523002050/tmp/pids ] as deploy@64.225.63.183
+ DEBUG [44f3d84e] Command: [ -L /home/deploy/encal/releases/20200523002050/tmp/pids ]
+ DEBUG [44f3d84e] Finished in 0.472 seconds with exit status 1 (failed).
+ DEBUG [cb1188d1] Running [ -d /home/deploy/encal/releases/20200523002050/tmp/pids ] as deploy@64.225.63.183
+ DEBUG [cb1188d1] Command: [ -d /home/deploy/encal/releases/20200523002050/tmp/pids ]
+ DEBUG [cb1188d1] Finished in 0.490 seconds with exit status 0 (successful).
+  INFO [40c6e7de] Running /usr/bin/env rm -rf /home/deploy/encal/releases/20200523002050/tmp/pids as deploy@64.225.63.183
+ DEBUG [40c6e7de] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /home/deploy/encal/releases/20200523002050/tmp/pids )
+  INFO [40c6e7de] Finished in 0.473 seconds with exit status 0 (successful).
+  INFO [f886cc51] Running /usr/bin/env ln -s /home/deploy/encal/shared/tmp/pids /home/deploy/encal/releases/20200523002050/tmp/pids as deploy@64.225.63.183
+ DEBUG [f886cc51] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/deploy/encal/shared/tmp/pids /home/deploy/encal/releases/20200523002050/tmp/pids )
+  INFO [f886cc51] Finished in 0.474 seconds with exit status 0 (successful).
+ DEBUG [f54d3ae5] Running [ -L /home/deploy/encal/releases/20200523002050/tmp/cache ] as deploy@64.225.63.183
+ DEBUG [f54d3ae5] Command: [ -L /home/deploy/encal/releases/20200523002050/tmp/cache ]
+ DEBUG [f54d3ae5] Finished in 0.477 seconds with exit status 1 (failed).
+ DEBUG [116156f1] Running [ -d /home/deploy/encal/releases/20200523002050/tmp/cache ] as deploy@64.225.63.183
+ DEBUG [116156f1] Command: [ -d /home/deploy/encal/releases/20200523002050/tmp/cache ]
+ DEBUG [116156f1] Finished in 0.496 seconds with exit status 0 (successful).
+  INFO [d1bc7081] Running /usr/bin/env rm -rf /home/deploy/encal/releases/20200523002050/tmp/cache as deploy@64.225.63.183
+ DEBUG [d1bc7081] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /home/deploy/encal/releases/20200523002050/tmp/cache )
+  INFO [d1bc7081] Finished in 0.787 seconds with exit status 0 (successful).
+  INFO [9ab1479a] Running /usr/bin/env ln -s /home/deploy/encal/shared/tmp/cache /home/deploy/encal/releases/20200523002050/tmp/cache as deploy@64.225.63.183
+ DEBUG [9ab1479a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/deploy/encal/shared/tmp/cache /home/deploy/encal/releases/20200523002050/tmp/cache )
+  INFO [9ab1479a] Finished in 0.473 seconds with exit status 0 (successful).
+ DEBUG [c458af2d] Running [ -L /home/deploy/encal/releases/20200523002050/tmp/sockets ] as deploy@64.225.63.183
+ DEBUG [c458af2d] Command: [ -L /home/deploy/encal/releases/20200523002050/tmp/sockets ]
+ DEBUG [c458af2d] Finished in 0.476 seconds with exit status 1 (failed).
+ DEBUG [07383fd2] Running [ -d /home/deploy/encal/releases/20200523002050/tmp/sockets ] as deploy@64.225.63.183
+ DEBUG [07383fd2] Command: [ -d /home/deploy/encal/releases/20200523002050/tmp/sockets ]
+ DEBUG [07383fd2] Finished in 0.531 seconds with exit status 1 (failed).
+  INFO [30f6408a] Running /usr/bin/env ln -s /home/deploy/encal/shared/tmp/sockets /home/deploy/encal/releases/20200523002050/tmp/sockets as deploy@64.225.63.183
+ DEBUG [30f6408a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/deploy/encal/shared/tmp/sockets /home/deploy/encal/releases/20200523002050/tmp/sockets )
+  INFO [30f6408a] Finished in 0.473 seconds with exit status 0 (successful).
+ DEBUG [ccb64589] Running [ -L /home/deploy/encal/releases/20200523002050/vendor/bundle ] as deploy@64.225.63.183
+ DEBUG [ccb64589] Command: [ -L /home/deploy/encal/releases/20200523002050/vendor/bundle ]
+ DEBUG [ccb64589] Finished in 0.473 seconds with exit status 1 (failed).
+ DEBUG [6cbc204c] Running [ -d /home/deploy/encal/releases/20200523002050/vendor/bundle ] as deploy@64.225.63.183
+ DEBUG [6cbc204c] Command: [ -d /home/deploy/encal/releases/20200523002050/vendor/bundle ]
+ DEBUG [6cbc204c] Finished in 0.476 seconds with exit status 1 (failed).
+  INFO [e217705c] Running /usr/bin/env ln -s /home/deploy/encal/shared/vendor/bundle /home/deploy/encal/releases/20200523002050/vendor/bundle as deploy@64.225.63.183
+ DEBUG [e217705c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/deploy/encal/shared/vendor/bundle /home/deploy/encal/releases/20200523002050/vendor/bundle )
+  INFO [e217705c] Finished in 0.545 seconds with exit status 0 (successful).
+ DEBUG [d36abc2c] Running [ -L /home/deploy/encal/releases/20200523002050/.bundle ] as deploy@64.225.63.183
+ DEBUG [d36abc2c] Command: [ -L /home/deploy/encal/releases/20200523002050/.bundle ]
+ DEBUG [d36abc2c] Finished in 0.467 seconds with exit status 1 (failed).
+ DEBUG [4d2247cf] Running [ -d /home/deploy/encal/releases/20200523002050/.bundle ] as deploy@64.225.63.183
+ DEBUG [4d2247cf] Command: [ -d /home/deploy/encal/releases/20200523002050/.bundle ]
+ DEBUG [4d2247cf] Finished in 0.500 seconds with exit status 1 (failed).
+  INFO [fe051313] Running /usr/bin/env ln -s /home/deploy/encal/shared/.bundle /home/deploy/encal/releases/20200523002050/.bundle as deploy@64.225.63.183
+ DEBUG [fe051313] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/deploy/encal/shared/.bundle /home/deploy/encal/releases/20200523002050/.bundle )
+  INFO [fe051313] Finished in 0.475 seconds with exit status 0 (successful).
+ DEBUG [2bbb9273] Running [ -L /home/deploy/encal/releases/20200523002050/public/system ] as deploy@64.225.63.183
+ DEBUG [2bbb9273] Command: [ -L /home/deploy/encal/releases/20200523002050/public/system ]
+ DEBUG [2bbb9273] Finished in 0.525 seconds with exit status 1 (failed).
+ DEBUG [380b4da3] Running [ -d /home/deploy/encal/releases/20200523002050/public/system ] as deploy@64.225.63.183
+ DEBUG [380b4da3] Command: [ -d /home/deploy/encal/releases/20200523002050/public/system ]
+ DEBUG [380b4da3] Finished in 0.476 seconds with exit status 0 (successful).
+  INFO [3d160bcd] Running /usr/bin/env rm -rf /home/deploy/encal/releases/20200523002050/public/system as deploy@64.225.63.183
+ DEBUG [3d160bcd] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /home/deploy/encal/releases/20200523002050/public/system )
+  INFO [3d160bcd] Finished in 0.482 seconds with exit status 0 (successful).
+  INFO [212eb100] Running /usr/bin/env ln -s /home/deploy/encal/shared/public/system /home/deploy/encal/releases/20200523002050/public/system as deploy@64.225.63.183
+ DEBUG [212eb100] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/deploy/encal/shared/public/system /home/deploy/encal/releases/20200523002050/public/system )
+  INFO [212eb100] Finished in 0.480 seconds with exit status 0 (successful).
+ DEBUG [6427358f] Running [ -L /home/deploy/encal/releases/20200523002050/public/uploads ] as deploy@64.225.63.183
+ DEBUG [6427358f] Command: [ -L /home/deploy/encal/releases/20200523002050/public/uploads ]
+ DEBUG [6427358f] Finished in 0.511 seconds with exit status 1 (failed).
+ DEBUG [56483771] Running [ -d /home/deploy/encal/releases/20200523002050/public/uploads ] as deploy@64.225.63.183
+ DEBUG [56483771] Command: [ -d /home/deploy/encal/releases/20200523002050/public/uploads ]
+ DEBUG [56483771] Finished in 0.473 seconds with exit status 1 (failed).
+  INFO [9a6fed36] Running /usr/bin/env ln -s /home/deploy/encal/shared/public/uploads /home/deploy/encal/releases/20200523002050/public/uploads as deploy@64.225.63.183
+ DEBUG [9a6fed36] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/deploy/encal/shared/public/uploads /home/deploy/encal/releases/20200523002050/public/uploads )
+  INFO [9a6fed36] Finished in 0.477 seconds with exit status 0 (successful).
+ DEBUG [b1265e82] Running [ -L /home/deploy/encal/releases/20200523002050/public/assets ] as deploy@64.225.63.183
+ DEBUG [b1265e82] Command: [ -L /home/deploy/encal/releases/20200523002050/public/assets ]
+ DEBUG [b1265e82] Finished in 0.481 seconds with exit status 1 (failed).
+ DEBUG [98f7814f] Running [ -d /home/deploy/encal/releases/20200523002050/public/assets ] as deploy@64.225.63.183
+ DEBUG [98f7814f] Command: [ -d /home/deploy/encal/releases/20200523002050/public/assets ]
+ DEBUG [98f7814f] Finished in 0.570 seconds with exit status 1 (failed).
+  INFO [2a43d04f] Running /usr/bin/env ln -s /home/deploy/encal/shared/public/assets /home/deploy/encal/releases/20200523002050/public/assets as deploy@64.225.63.183
+ DEBUG [2a43d04f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/deploy/encal/shared/public/assets /home/deploy/encal/releases/20200523002050/public/assets )
+  INFO [2a43d04f] Finished in 0.477 seconds with exit status 0 (successful).
+ DEBUG [c3e03d6a] Running if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi as deploy@64.225.63.183
+ DEBUG [c3e03d6a] Command: if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi
+ DEBUG [c3e03d6a] Finished in 0.484 seconds with exit status 0 (successful).
+ DEBUG [e75ea836] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /home/deploy/encal/shared/bundle as deploy@64.225.63.183
+ DEBUG [e75ea836] Command: cd /home/deploy/encal/releases/20200523002050 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /home/deploy/encal/shared/bundle )
+ DEBUG [e75ea836] 	Your Gemfile lists the gem web-console (>= 3.3.0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [e75ea836] 	Your Gemfile lists the gem listen (< 3.2, >= 3.0.5) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [e75ea836] 	Your Gemfile lists the gem spring (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [e75ea836] 	Your Gemfile lists the gem spring-watcher-listen (~> 2.0.0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [e75ea836] 	Warning: the running version of Bundler (1.16.1) is older than the version that created the lockfile (1.16.2). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+ DEBUG [e75ea836] 	The Gemfile's dependencies are satisfied
+ DEBUG [e75ea836] Finished in 0.789 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+ DEBUG [c613d975] Running if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi as deploy@64.225.63.183
+ DEBUG [c613d975] Command: if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi
+ DEBUG [c613d975] Finished in 0.494 seconds with exit status 0 (successful).
+  INFO [a9b32078] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as deploy@64.225.63.183
+ DEBUG [a9b32078] Command: cd /home/deploy/encal/releases/20200523002050 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [a9b32078] 	DEPRECATION WARNING: axlsx_rails has been renamed to caxlsx_rails. See http://github.com/caxlsx
+ DEBUG [a9b32078] 	[Simple Form] Simple Form is not configured in the application and will use the default values. Use `rails generate simple_form:install` to generate the Simple Form configuration.
+ DEBUG [a9b32078] 	yarn install v1.22.4
+ DEBUG [a9b32078] 	info No lockfile found.
+ DEBUG [a9b32078] 	[1/4] Resolving packages...
+ DEBUG [a9b32078] 	[2/4] Fetching packages...
+ DEBUG [a9b32078] 	[3/4] Linking dependencies...
+ DEBUG [a9b32078] 	[4/4] Building fresh packages...
+ DEBUG [a9b32078] 	success Saved lockfile.
+ DEBUG [a9b32078] 	Done in 0.06s.
+  INFO [a9b32078] Finished in 4.906 seconds with exit status 0 (successful).
+ DEBUG [e02b8177] Running if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi as deploy@64.225.63.183
+ DEBUG [e02b8177] Command: if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi
+ DEBUG [e02b8177] Finished in 0.475 seconds with exit status 0 (successful).
+  INFO [933589e2] Running /usr/bin/env mkdir -p /home/deploy/encal/releases/20200523002050/assets_manifest_backup as deploy@64.225.63.183
+ DEBUG [933589e2] Command: cd /home/deploy/encal/releases/20200523002050 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /home/deploy/encal/releases/20200523002050/assets_manifest_backup )
+  INFO [933589e2] Finished in 0.501 seconds with exit status 0 (successful).
+ DEBUG [a2f19bf7] Running /usr/bin/env ls /home/deploy/encal/releases/20200523002050/public/assets/.sprockets-manifest* as deploy@64.225.63.183
+ DEBUG [a2f19bf7] Command: cd /home/deploy/encal/releases/20200523002050 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls /home/deploy/encal/releases/20200523002050/public/assets/.sprockets-manifest* )
+ DEBUG [a2f19bf7] 	/home/deploy/encal/releases/20200523002050/public/assets/.sprockets-manifest-78aa67f1b67c7d89edabebbbf320df74.json
+ DEBUG [a2f19bf7] Finished in 0.476 seconds with exit status 0 (successful).
+ DEBUG [6b889276] Running /usr/bin/env ls /home/deploy/encal/releases/20200523002050/public/assets/.sprockets-manifest* as deploy@64.225.63.183
+ DEBUG [6b889276] Command: cd /home/deploy/encal/releases/20200523002050 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls /home/deploy/encal/releases/20200523002050/public/assets/.sprockets-manifest* )
+ DEBUG [6b889276] 	/home/deploy/encal/releases/20200523002050/public/assets/.sprockets-manifest-78aa67f1b67c7d89edabebbbf320df74.json
+ DEBUG [6b889276] Finished in 0.500 seconds with exit status 0 (successful).
+  INFO [fd81902e] Running /usr/bin/env cp /home/deploy/encal/releases/20200523002050/public/assets/.sprockets-manifest-78aa67f1b67c7d89edabebbbf320df74.json /home/deploy/encal/releases/20200523002050/assets_manifest_backup as deploy@64.225.63.183
+ DEBUG [fd81902e] Command: cd /home/deploy/encal/releases/20200523002050 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env cp /home/deploy/encal/releases/20200523002050/public/assets/.sprockets-manifest-78aa67f1b67c7d89edabebbbf320df74.json /home/deploy/encal/releases/20200523002050/assets_manifest_backup )
+  INFO [fd81902e] Finished in 0.477 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [04f8caaa] Running if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi as deploy@64.225.63.183
+ DEBUG [04f8caaa] Command: if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi
+ DEBUG [04f8caaa] Finished in 0.530 seconds with exit status 0 (successful).
+  INFO [fae48a42] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as deploy@64.225.63.183
+ DEBUG [fae48a42] Command: cd /home/deploy/encal/releases/20200523002050 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+ DEBUG [fae48a42] 	DEPRECATION WARNING: axlsx_rails has been renamed to caxlsx_rails. See http://github.com/caxlsx
+ DEBUG [fae48a42] 	[Simple Form] Simple Form is not configured in the application and will use the default values. Use `rails generate simple_form:install` to generate the Simple Form configuration.
+ DEBUG [fae48a42] 	== 20200523001835 RenameusuariosPermitidosToUsuariosPermitidos: migrating =====
+-- rename_column(:grupos, :usuariosPermitidos, :usuarios_permitidos)
+   -> 0.0056s
+== 20200523001835 RenameusuariosPermitidosToUsuariosPermitidos: migrated (0.0057s) 
+
+  INFO [fae48a42] Finished in 2.521 seconds with exit status 0 (successful).
+  INFO [0b29ad2d] Running /usr/bin/env ln -s /home/deploy/encal/releases/20200523002050 /home/deploy/encal/releases/current as deploy@64.225.63.183
+ DEBUG [0b29ad2d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /home/deploy/encal/releases/20200523002050 /home/deploy/encal/releases/current )
+  INFO [0b29ad2d] Finished in 0.478 seconds with exit status 0 (successful).
+  INFO [48a4b1db] Running /usr/bin/env mv /home/deploy/encal/releases/current /home/deploy/encal as deploy@64.225.63.183
+ DEBUG [48a4b1db] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mv /home/deploy/encal/releases/current /home/deploy/encal )
+  INFO [48a4b1db] Finished in 0.477 seconds with exit status 0 (successful).
+ DEBUG [38ce0ae2] Running if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi as deploy@64.225.63.183
+ DEBUG [38ce0ae2] Command: if test ! -d /home/deploy/encal/releases/20200523002050; then echo "Directory does not exist '/home/deploy/encal/releases/20200523002050'" 1>&2; false; fi
+ DEBUG [38ce0ae2] Finished in 0.541 seconds with exit status 0 (successful).
+ DEBUG [8275bd83] Running /usr/bin/env passenger -v as deploy@64.225.63.183
+ DEBUG [8275bd83] Command: cd /home/deploy/encal/releases/20200523002050 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env passenger -v )
+ DEBUG [8275bd83] 	Phusion Passenger 6.0.4
+ DEBUG [8275bd83] Finished in 0.557 seconds with exit status 0 (successful).
+  INFO [3bf59c3e] Running /usr/bin/env passenger-config restart-app /home/deploy/encal --ignore-app-not-running as deploy@64.225.63.183
+ DEBUG [3bf59c3e] Command: cd /home/deploy/encal/releases/20200523002050 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env passenger-config restart-app /home/deploy/encal --ignore-app-not-running )
+ DEBUG [3bf59c3e] 	Restarting /home/deploy/encal/current (production)
+  INFO [3bf59c3e] Finished in 0.622 seconds with exit status 0 (successful).
+ DEBUG [7a612cee] Running /usr/bin/env ls -x /home/deploy/encal/releases as deploy@64.225.63.183
+ DEBUG [7a612cee] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls -x /home/deploy/encal/releases )
+ DEBUG [7a612cee] 	20200320051043	20200320051424	20200320052236	20200515190748	20200523000653
+20200523002050
+ DEBUG [7a612cee] Finished in 0.530 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 64.225.63.183
+ DEBUG [d8420f52] Running [ -d /home/deploy/encal/current ] as deploy@64.225.63.183
+ DEBUG [d8420f52] Command: [ -d /home/deploy/encal/current ]
+ DEBUG [d8420f52] Finished in 0.466 seconds with exit status 0 (successful).
+ DEBUG [7c343e01] Running /usr/bin/env readlink /home/deploy/encal/current as deploy@64.225.63.183
+ DEBUG [7c343e01] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env readlink /home/deploy/encal/current )
+ DEBUG [7c343e01] 	/home/deploy/encal/releases/20200523002050
+ DEBUG [7c343e01] Finished in 0.484 seconds with exit status 0 (successful).
+  INFO [2510f60e] Running /usr/bin/env rm -rf /home/deploy/encal/releases/20200320051043 as deploy@64.225.63.183
+ DEBUG [2510f60e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /home/deploy/encal/releases/20200320051043 )
+  INFO [2510f60e] Finished in 0.496 seconds with exit status 0 (successful).
+ DEBUG [41c8ac68] Running if test ! -d /home/deploy/encal/releases; then echo "Directory does not exist '/home/deploy/encal/releases'" 1>&2; false; fi as deploy@64.225.63.183
+ DEBUG [41c8ac68] Command: if test ! -d /home/deploy/encal/releases; then echo "Directory does not exist '/home/deploy/encal/releases'" 1>&2; false; fi
+ DEBUG [41c8ac68] Finished in 0.544 seconds with exit status 0 (successful).
+  INFO [0ab7fcbe] Running /usr/bin/env echo "Branch master (at 376874c6dba2d5d8e8613b9beba815cf29267562) deployed as release 20200523002050 by guilherme" >> /home/deploy/encal/revisions.log as deploy@64.225.63.183
+ DEBUG [0ab7fcbe] Command: cd /home/deploy/encal/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "Branch master (at 376874c6dba2d5d8e8613b9beba815cf29267562) deployed as release 20200523002050 by guilherme" >> /home/deploy/encal/revisions.log )
+  INFO [0ab7fcbe] Finished in 0.477 seconds with exit status 0 (successful).

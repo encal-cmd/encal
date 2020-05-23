@@ -72,8 +72,8 @@ class ApiController < ApplicationController
   end
 
   def listar_grupos
-    where_perm = "usuariosPermitidos LIKE '#{params[:user_id]}:%' OR usuariosPermitidos LIKE '%:#{params[:user_id]}' OR usuariosPermitidos LIKE '%:#{params[:user_id]}:%'"
-    render json: {status: 200, grupos: Grupo.where(where_perm).collect{|n| [n.id, n.nome, n.usuariosPermitidos, n.ultima_msg]}}
+    where_perm = "usuarios_permitidos LIKE '#{params[:user_id]}:%' OR usuarios_permitidos LIKE '%:#{params[:user_id]}' OR usuarios_permitidos LIKE '%:#{params[:user_id]}:%'"
+    render json: {status: 200, grupos: Grupo.where(where_perm).collect{|n| [n.id, n.nome, n.usuarios_permitidos, n.ultima_msg]}}
   end
 
   def listar_grupos_img
@@ -89,7 +89,7 @@ class ApiController < ApplicationController
     if user && user.tem_permissao("criar_grupo")
       grupo = Grupo.create(
         nome: params[:grupo][:nome],
-        usuariosPermitidos: params[:grupo][:usuariosPermitidos],
+        usuarios_permitidos: params[:grupo][:usuariosPermitidos],
         user_id: user.id
       )
       # render json: {status: 200, grupo_id: grupo.id}
@@ -101,7 +101,7 @@ class ApiController < ApplicationController
 
   def get_grupo
     grupo = Grupo.find(params[:grupo_id])
-    grp = {id: grupo.id, nome: grupo.nome, usuariosPermitidos: grupo.usuariosPermitidos}
+    grp = {id: grupo.id, nome: grupo.nome, usuariosPermitidos: grupo.usuarios_permitidos}
     render json: {status: 200, grupo: grp}
   end
 
@@ -143,10 +143,10 @@ class ApiController < ApplicationController
   def att_grupo
     user = User.find(params[:user_id])
     grupo = Grupo.find(params[:grupo][:id])
-    if grupo.usuariosPermitidos.split(":::").include?(user.id.to_s) || grupo.user == user
+    if grupo.usuarios_permitidos.split(":::").include?(user.id.to_s) || grupo.user == user
       grupo.update_attributes(
         nome: params[:grupo][:nome],
-        usuariosPermitidos: params[:grupo][:usuariosPermitidos]
+        usuarios_permitidos: params[:grupo][:usuariosPermitidos]
       )
       render json: {status: "OK"}
     else
