@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_142331) do
+ActiveRecord::Schema.define(version: 2020_05_23_001835) do
 
   create_table "grupos", force: :cascade do |t|
     t.string "nome"
-    t.string "usuariosPermitidos"
+    t.string "usuarios_permitidos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

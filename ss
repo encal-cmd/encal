@@ -15,5 +15,10 @@ Encal@123456
 encaldigitalservidor@gmail.com
 Encal123456@
 
+------- Git
+encaldigitalservidor@gmail.com
+encal123456
+encal-cmd
+
 postgree server password
 password
