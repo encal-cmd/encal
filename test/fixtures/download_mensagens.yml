@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mensagem: one
+  onesignal: MyString
+  url: MyString
+
+two:
+  mensagem: two
+  onesignal: MyString
+  url: MyString

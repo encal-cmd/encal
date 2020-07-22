@@ -12,9 +12,7 @@ class ApiController < ApplicationController
   # this.form.value.resetSenha,
 
   def login
-
     user = User.where(cpf: params[:cpf].get_only_digits).last
-
     if user && user.valid_password?(params[:senha])
       if user.ativo
         user = {id: user.id, nome: user.nome, email: user.email, cpf: user.cpf, ativo: user.ativo, permissoes: user.permissoes}
@@ -25,7 +23,6 @@ class ApiController < ApplicationController
     else
       render json: { status: "USUARIO_NAO_ENCONTRADO" }
     end
-
   end
 
   def criar_usuario
@@ -162,48 +159,190 @@ class ApiController < ApplicationController
   end
 
   def listar_mesagens
-    
-    msgs = Mensagem.where(grupo_id: params[:grupo_id]).collect{|n| [
-      n.user_id, 
-      n.grupo_id, 
-      n.created_at.strftime("%H:%M"),
-      n.user.nome,
-      n.msg,
-      n.imagem.url,
-      n.tipo,
-      n.created_at.strftime("%d/%m/%Y")
-    ]}
-
-    puts "-- mensagens"
-    puts msgs.inspect
-
-    msgs_data = msgs.group_by { |d| d[7] }
-
-    msg_data = []
-
-    msgs_data.each do |data, msgs_dia|
-
-      msg_data << [
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        "data",
-        data
-      ]
-
-      msg_data += msgs_dia
-
-    end
-
-    puts '-- msg data'
-    puts msg_data.inspect
-
-
-    render json: {status: 200, mensagens: msg_data}
+    render json: {status: 200, mensagens: Mensagem.listar_mensagens(params)}
   end
+
+  def up_file
+
+    mensagem = Mensagem.create(
+      grupo_id: params[:grupo_id],
+      user_id: params[:user_id],
+      tipo: "anexo"
+    )
+
+    mensagem.update_attribute(:imagem, params[:file])
+
+    render json: {status: 200}
+  end
+
+  def criar_aprovacao
+    user = User.find(params[:user_id])
+    if user && user.tem_permissao("criar_aprovacao")
+      grupo = Aprovacao.create(
+        titulo: params[:aprovacao][:titulo],
+        empresa: "Encal",
+        centro_custo: params[:aprovacao][:centroCusto],
+        solicitante: params[:aprovacao][:solicitante],
+        data_solicitacao: params[:aprovacao][:dataSolicitacao].to_datetime,
+        data_entrega: params[:aprovacao][:dataEntrega].to_datetime,
+        valor: params[:aprovacao][:valor],
+        obsPagamento: params[:aprovacao][:obsPagamento],
+        avaliadores: params[:aprovacao][:avaliadores].collect{|n| n["id"]}.join("||"),
+        user_criou_id: user.id,
+        prestador_id: params[:aprovacao][:prestador_id],
+        status: "PENDENTE"
+      )
+      # render json: {status: 200, grupo_id: grupo.id}
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def listar_aprovacoes
+    user = User.find(params[:user_id])
+    if user && user.tem_permissao("ver_aprovacao")
+      lista_aprovacoes = Aprovacao.all.collect{|n| [
+        n.id,
+        n.empresa,
+        n.centro_custo,
+        n.solicitante,
+        (n.data_solicitacao.strftime("%d/%m/%Y") rescue nil),
+        (n.data_entrega.strftime("%d/%m/%Y") rescue nil),
+        n.valor,
+        n.obsPagamento,
+        n.avaliadores,
+        n.user_criou_id,
+        n.status,
+        (n.user_avaliou.nome rescue ""),
+        n.titulo
+      ]}
+      render json: {status: 200, aprovacoes: lista_aprovacoes}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def get_aprovacao
+    aprovacao = Aprovacao.find(params[:aprovacao_id])
+    apv = [
+      aprovacao.id,
+      aprovacao.empresa,
+      aprovacao.centro_custo,
+      aprovacao.solicitante,
+      (aprovacao.data_solicitacao.strftime("%d/%m/%Y") rescue nil),
+      (aprovacao.data_entrega.strftime("%d/%m/%Y") rescue nil),
+      aprovacao.valor,
+      aprovacao.obsPagamento,
+      aprovacao.avaliadores,
+      aprovacao.user_criou_id,
+      aprovacao.status,
+      (aprovacao.user_avaliou.nome rescue ""),
+      aprovacao.titulo,
+      (aprovacao.prestador.nome rescue ""),
+      (aprovacao.prestador.banco rescue ""),
+      (aprovacao.prestador.agencia rescue ""),
+      (aprovacao.prestador.conta rescue ""),
+      (aprovacao.prestador.cpf rescue ""),
+    ]
+    render json: {status: 200, aprovacao: apv}
+  end
+
+  def avaliar_aprovacao
+    aprovacao = Aprovacao.find(params[:aprovacao_id])
+    if aprovacao.avaliadores.split("||").include?(params[:user_id].to_s)
+      status = params[:acao] == "APROVAR" ? "APROVADO" : "NEGADO"
+      aprovacao.update_attributes(status: status, user_avaliou_id: params[:user_id])
+      aprovacao.mandar_notificacao(status)
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def apagar_aprovacao
+    obj = Prestador.find(params[:aprovacao_id])
+    if obj.user_criou_id == params[:user_id]
+      obj.destroy
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def criar_prestadores
+    user = User.find(params[:user_id])
+    if user && user.tem_permissao("criar_prestadores")
+      grupo = Prestador.create(
+        nome: params[:objeto][:nome],
+        banco: params[:objeto][:banco],
+        agencia: params[:objeto][:agencia],
+        conta: params[:objeto][:conta],
+        cpf: params[:objeto][:cpf]
+      )
+      # render json: {status: 200, grupo_id: grupo.id}
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def editar_prestadores
+    user = User.find(params[:user_id])
+    if user && user.tem_permissao("editar_prestadores")
+      obj = Prestador.find(params[:objeto][:id]).update_attributes(
+        nome: params[:objeto][:nome],
+        banco: params[:objeto][:banco],
+        agencia: params[:objeto][:agencia],
+        conta: params[:objeto][:conta],
+        cpf: params[:objeto][:cpf]
+      )
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def listar_prestadores
+    user = User.find(params[:user_id])
+    if user && user.tem_permissao("ver_prestadores")
+      lista = Prestador.all.collect{|n| [
+        n.id,
+        n.nome,
+        n.banco,
+        n.agencia,
+        n.conta,
+        n.cpf,
+      ]}
+      puts lista.inspect
+      render json: {status: 200, lista: lista}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def get_prestadores
+    obj = Prestador.find(params[:id])
+    rst = [
+      obj.id,
+      obj.nome,
+      obj.banco,
+      obj.agencia,
+      obj.conta,
+      obj.cpf,
+    ]
+    render json: {status: 200, obj: rst}
+  end
+
+  def attdownload
+    msg = Mensagem.find(params[:msg_id])
+    msg.download_mensagens.create(onesignal: params[:onesig], url: params[:url])
+    render json: {status: "OK"}
+  end
+
+
+  
+
 
   # resetar senha
   # editar usuario

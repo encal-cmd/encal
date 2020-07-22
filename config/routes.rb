@@ -28,6 +28,21 @@ Rails.application.routes.draw do
   match "/api/criar_msg" => 'api#criar_msg', via: [:get, :post, :options]
   match "/api/criar_msg_imagem" => 'api#criar_msg_imagem', via: [:get, :post, :options]
 
+  match "/api/criar_aprovacao" => 'api#criar_aprovacao', via: [:get, :post, :options]
+  match "/api/listar_aprovacoes" => 'api#listar_aprovacoes', via: [:get, :post, :options]
+  match "/api/get_aprovacao" => 'api#get_aprovacao', via: [:get, :post, :options]
+  match "/api/avaliar_aprovacao" => 'api#avaliar_aprovacao', via: [:get, :post, :options]
+  match "/api/apagar_aprovacao" => 'api#apagar_aprovacao', via: [:get, :post, :options]
+
+  match "/api/criar_prestadores" => 'api#criar_prestadores', via: [:get, :post, :options]
+  match "/api/listar_prestadores" => 'api#listar_prestadores', via: [:get, :post, :options]
+  match "/api/get_prestadores" => 'api#get_prestadores', via: [:get, :post, :options]
+  match "/api/editar_prestadores" => 'api#editar_prestadores', via: [:get, :post, :options]
+
   match "/api/listar_mesagens" => 'api#listar_mesagens', via: [:get, :post, :options]
+  
+  match "/api/attdownload" => 'api#attdownload', via: [:get, :post, :options]
+
+  match "/api/up_file" => 'api#up_file', via: [:get, :post, :options]
   
 end

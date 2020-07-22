@@ -10,7 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_001835) do
+ActiveRecord::Schema.define(version: 2020_07_18_201806) do
+
+  create_table "aprovacoes", force: :cascade do |t|
+    t.string "avaliadores"
+    t.string "status"
+    t.integer "user_criou_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_avaliou_id"
+    t.string "empresa"
+    t.string "centro_custo"
+    t.string "solicitante"
+    t.datetime "data_solicitacao"
+    t.datetime "data_entrega"
+    t.string "horario"
+    t.decimal "valor", precision: 10, scale: 2
+    t.text "obsPagamento"
+    t.string "titulo"
+    t.integer "prestador_id"
+    t.index ["prestador_id"], name: "index_aprovacoes_on_prestador_id"
+  end
+
+  create_table "download_mensagens", force: :cascade do |t|
+    t.integer "mensagem_id"
+    t.string "onesignal"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mensagem_id"], name: "index_download_mensagens_on_mensagem_id"
+  end
 
   create_table "grupos", force: :cascade do |t|
     t.string "nome"
@@ -57,6 +86,16 @@ ActiveRecord::Schema.define(version: 2020_05_23_001835) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_onesignal_users_on_user_id"
+  end
+
+  create_table "prestadores", force: :cascade do |t|
+    t.string "nome"
+    t.string "banco"
+    t.string "agencia"
+    t.string "conta"
+    t.string "cpf"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
