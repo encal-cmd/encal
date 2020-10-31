@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_18_201806) do
+ActiveRecord::Schema.define(version: 2020_10_31_182445) do
 
   create_table "aprovacoes", force: :cascade do |t|
     t.string "avaliadores"
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(version: 2020_07_18_201806) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["mensagem_id"], name: "index_download_mensagens_on_mensagem_id"
+  end
+
+  create_table "etapa_projetos", force: :cascade do |t|
+    t.string "nome"
+    t.integer "porc"
+    t.string "status"
+    t.datetime "data_inicio"
+    t.datetime "data_fim"
+    t.integer "projeto_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "ordem"
+    t.index ["projeto_id"], name: "index_etapa_projetos_on_projeto_id"
   end
 
   create_table "grupos", force: :cascade do |t|
@@ -88,6 +101,13 @@ ActiveRecord::Schema.define(version: 2020_07_18_201806) do
     t.index ["user_id"], name: "index_onesignal_users_on_user_id"
   end
 
+  create_table "permissoes", force: :cascade do |t|
+    t.string "nome"
+    t.string "codigo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "prestadores", force: :cascade do |t|
     t.string "nome"
     t.string "banco"
@@ -96,6 +116,30 @@ ActiveRecord::Schema.define(version: 2020_07_18_201806) do
     t.string "cpf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "projetos", force: :cascade do |t|
+    t.string "titulo"
+    t.integer "porc"
+    t.string "status"
+    t.string "etapa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "etapa_atual"
+  end
+
+  create_table "tarefas", force: :cascade do |t|
+    t.integer "user_id"
+    t.bigint "user_criou"
+    t.datetime "data_limite"
+    t.text "descricao"
+    t.string "titulo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.string "responsaveis"
+    t.string "tipo"
+    t.index ["user_id"], name: "index_tarefas_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -112,6 +156,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_201806) do
     t.boolean "ativo"
     t.boolean "admin"
     t.string "permissoes"
+    t.string "permissao_ids"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

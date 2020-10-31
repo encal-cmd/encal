@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  porc: 1
+  status: MyString
+  etapa: MyString
+
+two:
+  titulo: MyString
+  porc: 1
+  status: MyString
+  etapa: MyString

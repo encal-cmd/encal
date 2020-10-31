@@ -13,28 +13,17 @@ class User < ApplicationRecord
   end
 
   def tem_permissao(permissao)
-    perms = self.permissoes.split("||")
-    return true if permissao == "ver_grupo" && perms[0] == "true"
-    return true if permissao == "criar_grupo" && perms[1] == "true"
-    return true if permissao == "ver_usuario" && perms[2] == "true"
-    return true if permissao == "criar_usuario" && perms[3] == "true"
-    return true if permissao == "editar_usuario" && perms[4] == "true"
-    return true if permissao == "resetar_usuario" && perms[5] == "true"
-    return true if permissao == "ver_aprovacao" && perms[6] == "true"
-    return true if permissao == "criar_aprovacao" && perms[7] == "true"
-    return true if permissao == "editar_aprovacao" && perms[8] == "true"
-    return true if permissao == "ver_prestadores" && perms[9] == "true"
-    return true if permissao == "criar_prestadores" && perms[10] == "true"
-    return true if permissao == "editar_prestadores" && perms[11] == "true"
-    return false
+    perms_ids = self.permissao_ids.split("||").map{|n| n.to_i}
+    perms = Permissao.where(id: perms_ids).map(&:codigo)
+    return perms.include?(permissao)
   end
 
-  def atualizar_perms
+  def self.atualizar_perms
     count_permissao = User.first.permissoes.split("||").count
     puts count_permissao
     string_true = ""
     string_false = ""
-    if count_permissao < 12
+    if count_permissao < 13
       puts "eeeeee"
       (1..12-count_permissao).each do |k|
         string_true += "||true"
@@ -52,6 +41,16 @@ class User < ApplicationRecord
       end
     end
 
+  end
+
+  def self.att_perm
+    string_true = "true"
+    num = Permissao.count
+    (1..num-1).each do |k|
+      string_true += "||true"
+      # string_false += "||false"
+    end
+    User.update_all(permissoes: string_true, permissao_ids: Permissao.all.map(&:id).join("||"))
   end
 
 end

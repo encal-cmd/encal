@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  user_criou: 
+  data_limite: 2020-10-07 20:08:08
+  descricao: MyText
+  titulo: MyString
+
+two:
+  user: two
+  user_criou: 
+  data_limite: 2020-10-07 20:08:08
+  descricao: MyText
+  titulo: MyString

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  porc: 1
+  status: MyString
+  data_inicio: 2020-10-17 15:02:28
+  data_fim: 2020-10-17 15:02:28
+  projeto: one
+
+two:
+  nome: MyString
+  porc: 1
+  status: MyString
+  data_inicio: 2020-10-17 15:02:28
+  data_fim: 2020-10-17 15:02:28
+  projeto: two

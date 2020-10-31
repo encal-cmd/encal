@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   match "/api/criar_grupo" => 'api#criar_grupo', via: [:get, :post, :options]
   match "/api/listar_grupos" => 'api#listar_grupos', via: [:get, :post, :options]
   match "/api/listar_grupos_img" => 'api#listar_grupos_img', via: [:get, :post, :options]
+  match "/api/listar_anexos_grupo" => 'api#listar_anexos_grupo', via: [:get, :post, :options]
   match "/api/get_grupo" => 'api#get_grupo', via: [:get, :post, :options]
   match "/api/att_grupo" => 'api#att_grupo', via: [:get, :post, :options]
 
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
   match "/api/criar_msg_imagem" => 'api#criar_msg_imagem', via: [:get, :post, :options]
 
   match "/api/criar_aprovacao" => 'api#criar_aprovacao', via: [:get, :post, :options]
+  match "/api/editar_aprovacao" => 'api#editar_aprovacao', via: [:get, :post, :options]
   match "/api/listar_aprovacoes" => 'api#listar_aprovacoes', via: [:get, :post, :options]
   match "/api/get_aprovacao" => 'api#get_aprovacao', via: [:get, :post, :options]
   match "/api/avaliar_aprovacao" => 'api#avaliar_aprovacao', via: [:get, :post, :options]
@@ -44,5 +46,22 @@ Rails.application.routes.draw do
   match "/api/attdownload" => 'api#attdownload', via: [:get, :post, :options]
 
   match "/api/up_file" => 'api#up_file', via: [:get, :post, :options]
+
+  match "/api/criar_tarefa" => 'api#criar_tarefa', via: [:get, :post, :options]
+  match "/api/listar_tarefas" => 'api#listar_tarefas', via: [:get, :post, :options]
+  match "/api/editar_tarefa" => 'api#editar_tarefa', via: [:get, :post, :options]
+  match "/api/get_tarefa" => 'api#get_tarefa', via: [:get, :post, :options]
+  match "/api/finalizar_tarefa" => 'api#finalizar_tarefa', via: [:get, :post, :options]
+
+  match "/api/criar_projeto" => 'api#criar_projeto', via: [:get, :post, :options]
+  match "/api/listar_projetos" => 'api#listar_projetos', via: [:get, :post, :options]
+  match "/api/editar_projeto" => 'api#editar_projeto', via: [:get, :post, :options]
+  match "/api/get_projeto" => 'api#get_projeto', via: [:get, :post, :options]
+  match "/api/get_etapa_projeto" => 'api#get_etapa_projeto', via: [:get, :post, :options]
+  match "/api/editar_etapa_projeto" => 'api#editar_etapa_projeto', via: [:get, :post, :options]
+  match "/api/finalizar_etapa_projeto" => 'api#finalizar_etapa_projeto', via: [:get, :post, :options]
+
+  match "/api/listar_permissoes" => 'api#listar_permissoes', via: [:get, :post, :options]
+  match "/api/listar_calendario" => 'api#listar_calendario', via: [:get, :post, :options]
   
 end

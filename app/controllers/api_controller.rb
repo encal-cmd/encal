@@ -37,7 +37,8 @@ class ApiController < ApplicationController
         email: params[:usuario][:email],
         ativo: true,
         nome: params[:usuario][:nome],
-        permissoes: params[:usuario][:permissoes]
+        permissoes: params[:usuario][:permissoes],
+        permissao_ids: params[:usuario][:permissoesIds]
       )
       render json: {status: "OK"}
     else
@@ -51,7 +52,7 @@ class ApiController < ApplicationController
 
   def get_usuario
     user = User.find(params[:id])
-    user = {id: user.id, nome: user.nome, email: user.email, cpf: user.cpf, ativo: user.ativo, permissoes: user.permissoes}
+    user = {id: user.id, nome: user.nome, email: user.email, cpf: user.cpf, ativo: user.ativo, permissoes: user.permissoes, permissoesIds: user.permissao_ids}
     render json: {status: 200, usuario: user}
   end
 
@@ -61,7 +62,7 @@ class ApiController < ApplicationController
       a = params[:permissoes]
       params[:permissoes] = "#{params[:permissoes]}false" if a[a.size-2..a.size-1] == "||"
       params[:permissoes] = params[:permissoes].split("||").collect{|f| f.present? && f != "false" ? "true" : "false"}.join("||")
-      user.update_attributes(nome: params[:nome], email: params[:email], cpf: params[:cpf], ativo: params[:ativo], permissoes: params[:permissoes])
+      user.update_attributes(nome: params[:nome], email: params[:email], cpf: params[:cpf], ativo: params[:ativo], permissoes: params[:permissoes], permissao_ids: params[:permissoesIds])
       render json: {status: "OK"}
     else
       render json: {status: "Usuário sem permissão"}
@@ -79,6 +80,15 @@ class ApiController < ApplicationController
       imagens.push(m.imagem.url)
     end
     render json: {status: 200, imagens: imagens}
+  end
+
+  def listar_anexos_grupo
+    grupo = Grupo.find(params[:grupo_id])
+    if grupo
+      render json: {status: 200, mensagens: grupo.listar_anexos(params)}
+    else
+      render json: {status: 200, mensagens: []}
+    end
   end
 
   def criar_grupo
@@ -199,6 +209,26 @@ class ApiController < ApplicationController
     end
   end
 
+  def editar_aprovacao
+    user = User.find(params[:user_id])
+    if user && user.tem_permissao("editar_aprovacao")
+      aprov = Aprovacao.find(params[:aprovacao][:id])
+      obj = aprov.update_attributes(
+        titulo: params[:aprovacao][:titulo],
+        centro_custo: params[:aprovacao][:centroCusto],
+        solicitante: params[:aprovacao][:solicitante],
+        data_solicitacao: params[:aprovacao][:dataSolicitacao].to_datetime,
+        data_entrega: params[:aprovacao][:dataEntrega].to_datetime,
+        obsPagamento: params[:aprovacao][:obsPagamento],
+        avaliadores: params[:aprovacao][:avaliadores].collect{|n| n["id"]}.join("||"),
+        prestador_id: params[:aprovacao][:prestador_id],
+      )
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
   def listar_aprovacoes
     user = User.find(params[:user_id])
     if user && user.tem_permissao("ver_aprovacao")
@@ -244,6 +274,7 @@ class ApiController < ApplicationController
       (aprovacao.prestador.agencia rescue ""),
       (aprovacao.prestador.conta rescue ""),
       (aprovacao.prestador.cpf rescue ""),
+      (aprovacao.prestador.id rescue ""),
     ]
     render json: {status: 200, aprovacao: apv}
   end
@@ -340,8 +371,200 @@ class ApiController < ApplicationController
     render json: {status: "OK"}
   end
 
+  def criar_tarefa
+    user = User.find(params[:user_id])
+    if user && user.tem_permissao("criar_tarefa")
+      obj = Tarefa.create(
+        titulo: params[:objeto][:titulo],
+        descricao: params[:objeto][:descricao],
+        tipo: params[:objeto][:tipo],
+        data_limite: params[:objeto][:data_limite].to_datetime,
+        # user_id: params[:objeto][:user_id],
+        responsaveis: params[:objeto][:user_id].collect{|n| n["id"]}.join("||"),
+        user_criou: params[:user_id],
+        status: "PENDENTE"
+      )
+      obj.mandar_notificacao("CRIACAO")
+      # render json: {status: 200, grupo_id: grupo.id}
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
 
-  
+  def editar_tarefa
+    user = User.find(params[:user_id])
+    tarefa = Tarefa.find(params[:objeto][:id])
+    if user && user.id == tarefa.user_criou
+      obj = tarefa.update_attributes(
+        titulo: params[:objeto][:titulo],
+        descricao: params[:objeto][:descricao],
+        tipo: params[:objeto][:tipo],
+        data_limite: params[:objeto][:data_limite],
+        responsaveis: params[:objeto][:user_id].collect{|n| n["id"]}.join("||")
+      )
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def listar_tarefas
+    user = User.find(params[:user_id])
+    if user
+      lista = Tarefa.where(tipo: "tarefa").select{|n| n.responsaveis.split("||").include?(params[:user_id].to_s)}.collect{|n| [
+        n.id,
+        n.titulo,
+        n.descricao,
+        n.data_limite,
+        n.responsaveis,
+        n.user_criou,
+        n.status,
+        n.tipo
+      ]}
+      puts lista.inspect
+      render json: {status: 200, lista: lista}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def get_tarefa
+    obj = Tarefa.find(params[:id])
+    rst = [
+      obj.id,
+      obj.titulo,
+      obj.descricao,
+      obj.data_limite,
+      obj.responsaveis,
+      obj.user_criou,
+      obj.status,
+      obj.tipo
+    ]
+    render json: {status: 200, obj: rst}
+  end
+
+  def finalizar_tarefa
+    obj = Tarefa.find(params[:id])
+    if obj.responsaveis.split("||").include?(params[:user_id].to_s)
+      obj.update_attributes(status: "FINALIZADO")
+      obj.mandar_notificacao("FINALIZADO")
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def criar_projeto
+    user = User.find(params[:user_id])
+    if user && user.tem_permissao("criar_projeto")
+      obj = Projeto.create(
+        titulo: params[:objeto][:titulo],
+        porc: 0,
+        status: "PENDENTE",
+      )
+      # obj.mandar_notificacao("CRIACAO")
+      # render json: {status: 200, grupo_id: grupo.id}
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def editar_projeto
+    user = User.find(params[:user_id])
+    obj = Projeto.find(params[:objeto][:id])
+    if user && user.tem_permissao("editar_projeto")
+      obj.update_attributes(
+        titulo: params[:objeto][:titulo]
+      )
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def listar_projetos
+    user = User.find(params[:user_id])
+    if user
+      lista = Projeto.all.collect{|n| [
+        n.id,
+        n.titulo,
+        n.status
+      ]}
+      puts lista.inspect
+      render json: {status: 200, lista: lista}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def get_projeto
+    obj = Projeto.find(params[:id])
+    rst = [
+      obj.id,
+      obj.titulo,
+      obj.status,
+      obj.etapas,
+      obj.etapa_atual
+    ]
+    render json: {status: 200, obj: rst}
+  end
+
+  def get_etapa_projeto
+    obj = EtapaProjeto.find(params[:id])
+    rst = [
+      obj.id,
+      obj.nome,
+      obj.status,
+      obj.data_inicio,
+      obj.data_fim,
+      obj.projeto_id,
+    ]
+    render json: {status: 200, obj: rst}
+  end
+
+  def editar_etapa_projeto
+    user = User.find(params[:user_id])
+    obj = EtapaProjeto.find(params[:objeto][:id])
+    if user && user.tem_permissao("editar_projeto")
+      obj.update_attributes(
+        data_inicio: params[:objeto][:data_ini].to_datetime,
+        data_fim: params[:objeto][:data_fim].to_datetime
+      )
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def finalizar_etapa_projeto
+    user = User.find(params[:user_id])
+    obj = EtapaProjeto.find(params[:id])
+    if user && user.tem_permissao("editar_projeto")
+      obj.finalizar
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def listar_permissoes
+    render json: {status: 200, lista: Permissao.all.collect{|n| [n.id, n.nome]}}
+  end
+
+  def listar_calendario
+    agenda = []
+    agenda = Tarefa.all.select{|n| n.responsaveis.split("||").include?(params[:user_id].to_s)}.collect{|n| [
+      n.titulo,
+      n.descricao,
+      n.status,
+      n.data_limite,
+      n.tipo,
+      n.id
+    ]}
+    render json: {status: 200, lista: agenda}
+  end
 
 
   # resetar senha

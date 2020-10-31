@@ -26,18 +26,6 @@ class Mensagem < ApplicationRecord
   end
 
   def mandar_fb
-    puts "
-
-
-        ------------
-        ------------
-        ------------
-        ------------
-
-        entroo!
-
-
-    "
     if self.tipo == "imagem"
       envio = HTTParty.post("https://encal-a4d41.firebaseio.com/chat.json", 
       { body: { 
