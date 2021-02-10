@@ -1,5 +1,5 @@
 class Aprovacao < ApplicationRecord
-  belongs_to :prestador
+  belongs_to :prestador, optional: true
 
   def user_avaliou
     return User.where(id: self.user_avaliou_id).last
