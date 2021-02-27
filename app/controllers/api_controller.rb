@@ -27,11 +27,6 @@ class ApiController < ApplicationController
 
   def criar_usuario
     if User.find(params[:user_id]).tem_permissao("criar_usuario")
-
-      permsId = params[:usuario][:permissoes]
-      params[:usuario][:permissoes] = params[:usuario][:permissoesIds]
-      params[:usuario][:permissoesIds] = permsId
-
       a = params[:usuario][:permissoes]
       params[:usuario][:permissoes] = "#{params[:usuario][:permissoes]}false" if a[a.size-2..a.size-1] == "||"
       params[:usuario][:permissoes] = params[:usuario][:permissoes].split("||").collect{|f| f.present? && f != "false" ? "true" : "false"}.join("||")
@@ -64,6 +59,11 @@ class ApiController < ApplicationController
   def update_usuario
     if User.find(params[:user_id]).tem_permissao("editar_usuario")
       user = User.find(params[:id])
+
+      permsId = params[:permissoes]
+      params[:permissoes] = params[:permissoesIds]
+      params[:permissoesIds] = permsId
+
       a = params[:permissoes]
       params[:permissoes] = "#{params[:permissoes]}false" if a[a.size-2..a.size-1] == "||"
       params[:permissoes] = params[:permissoes].split("||").collect{|f| f.present? && f != "false" ? "true" : "false"}.join("||")
