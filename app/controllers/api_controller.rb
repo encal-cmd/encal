@@ -27,6 +27,11 @@ class ApiController < ApplicationController
 
   def criar_usuario
     if User.find(params[:user_id]).tem_permissao("criar_usuario")
+
+      permsId = params[:usuario][:permissoes]
+      params[:usuario][:permissoes] = params[:usuario][:permissoesIds]
+      params[:usuario][:permissoesIds] = permsId
+
       a = params[:usuario][:permissoes]
       params[:usuario][:permissoes] = "#{params[:usuario][:permissoes]}false" if a[a.size-2..a.size-1] == "||"
       params[:usuario][:permissoes] = params[:usuario][:permissoes].split("||").collect{|f| f.present? && f != "false" ? "true" : "false"}.join("||")
