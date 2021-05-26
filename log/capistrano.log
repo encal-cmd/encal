@@ -7432,3 +7432,21 @@ and the repository exists.
  DEBUG [751a4b45] 	)
  DEBUG [751a4b45] 		from /home/deploy/.rbenv/versions/2.5.1/lib/ruby/2.5.0/rubygems.rb:308:in `activate_bin_path'
  DEBUG [751a4b45] 		from /home/deploy/.rbenv/versions/2.5.1/bin/bundle:23:in `<main>'
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-05-26 11:54:50 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [8d6ceced] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as deploy@64.225.63.183
+ DEBUG [8d6ceced] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+ DEBUG [8d6ceced] Finished in 7.794 seconds with exit status 0 (successful).
+ DEBUG [e9fab19f] Running /usr/bin/env which passenger as deploy@64.225.63.183
+ DEBUG [e9fab19f] Command: /usr/bin/env which passenger
+ DEBUG [e9fab19f] 	/usr/bin/passenger
+ DEBUG [e9fab19f] Finished in 0.612 seconds with exit status 0 (successful).
+  INFO [44a2b0c0] Running /usr/bin/env mkdir -p /tmp as deploy@64.225.63.183
+ DEBUG [44a2b0c0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [44a2b0c0] Finished in 0.507 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-encal-production-guilherme.sh 0.0%
+  INFO Uploading /tmp/git-ssh-encal-production-guilherme.sh 100.0%
+  INFO [f59612b6] Running /usr/bin/env chmod 700 /tmp/git-ssh-encal-production-guilherme.sh as deploy@64.225.63.183
+ DEBUG [f59612b6] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-encal-production-guilherme.sh )
+  INFO [f59612b6] Finished in 0.614 seconds with exit status 0 (successful).
