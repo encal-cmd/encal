@@ -15,7 +15,7 @@ class ApiController < ApplicationController
     user = User.where(cpf: params[:cpf].get_only_digits).last
     if user && user.valid_password?(params[:senha])
       if user.ativo
-        user = {id: user.id, nome: user.nome, email: user.email, cpf: user.cpf, ativo: user.ativo, permissoes: user.permissoes}
+        user = {id: user.id, nome: user.nome, email: user.email, cpf: user.cpf, ativo: user.ativo, permissoes: user.permissoes, admin: user.admin}
         render json: { status: "OK", usuario: user }
       else
         render json: { status: "USUARIO_DESATIVADO" }
@@ -27,18 +27,13 @@ class ApiController < ApplicationController
 
   def criar_usuario
     if User.find(params[:user_id]).tem_permissao("criar_usuario")
-      a = params[:usuario][:permissoes]
-      params[:usuario][:permissoes] = "#{params[:usuario][:permissoes]}false" if a[a.size-2..a.size-1] == "||"
-      params[:usuario][:permissoes] = params[:usuario][:permissoes].split("||").collect{|f| f.present? && f != "false" ? "true" : "false"}.join("||")
-
       user = User.create(
         cpf: params[:usuario][:cpf].get_only_digits,
         password: "123456",
         email: params[:usuario][:email],
         ativo: true,
         nome: params[:usuario][:nome],
-        permissoes: params[:usuario][:permissoes],
-        permissao_ids: params[:usuario][:permissoesIds]
+        grupo_usu_ids: params[:usuario][:grupoUsuIds]
       )
       render json: {status: "OK"}
     else
@@ -47,27 +42,26 @@ class ApiController < ApplicationController
   end
 
   def listar_usuarios
+    puts User.all.collect{|n| [n.id, n.nome, n.email, n.cpf, n.ativo, n.permissoes]}.inspect
     render json: {status: 200, usuarios: User.all.collect{|n| [n.id, n.nome, n.email, n.cpf, n.ativo, n.permissoes]}}
   end
 
   def get_usuario
     user = User.find(params[:id])
-    user = {id: user.id, nome: user.nome, email: user.email, cpf: user.cpf, ativo: user.ativo, permissoes: user.permissoes, permissoesIds: user.permissao_ids}
+    user = {id: user.id, nome: user.nome, email: user.email, cpf: user.cpf, ativo: user.ativo, grupoUsuIds: user.grupo_usu_ids}
     render json: {status: 200, usuario: user}
   end
 
   def update_usuario
     if User.find(params[:user_id]).tem_permissao("editar_usuario")
       user = User.find(params[:id])
-
-      permsId = params[:permissoes]
-      params[:permissoes] = params[:permissoesIds]
-      params[:permissoesIds] = permsId
-
-      a = params[:permissoes]
-      params[:permissoes] = "#{params[:permissoes]}false" if a[a.size-2..a.size-1] == "||"
-      params[:permissoes] = params[:permissoes].split("||").collect{|f| f.present? && f != "false" ? "true" : "false"}.join("||")
-      user.update_attributes(nome: params[:nome], email: params[:email], cpf: params[:cpf], ativo: params[:ativo], permissoes: params[:permissoes], permissao_ids: params[:permissoesIds])
+      user.update_attributes(
+        nome: params[:nome], 
+        email: params[:email], 
+        cpf: params[:cpf], 
+        ativo: params[:ativo], 
+        grupo_usu_ids: params[:grupoUsuIds]
+      )
       render json: {status: "OK"}
     else
       render json: {status: "Usuário sem permissão"}
@@ -178,22 +172,48 @@ class ApiController < ApplicationController
   end
 
   def up_file
-
     mensagem = Mensagem.create(
       grupo_id: params[:grupo_id],
       user_id: params[:user_id],
       tipo: "anexo"
     )
-
     mensagem.update_attribute(:imagem, params[:file])
-
     render json: {status: 200}
+  end
+
+  def attdownload
+    msg = Mensagem.find(params[:msg_id])
+    msg.download_mensagens.create(onesignal: params[:onesig], url: params[:url])
+    render json: {status: "OK"}
+  end
+
+  def up_file_aprovacao
+    aprov = Aprovacao.find(params[:solicitacao_id])
+    anexo = aprov.anexo_aprovacoes.create()
+    anexoUp = anexo.update_attribute(:anexo, params[:file])
+    # aprov.update_attribute(:anexo, params[:file])
+    render json: {status: 200}
+  end
+
+  def attdownload_aprovacao
+    anexo_aprov = AnexoAprovacao.find(params[:anexo_aprovacao_id])
+    anexo_aprov.download_anexo_aprovacoes.create(onesignal: params[:onesig], url: params[:url])
+    render json: {status: "OK"}
+  end
+
+  def listar_anexos_aprovacao
+    aprovacao = Aprovacao.find(params[:aprovacao_id])
+    if aprovacao
+      render json: {status: 200, mensagens: aprovacao.listar_anexos(params)}
+    else
+      render json: {status: 200, mensagens: []}
+    end
   end
 
   def criar_aprovacao
     user = User.find(params[:user_id])
     if user && user.tem_permissao("criar_aprovacao")
-      grupo = Aprovacao.create(
+      aprov = Aprovacao.create(
         titulo: params[:aprovacao][:titulo],
         empresa: "Encal",
         centro_custo: params[:aprovacao][:centroCusto],
@@ -208,7 +228,7 @@ class ApiController < ApplicationController
         status: "PENDENTE"
       )
       # render json: {status: 200, grupo_id: grupo.id}
-      render json: {status: "OK"}
+      render json: {status: "OK", aprovacao_id: aprov.id}
     else
       render json: {status: "Usuário sem permissão"}
     end
@@ -280,6 +300,7 @@ class ApiController < ApplicationController
       (aprovacao.prestador.conta rescue ""),
       (aprovacao.prestador.cpf rescue ""),
       (aprovacao.prestador.id rescue ""),
+      aprovacao.listar_anexos(params),
     ]
     render json: {status: 200, aprovacao: apv}
   end
@@ -370,12 +391,6 @@ class ApiController < ApplicationController
     render json: {status: 200, obj: rst}
   end
 
-  def attdownload
-    msg = Mensagem.find(params[:msg_id])
-    msg.download_mensagens.create(onesignal: params[:onesig], url: params[:url])
-    render json: {status: "OK"}
-  end
-
   def criar_tarefa
     user = User.find(params[:user_id])
     if user && user.tem_permissao("criar_tarefa")
@@ -417,7 +432,7 @@ class ApiController < ApplicationController
   def listar_tarefas
     user = User.find(params[:user_id])
     if user
-      lista = Tarefa.where(tipo: "tarefa").select{|n| n.responsaveis.split("||").include?(params[:user_id].to_s)}.collect{|n| [
+      lista = Tarefa.where(tipo: ["tarefa", "planejamento"]).select{|n| (n.responsaveis.split("||").include?(params[:user_id].to_s) || n.user_criou == params[:user_id])}.collect{|n| [
         n.id,
         n.titulo,
         n.descricao,
@@ -451,7 +466,7 @@ class ApiController < ApplicationController
 
   def finalizar_tarefa
     obj = Tarefa.find(params[:id])
-    if obj.responsaveis.split("||").include?(params[:user_id].to_s)
+    if (obj.tipo == 'tarefa' && obj.responsaveis.split("||").include?(params[:user_id].to_s)) || (obj.tipo == 'planejamento' && obj.user_criou.to_i == params[:user_id].to_i)
       obj.update_attributes(status: "FINALIZADO")
       obj.mandar_notificacao("FINALIZADO")
       render json: {status: "OK"}
@@ -571,13 +586,159 @@ class ApiController < ApplicationController
     render json: {status: 200, lista: agenda}
   end
 
+  def criar_grupo_usuario
+    if User.find(params[:user_id]).tem_permissao("criar_grupo_usuario")
+      user = GrupoUsuario.create(
+        nome: params[:grupo_usuario][:nome],
+        permissao_ids: params[:grupo_usuario][:permissoesIds]
+      )
+      puts user.errors.inspect
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
 
-  # resetar senha
-  # editar usuario
+  def listar_grupo_usuarios
+    if User.find(params[:user_id]).tem_permissao("listar_grupo_usuarios")
+      lista = GrupoUsuario.all.collect{|n| [
+        n.id,
+        n.nome,
+      ]}
+      render json: {status: 200, lista: lista}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
 
-  # novo grupo
-  # criar usuario
-  # ver usuarios
-  # ver grupos
+  def get_grupo_usuario
+    obj = GrupoUsuario.find(params[:id])
+    rst = [
+      obj.id,
+      obj.nome,
+      obj.permissao_ids
+    ]
+    render json: {status: 200, obj: rst}
+  end
+
+  def update_grupo_usuario
+    if User.find(params[:user_id]).tem_permissao("editar_grupo_usuario")
+      GrupoUsuario.find(params[:id]).update_attributes(nome: params[:nome], permissao_ids: params[:permissoesIds])
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+
+
+
+
+
+
+
+
+
+  def criar_planejamento
+    user = User.find(params[:user_id])
+    if user && user.tem_permissao("criar_planejamento")
+      obj = Planejamento.new(
+        nome: params[:objeto][:nome],
+        descricao: params[:objeto][:descricao],
+        grupo_usu_ver_ids: params[:objeto][:grupoUsuVer],
+        grupo_usu_editar_ids: params[:objeto][:grupoUsuEditar],
+      )
+
+      obj.pasta_planejamentos.new(nome: "Pasta 1")
+      obj.pasta_planejamentos.new(nome: "Pasta 2")
+      obj.pasta_planejamentos.new(nome: "Pasta 3")
+      obj.pasta_planejamentos.new(nome: "Pasta 4")
+      obj.pasta_planejamentos.new(nome: "Pasta 5")
+      obj.pasta_planejamentos.new(nome: "Pasta 6")
+      obj.pasta_planejamentos.new(nome: "Pasta 7")
+      obj.pasta_planejamentos.new(nome: "Pasta 8")
+      obj.pasta_planejamentos.new(nome: "Pasta 9")
+      obj.pasta_planejamentos.new(nome: "Pasta 10")
+
+      obj.save
+
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def editar_planejamento
+    user = User.find(params[:user_id])
+    obj = Planejamento.find(params[:objeto][:id])
+    if user && obj.pode_editar?(user)
+      obj.update_attributes(
+        nome: params[:objeto][:nome],
+        descricao: params[:objeto][:descricao],
+        grupo_usu_ver_ids: params[:objeto][:grupoUsuVer],
+        grupo_usu_editar_ids: params[:objeto][:grupoUsuEditar],
+      )
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def listar_planejamentos
+    user = User.find(params[:user_id])
+    if user
+      lista = Planejamento.all.select{|n| n.pode_ver?(user)}.collect{|n| [
+        n.id,
+        n.nome,
+        n.descricao
+      ]}
+      puts lista.inspect
+      render json: {status: 200, lista: lista}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
+  def get_planejamento
+    user = User.find(params[:user_id])
+    obj = Planejamento.find(params[:id])
+    rst = [
+      obj.id,
+      obj.nome,
+      obj.descricao,
+      obj.pasta_planejamentos.collect{|n| [n.id, n.nome, n.link]},
+      obj.grupo_usu_ver_ids,
+      obj.grupo_usu_editar_ids,
+      obj.pode_editar?(user)
+    ]
+    render json: {status: 200, obj: rst}
+  end
+
+  def get_pasta_planejamento
+    user = User.find(params[:user_id])
+    obj = PastaPlanejamento.find(params[:id])
+    rst = [
+      obj.id,
+      obj.nome,
+      obj.link,
+      obj.planejamento_id,
+      obj.planejamento.pode_editar?(user)
+    ]
+    render json: {status: 200, obj: rst}
+  end
+
+  def editar_etapa_planejamento
+    user = User.find(params[:user_id])
+    obj = PastaPlanejamento.find(params[:objeto][:id])
+    if user && user.tem_permissao("editar_planejamento")
+      obj.update_attributes(
+        link: params[:objeto][:link]
+      )
+      render json: {status: "OK"}
+    else
+      render json: {status: "Usuário sem permissão"}
+    end
+  end
+
 
 end

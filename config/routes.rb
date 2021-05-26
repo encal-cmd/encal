@@ -44,8 +44,10 @@ Rails.application.routes.draw do
   match "/api/listar_mesagens" => 'api#listar_mesagens', via: [:get, :post, :options]
   
   match "/api/attdownload" => 'api#attdownload', via: [:get, :post, :options]
+  match "/api/attdownload_aprovacao" => 'api#attdownload_aprovacao', via: [:get, :post, :options]
 
   match "/api/up_file" => 'api#up_file', via: [:get, :post, :options]
+  match "/api/up_file_aprovacao" => 'api#up_file_aprovacao', via: [:get, :post, :options]
 
   match "/api/criar_tarefa" => 'api#criar_tarefa', via: [:get, :post, :options]
   match "/api/listar_tarefas" => 'api#listar_tarefas', via: [:get, :post, :options]
@@ -63,5 +65,17 @@ Rails.application.routes.draw do
 
   match "/api/listar_permissoes" => 'api#listar_permissoes', via: [:get, :post, :options]
   match "/api/listar_calendario" => 'api#listar_calendario', via: [:get, :post, :options]
-  
+
+  match "/api/criar_grupo_usuario" => 'api#criar_grupo_usuario', via: [:get, :post, :options]
+  match "/api/listar_grupo_usuarios" => 'api#listar_grupo_usuarios', via: [:get, :post, :options]
+  match "/api/get_grupo_usuario" => 'api#get_grupo_usuario', via: [:get, :post, :options]
+  match "/api/update_grupo_usuario" => 'api#update_grupo_usuario', via: [:get, :post, :options]
+
+  match "/api/criar_planejamento" => 'api#criar_planejamento', via: [:get, :post, :options]
+  match "/api/editar_planejamento" => 'api#editar_planejamento', via: [:get, :post, :options]
+  match "/api/listar_planejamentos" => 'api#listar_planejamentos', via: [:get, :post, :options]
+  match "/api/get_planejamento" => 'api#get_planejamento', via: [:get, :post, :options]
+  match "/api/get_pasta_planejamento" => 'api#get_pasta_planejamento', via: [:get, :post, :options]
+  match "/api/editar_etapa_planejamento" => 'api#editar_etapa_planejamento', via: [:get, :post, :options]
+
 end

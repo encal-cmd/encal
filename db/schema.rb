@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_31_182445) do
+ActiveRecord::Schema.define(version: 2021_05_26_013547) do
+
+  create_table "anexo_aprovacoes", force: :cascade do |t|
+    t.integer "aprovacao_id"
+    t.string "anexo_file_name"
+    t.string "anexo_content_type"
+    t.bigint "anexo_file_size"
+    t.datetime "anexo_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["aprovacao_id"], name: "index_anexo_aprovacoes_on_aprovacao_id"
+  end
 
   create_table "aprovacoes", force: :cascade do |t|
     t.string "avaliadores"
@@ -30,6 +41,15 @@ ActiveRecord::Schema.define(version: 2020_10_31_182445) do
     t.string "titulo"
     t.integer "prestador_id"
     t.index ["prestador_id"], name: "index_aprovacoes_on_prestador_id"
+  end
+
+  create_table "download_anexo_aprovacoes", force: :cascade do |t|
+    t.integer "anexo_aprovacao_id"
+    t.string "onesignal"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["anexo_aprovacao_id"], name: "index_download_anexo_aprovacoes_on_anexo_aprovacao_id"
   end
 
   create_table "download_mensagens", force: :cascade do |t|
@@ -52,6 +72,22 @@ ActiveRecord::Schema.define(version: 2020_10_31_182445) do
     t.datetime "updated_at", null: false
     t.integer "ordem"
     t.index ["projeto_id"], name: "index_etapa_projetos_on_projeto_id"
+  end
+
+  create_table "grupo_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "grupo_usuarios_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["grupo_usuarios_id"], name: "index_grupo_users_on_grupo_usuarios_id"
+    t.index ["user_id"], name: "index_grupo_users_on_user_id"
+  end
+
+  create_table "grupo_usuarios", force: :cascade do |t|
+    t.string "permissao_ids"
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "grupos", force: :cascade do |t|
@@ -101,11 +137,29 @@ ActiveRecord::Schema.define(version: 2020_10_31_182445) do
     t.index ["user_id"], name: "index_onesignal_users_on_user_id"
   end
 
+  create_table "pasta_planejamentos", force: :cascade do |t|
+    t.integer "planejamento_id"
+    t.string "nome"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["planejamento_id"], name: "index_pasta_planejamentos_on_planejamento_id"
+  end
+
   create_table "permissoes", force: :cascade do |t|
     t.string "nome"
     t.string "codigo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "planejamentos", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "descricao"
+    t.string "grupo_usu_ver_ids"
+    t.string "grupo_usu_editar_ids"
   end
 
   create_table "prestadores", force: :cascade do |t|
@@ -155,8 +209,7 @@ ActiveRecord::Schema.define(version: 2020_10_31_182445) do
     t.string "nome"
     t.boolean "ativo"
     t.boolean "admin"
-    t.string "permissoes"
-    t.string "permissao_ids"
+    t.string "grupo_usu_ids"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

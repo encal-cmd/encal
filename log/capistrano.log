@@ -5996,3 +5996,36 @@ While it's not a problem now, it could cause errors if you change the version of
   INFO [d18c1135] Running /usr/bin/env echo "Branch master (at f544c06f9d0d33526dac6f51221ebfda0d66afad) deployed as release 20210227231444 by guilherme" >> /home/deploy/encal/revisions.log as deploy@64.225.63.183
  DEBUG [d18c1135] Command: cd /home/deploy/encal/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "Branch master (at f544c06f9d0d33526dac6f51221ebfda0d66afad) deployed as release 20210227231444 by guilherme" >> /home/deploy/encal/revisions.log )
   INFO [d18c1135] Finished in 0.425 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-20 10:22:21 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [4a4f6585] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as deploy@64.225.63.183
+ DEBUG [4a4f6585] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-20 10:31:11 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [1b639bc8] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as deploy@64.225.63.183
+ DEBUG [1b639bc8] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-20 10:35:12 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [7f738d1d] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as deploy@64.225.63.183
+ DEBUG [7f738d1d] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-20 10:36:46 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [91dfff82] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as deploy@64.225.63.183
+ DEBUG [91dfff82] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-04-20 10:37:25 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [8d1ebf06] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as deploy@64.225.63.183
+ DEBUG [8d1ebf06] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+ DEBUG [8d1ebf06] Finished in 11.448 seconds with exit status 0 (successful).
+ DEBUG [cb6bea7b] Running /usr/bin/env which passenger as deploy@64.225.63.183
+ DEBUG [cb6bea7b] Command: /usr/bin/env which passenger
+ DEBUG [cb6bea7b] 	/usr/bin/passenger
+ DEBUG [cb6bea7b] Finished in 0.580 seconds with exit status 0 (successful).
+  INFO [f6852bf9] Running /usr/bin/env mkdir -p /tmp as deploy@64.225.63.183
+ DEBUG [f6852bf9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [f6852bf9] Finished in 0.544 seconds with exit status 0 (successful).

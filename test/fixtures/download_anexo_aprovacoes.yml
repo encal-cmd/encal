@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  anexo_aprovacao: one
+  onesignal: MyString
+  url: MyString
+
+two:
+  anexo_aprovacao: two
+  onesignal: MyString
+  url: MyString

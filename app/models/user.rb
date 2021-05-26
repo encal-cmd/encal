@@ -13,9 +13,11 @@ class User < ApplicationRecord
   end
 
   def tem_permissao(permissao)
-    perms_ids = self.permissao_ids.split("||").map{|n| n.to_i}
-    perms = Permissao.where(id: perms_ids).map(&:codigo)
-    return perms.include?(permissao)
+    return true if self.admin
+    self.permissoes.include?(permissao)
+    # perms_ids = self.permissao_ids.split("||").map{|n| n.to_i}
+    # perms = Permissao.where(id: perms_ids).map(&:codigo)
+    # return perms.include?(permissao)
   end
 
   def self.atualizar_perms
@@ -53,4 +55,14 @@ class User < ApplicationRecord
     User.update_all(permissoes: string_true, permissao_ids: Permissao.all.map(&:id).join("||"))
   end
 
+  def permissao_ids
+    return nil if !self.grupo_usu_ids.present?
+    GrupoUsuario.where(id: self.grupo_usu_ids.split("||")).map(&:permissao_ids).join("||").split("||").uniq.join("||")
+  end
+
+  def permissoes
+    return nil if !self.grupo_usu_ids.present?
+    permIds = GrupoUsuario.where(id: self.grupo_usu_ids.split("||")).map(&:permissao_ids).join("||").split("||").uniq
+    Permissao.where(id: permIds).map(&:codigo)
+  end
 end
