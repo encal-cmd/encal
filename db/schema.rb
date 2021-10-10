@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_013547) do
+ActiveRecord::Schema.define(version: 2021_10_10_153256) do
 
   create_table "anexo_aprovacoes", force: :cascade do |t|
     t.integer "aprovacao_id"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 2021_05_26_013547) do
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "descricao"
     t.index ["planejamento_id"], name: "index_pasta_planejamentos_on_planejamento_id"
   end
 

@@ -722,7 +722,8 @@ class ApiController < ApplicationController
       obj.nome,
       obj.link,
       obj.planejamento_id,
-      obj.planejamento.pode_editar?(user)
+      obj.planejamento.pode_editar?(user),
+      obj.descricao
     ]
     render json: {status: 200, obj: rst}
   end
@@ -732,7 +733,8 @@ class ApiController < ApplicationController
     obj = PastaPlanejamento.find(params[:objeto][:id])
     if user && user.tem_permissao("editar_planejamento")
       obj.update_attributes(
-        link: params[:objeto][:link]
+        link: params[:objeto][:link],
+        descricao: params[:objeto][:descricao],
       )
       render json: {status: "OK"}
     else
