@@ -649,16 +649,16 @@ class ApiController < ApplicationController
         grupo_usu_editar_ids: params[:objeto][:grupoUsuEditar],
       )
 
-      obj.pasta_planejamentos.new(nome: "Pasta 1")
-      obj.pasta_planejamentos.new(nome: "Pasta 2")
-      obj.pasta_planejamentos.new(nome: "Pasta 3")
-      obj.pasta_planejamentos.new(nome: "Pasta 4")
-      obj.pasta_planejamentos.new(nome: "Pasta 5")
-      obj.pasta_planejamentos.new(nome: "Pasta 6")
-      obj.pasta_planejamentos.new(nome: "Pasta 7")
-      obj.pasta_planejamentos.new(nome: "Pasta 8")
-      obj.pasta_planejamentos.new(nome: "Pasta 9")
-      obj.pasta_planejamentos.new(nome: "Pasta 10")
+      obj.pasta_planejamentos.new(nome: "PLANO DE MOBILIZAÇÃO")
+      obj.pasta_planejamentos.new(nome: "PLANO FINANCEIRO")
+      obj.pasta_planejamentos.new(nome: "PLANO DE CONTRATAÇÃO")
+      obj.pasta_planejamentos.new(nome: "PLANO DE CONTROLE DE PESSOAL")
+      obj.pasta_planejamentos.new(nome: "PLANO DE PREPARAÇÃO")
+      obj.pasta_planejamentos.new(nome: "PLANO DE SEGURANÇA")
+      obj.pasta_planejamentos.new(nome: "PLANO DE EXECUÇÃO")
+      obj.pasta_planejamentos.new(nome: "PLANO DE 5S")
+      obj.pasta_planejamentos.new(nome: "PLANO DE DESMOBILIZAÇÃO")
+      obj.pasta_planejamentos.new(nome: "PLANO DE QUALIDADE")
 
       obj.save
 

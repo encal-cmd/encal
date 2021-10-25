@@ -19,6 +19,7 @@ Encal123456@
 encaldigitalservidor@gmail.com
 encal123456
 encal-cmd
+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
 
 postgree server password
 password
