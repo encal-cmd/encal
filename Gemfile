@@ -16,7 +16,7 @@ gem 'cocoon', '~> 1.2', '>= 1.2.11'
 gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary', '~> 0.12.4'
 gem 'whenever', require: false
-gem 'sidekiq', '~> 5.2.5'
+gem 'sidekiq', '~> 6.4.0'
 gem 'httparty'
 gem 'rack-cors'
 gem 'mimemagic'
